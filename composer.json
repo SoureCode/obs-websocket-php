@@ -1,0 +1,34 @@
+{
+  "name": "sourecode/obs-websocket-php",
+  "description": "PHP implementation of the OBS WebSocket API",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "chapterjason",
+      "email": "jason@sourecode.dev"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "SoureCode\\": "./src"
+    }
+  },
+  "require": {
+    "php": "^8.3",
+    "textalk/websocket": "^1.6",
+    "symfony/string": "^7.0",
+    "symfony/serializer": "^7.0",
+    "symfony/property-access": "^7.0",
+    "symfony/uid": "^7.0",
+    "symfony/clock": "^7.0",
+    "symfony/finder": "^7.0"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest",
+    "nikic/php-parser": "^5.0",
+    "symfony/filesystem": "^7.0"
+  }
+}

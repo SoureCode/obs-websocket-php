@@ -1,0 +1,547 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use SoureCode\OBS\BaseClient;
+use SoureCode\OBS\Protocol\EventInterface;
+use SoureCode\OBS\Protocol\RequestInterface;
+use SoureCode\OBS\Protocol\ResponseInterface;
+use JetBrains\PhpStorm\Deprecated;
+use PhpParser\BuilderFactory;
+use PhpParser\Node\Expr\Assign;
+use PhpParser\Node\Expr\BinaryOp\BitwiseOr;
+use PhpParser\Node\Expr\ClassConstFetch;
+use PhpParser\Node\Stmt\Return_;
+use PhpParser\PrettyPrinter\Standard;
+use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\Serializer\Attribute\SerializedName;
+use function Symfony\Component\String\u;
+
+$projectDirectory = dirname(__DIR__);
+$obsNamespace = 'SoureCode\\OBS';
+$protocolNamespace = $obsNamespace . '\\Protocol';
+$obsDirectory = $projectDirectory . '/src/OBS';
+$protocolDirectory = $obsDirectory . '/Protocol';
+$protocolFile = $projectDirectory . '/data/protocol.json';
+
+$printer = new Standard();
+$filesystem = new Filesystem();
+$factory = new BuilderFactory();
+
+$enumNamespace = $protocolNamespace . '\\Enum';
+$requestNamespace = $protocolNamespace . '\\Request';
+$responseNamespace = $protocolNamespace . '\\Response';
+$eventNamespace = $protocolNamespace . '\\Event';
+
+$enumDirectory = $protocolDirectory . '/Enum';
+$requestDirectory = $protocolDirectory . '/Request';
+$responseDirectory = $protocolDirectory . '/Response';
+$eventDirectory = $protocolDirectory . '/Event';
+
+$directories = [
+    $enumDirectory,
+    $requestDirectory,
+    $responseDirectory,
+    $eventDirectory,
+];
+
+foreach ($directories as $directory) {
+    if ($filesystem->exists($directory)) {
+        $filesystem->remove($directory);
+    }
+
+    if (!$filesystem->exists($directory)) {
+        $filesystem->mkdir($directory);
+    }
+}
+
+function formatDocComment(string $text, ?array $tags = null, int $indention = 0): string
+{
+    $lines = explode(PHP_EOL, $text);
+    $indentionString = str_repeat(' ', $indention);
+
+    $docComment = '/**' . PHP_EOL;
+
+    foreach ($lines as $line) {
+        $docComment .= $indentionString . ' * ' . $line . PHP_EOL;
+    }
+
+    if ($tags !== null) {
+        if (!empty($lines)) {
+            $docComment .= $indentionString . ' *' . PHP_EOL;
+        }
+
+        foreach ($tags as $name => $value) {
+            $docComment .= $indentionString . ' * @' . $name . ' ' . $value . PHP_EOL;
+        }
+    }
+
+    $docComment .= $indentionString . ' */';
+
+    return $docComment;
+}
+
+function guessTypeFromValue(mixed $enumValue): string
+{
+    if (is_int($enumValue) || is_float($enumValue)) {
+        return 'int';
+    }
+
+    if (is_string($enumValue)) {
+        if (is_numeric($enumValue)) {
+            return 'int';
+        }
+
+        if (str_starts_with($enumValue, '(')) {
+            return 'int';
+        }
+
+        return 'string';
+    }
+
+    throw new \RuntimeException('Could not guess type from value');
+}
+
+function normalizeName(string $name): array
+{
+    return [
+        u($name)->camel()->toString(),
+        $name
+    ];
+}
+
+// [a,b,c], null -> a | b | c
+function buildBitwiseOr(array $references, mixed $right = null): null|BitwiseOr|ClassConstFetch
+{
+    if (empty($references)) {
+        return $right;
+    }
+
+    $result = array_shift($references);
+
+    while (!empty($references)) {
+        $next = array_shift($references);
+        $result = new BitwiseOr($result, $next);
+    }
+
+    if ($right !== null) {
+        $result = new BitwiseOr($result, $right);
+    }
+
+    return $result;
+}
+
+function resolveValueType(mixed $valueType, string $description, ?string $restrictions = null): array
+{
+    $valueType = strtolower($valueType);
+
+    if ($valueType === "any") {
+        return ["mixed", "mixed"];
+    }
+
+    if ($valueType === "object") {
+        return ["array", "array"];
+    }
+
+    if ($valueType === "boolean") {
+        return ["bool", "bool"];
+    }
+
+    if ($valueType === "number") {
+        if (preg_match('/\d+\.\d+/', $description) || preg_match('/\d+\.\d+/', $restrictions)) {
+            return ["float", "float"];
+        }
+
+        return ["int", "int"];
+    }
+
+    if (str_starts_with($valueType, "array")) {
+        return ["array", $valueType];
+    }
+
+    return [$valueType, $valueType];
+}
+
+$protocol = json_decode(file_get_contents($protocolFile), true, 512, JSON_THROW_ON_ERROR);
+
+$clientNode = $factory->class('Client')
+    ->makeFinal()
+    ->extend('BaseClient');
+
+$clientUses = [];
+
+foreach ($protocol['enums'] as $enum) {
+    $enumType = $enum['enumType'];
+    $enumIdentifiers = $enum['enumIdentifiers'];
+
+    $backedType = guessTypeFromValue($enumIdentifiers[0]['enumValue']);
+    $deprecatedIdentifiers = array_filter($enumIdentifiers, static fn($identifier) => $identifier['deprecated']);
+    $hasDeprecated = count($deprecatedIdentifiers) > 0;
+    $allDeprecated = count($enumIdentifiers) === count($deprecatedIdentifiers);
+
+    $enumNode = $factory->enum($enumType)
+        ->setScalarType($backedType);
+
+    if ($allDeprecated) {
+        $deprecatedAttribute = $factory->attribute('Deprecated');
+        $enumNode->addAttribute($deprecatedAttribute);
+    }
+
+    $constructorNode = $factory
+        ->method('__construct')
+        ->makePublic();
+
+    foreach ($enumIdentifiers as $identifier) {
+        $description = $identifier['description'];
+        $enumIdentifier = $identifier['enumIdentifier'];
+        $rpcVersion = $identifier['rpcVersion'];
+        $deprecated = $identifier['deprecated'];
+        $initialVersion = $identifier['initialVersion'];
+        $enumValue = $identifier['enumValue'];
+
+        if ($backedType === 'int') {
+            // starts with ( and next char musst be int
+            if (str_starts_with($enumValue, '(') && is_numeric($enumValue[1])) {
+                $enumValue = eval('return ' . $enumValue . ';');
+            } else if (str_starts_with($enumValue, '(')) {
+                $references = array_map(
+                    static fn($reference) => $factory->propertyFetch($factory->classConstFetch('self', trim($reference)), 'value'),
+                    explode('|', substr($enumValue, 1, -1))
+                );
+
+                $enumValue = buildBitwiseOr($references);
+            } else if ($enumValue === '-1') {
+                $enumValue = -1;
+            }
+        }
+
+        $caseNode = $factory->enumCase($enumIdentifier)
+            ->setDocComment(formatDocComment($description, ['since' => $initialVersion, 'rpcVersion' => $rpcVersion], 4))
+            ->setValue($enumValue);
+
+        if ($deprecated) {
+            $deprecatedAttribute = $factory->attribute('Deprecated');
+
+            $caseNode->addAttribute($deprecatedAttribute);
+        }
+
+        $enumNode->addStmt($caseNode);
+    }
+
+    $rootNode = $factory->namespace($enumNamespace);
+
+    if ($hasDeprecated) {
+        $rootNode->addStmt($factory->use(Deprecated::class));
+    }
+
+    $rootNode->addStmt($enumNode);
+
+    $code = $printer->prettyPrintFile([$rootNode->getNode()]);
+
+    $enumFile = $enumDirectory . '/' . $enumType . '.php';
+
+    $filesystem->dumpFile($enumFile, $code);
+}
+
+foreach ($protocol['requests'] as $request) {
+    $requestType = $request['requestType'];
+    $responseType = $requestType;
+
+    $description = $request['description'];
+    $complexity = $request['complexity'];
+    $rpcVersion = $request['rpcVersion'];
+    $initialVersion = $request['initialVersion'];
+    $category = $request['category'];
+    $deprecated = $request['deprecated'];
+    $requestFields = $request['requestFields'];
+    $responseFields = $request['responseFields'];
+
+    $originalRequestType = $requestType;
+    $originalResponseType = $responseType;
+
+    $responseType .= 'Response';
+    $requestType .= 'Request';
+
+    $subNamespace = u($category)->camel()->title();
+
+    $requestNamespace = $protocolNamespace . '\\Request\\' . $subNamespace;
+    $responseNamespace = $protocolNamespace . '\\Response\\' . $subNamespace;
+
+    $requestNode = $factory->class($requestType)
+        ->makeFinal()
+        ->makeReadonly()
+        ->implement('RequestInterface')
+        ->setDocComment(formatDocComment($description, ['since' => $initialVersion, 'rpcVersion' => $rpcVersion, 'complexity' => $complexity, 'category' => $category], 0));
+
+    $responseNode = $factory->class($responseType)
+        ->makeFinal()
+        ->makeReadonly()
+        ->implement('ResponseInterface')
+        ->setDocComment(formatDocComment($description, ['since' => $initialVersion, 'rpcVersion' => $rpcVersion, 'complexity' => $complexity, 'category' => $category], 0));
+
+    $clientMethod = $factory->method(u($originalRequestType)->camel()->toString())
+        ->makePublic()
+        ->setReturnType($responseType);
+
+    $clientUses[] = $requestNamespace . '\\' . $requestType;
+    $clientUses[] = $responseNamespace . '\\' . $responseType;
+
+    $newRequestInstance = $factory->new($requestType);
+
+    if ($deprecated) {
+        $requestNode->addAttribute($factory->attribute('Deprecated'));
+        $responseNode->addAttribute($factory->attribute('Deprecated'));
+    }
+
+    usort($requestFields, static fn($a, $b) => ($a['valueOptional'] ?? false) <=> ($b['valueOptional'] ?? false));
+
+    $requestConstructorNode = $factory
+        ->method('__construct')
+        ->makePublic();
+
+    $requestHasSerializedNames = false;
+
+    foreach ($requestFields as $field) {
+        $valueName = $field['valueName'];
+        $valueType = $field['valueType'];
+        $valueDescription = $field['valueDescription'];
+        $valueRestriction = $field['valueRestriction'] ?? null;
+        $valueOptional = $field['valueOptional'] ?? false;
+        $valueOptionalBehaviour = $field['valueOptionalBehaviour'] ?? null;
+
+        [$valueType, $realType] = resolveValueType($valueType, $valueDescription, $valueRestriction);
+        [$propertyName, $originalName] = normalizeName($valueName);
+
+        $tags = [
+            'since' => $initialVersion,
+            'rpcVersion' => $rpcVersion,
+            'type' => $realType,
+        ];
+
+        if ($valueRestriction) {
+            $tags['restriction'] = $valueRestriction;
+        }
+
+        $property = $factory->property($propertyName)
+            ->makePublic()
+            ->setType($valueOptional ? '?' . $valueType : $valueType)
+            ->setDocComment(formatDocComment($valueDescription, $tags, 4));
+
+        if ($propertyName !== $originalName) {
+            $property->addAttribute($factory->attribute('SerializedName', [$originalName]));
+            $requestHasSerializedNames = true;
+        }
+
+        $requestNode->addStmt($property);
+
+        $param = $factory->param($propertyName)->setType($valueOptional ? '?' . $valueType : $valueType);
+
+        if ($valueOptional) {
+            $param->setDefault(null);
+        }
+
+        $newRequestInstance->args[] = $factory->var($propertyName);
+        $clientMethod->addParam($param);
+        $requestConstructorNode->addParam($param);
+
+        $assign = new Assign(
+            $factory->propertyFetch($factory->var('this'), $propertyName),
+            $factory->var($propertyName)
+        );
+
+        $requestConstructorNode->addStmt($assign);
+    }
+
+    $requestCall = $factory->methodCall($factory->var('this'), 'request', [$newRequestInstance]);
+    $clientMethod->addStmt(new Return_($factory->propertyFetch($factory->propertyFetch($requestCall, 'd'), 'responseData')));
+    $clientNode->addStmt($clientMethod);
+
+    usort($responseFields, static fn($a, $b) => ($a['valueOptional'] ?? false) <=> ($b['valueOptional'] ?? false));
+
+    $responseConstructorNode = $factory
+        ->method('__construct')
+        ->makePublic();
+
+    $responseHasSerializedNames = false;
+
+    foreach ($responseFields as $field) {
+        $valueName = $field['valueName'];
+        $valueType = $field['valueType'];
+        $valueDescription = $field['valueDescription'];
+        $valueRestriction = $field['valueRestriction'] ?? null;
+        $valueOptional = $field['valueOptional'] ?? false;
+        $valueOptionalBehaviour = $field['valueOptionalBehaviour'] ?? null;
+
+        [$valueType, $realType] = resolveValueType($valueType, $valueDescription, $valueRestriction);
+        [$propertyName, $originalName] = normalizeName($valueName);
+
+        $tags = [
+            'since' => $initialVersion,
+            'rpcVersion' => $rpcVersion,
+            'var' => $realType,
+        ];
+
+        if ($valueRestriction) {
+            $tags['restriction'] = $valueRestriction;
+        }
+
+        $property = $factory->property($propertyName)
+            ->makePublic()
+            ->setType($valueOptional ? '?' . $valueType : $valueType)
+            ->setDocComment(formatDocComment($valueDescription, $tags, 4));
+
+        if ($propertyName !== $originalName) {
+            $property->addAttribute($factory->attribute('SerializedName', [$originalName]));
+            $responseHasSerializedNames = true;
+        }
+
+        $responseNode->addStmt($property);
+
+        $param = $factory->param($propertyName)
+            ->setType($valueOptional ? '?' . $valueType : $valueType);
+
+        if ($valueOptional) {
+            $param->setDefault(null);
+        }
+
+        $responseConstructorNode->addParam($param);
+
+        $assign = new Assign(
+            $factory->propertyFetch($factory->var('this'), $propertyName),
+            $factory->var($propertyName)
+        );
+
+        $responseConstructorNode->addStmt($assign);
+    }
+
+    $requestNode->addStmt($requestConstructorNode);
+    $responseNode->addStmt($responseConstructorNode);
+
+    $requestRootNode = $factory->namespace($requestNamespace);
+    $responseRootNode = $factory->namespace($responseNamespace);
+
+    if ($deprecated) {
+        $requestRootNode->addStmt($factory->use(Deprecated::class));
+        $responseRootNode->addStmt($factory->use(Deprecated::class));
+    }
+
+    if ($requestHasSerializedNames) {
+        $requestRootNode->addStmt($factory->use(SerializedName::class));
+    }
+
+    if ($responseHasSerializedNames) {
+        $responseRootNode->addStmt($factory->use(SerializedName::class));
+    }
+
+    $responseRootNode->addStmt($factory->use(ResponseInterface::class));
+    $requestRootNode->addStmt($factory->use(RequestInterface::class));
+
+    $requestRootNode->addStmt($requestNode);
+    $responseRootNode->addStmt($responseNode);
+
+    $filesystem->dumpFile($requestDirectory . '/' . $subNamespace . '/' . $requestType . '.php', $printer->prettyPrintFile([$requestRootNode->getNode()]));
+    $filesystem->dumpFile($responseDirectory . '/' . $subNamespace . '/' . $responseType . '.php', $printer->prettyPrintFile([$responseRootNode->getNode()]));
+}
+
+foreach ($protocol['events'] as $event) {
+    $eventType = $event['eventType'];
+    $description = $event['description'];
+    $eventSubscription = $event['eventSubscription'];
+    $complexity = $event['complexity'];
+    $rpcVersion = $event['rpcVersion'];
+    $deprecated = $event['deprecated'];
+    $initialVersion = $event['initialVersion'];
+    $category = $event['category'];
+    $dataFields = $event['dataFields'];
+
+    if (!str_ends_with($eventType, 'Event')) {
+        $eventType .= 'Event';
+    }
+
+    $subNamespace = u($category)->camel()->title();
+
+    $eventNamespace = $protocolNamespace . '\\Event\\' . $subNamespace;
+
+    $eventNode = $factory->class($eventType)
+        ->makeFinal()
+        ->makeReadonly()
+        ->implement('EventInterface')
+        ->setDocComment(formatDocComment($description, ['since' => $initialVersion, 'rpcVersion' => $rpcVersion, 'complexity' => $complexity, 'category' => $category], 0));
+
+    if ($deprecated) {
+        $deprecatedAttribute = $factory->attribute('Deprecated');
+        $eventNode->addAttribute($deprecatedAttribute);
+    }
+
+    $eventConstructorNode = $factory
+        ->method('__construct')
+        ->makePublic();
+
+    $hasSerializedNames = false;
+
+    foreach ($dataFields as $dataField) {
+        $valueName = $dataField['valueName'];
+        $valueType = $dataField['valueType'];
+        $valueDescription = $dataField['valueDescription'];
+
+        [$valueType, $realType] = resolveValueType($valueType, $valueDescription);
+        [$propertyName, $originalName] = normalizeName($valueName);
+
+        $property = $factory->property($propertyName)
+            ->makePublic()
+            ->setType($valueType)
+            ->setDocComment(formatDocComment($valueDescription, [
+                'since' => $initialVersion,
+                'rpcVersion' => $rpcVersion,
+                'type' => $realType,
+            ], 4));
+
+        if ($propertyName !== $originalName) {
+            $property->addAttribute($factory->attribute('SerializedName', [$originalName]));
+            $hasSerializedNames = true;
+        }
+
+        $eventNode->addStmt($property);
+
+        $param = $factory->param($propertyName)
+            ->setType($valueType);
+
+        $eventConstructorNode->addParam($param);
+
+        $assign = new Assign(
+            $factory->propertyFetch($factory->var('this'), $propertyName),
+            $factory->var($propertyName)
+        );
+
+        $eventConstructorNode->addStmt($assign);
+    }
+
+    $eventNode->addStmt($eventConstructorNode);
+
+    $eventRootNode = $factory->namespace($eventNamespace);
+
+    if ($deprecated) {
+        $eventRootNode->addStmt($factory->use(Deprecated::class));
+    }
+
+    if ($hasSerializedNames) {
+        $eventRootNode->addStmt($factory->use(SerializedName::class));
+    }
+
+    $eventRootNode->addStmt($factory->use(EventInterface::class));
+
+    $eventRootNode->addStmt($eventNode);
+
+    $filesystem->dumpFile($eventDirectory . '/' . $subNamespace . '/' . $eventType . '.php', $printer->prettyPrintFile([$eventRootNode->getNode()]));
+}
+
+$clientRootNode = $factory->namespace($obsNamespace);
+$clientRootNode->addStmt($factory->use(BaseClient::class));
+
+foreach ($clientUses as $use) {
+    $clientRootNode->addStmt($factory->use($use));
+}
+
+$clientRootNode->addStmt($clientNode);
+$filesystem->dumpFile($obsDirectory . '/Client.php', $printer->prettyPrintFile([$clientRootNode->getNode()]));
