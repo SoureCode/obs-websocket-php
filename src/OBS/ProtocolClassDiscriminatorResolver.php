@@ -11,8 +11,6 @@ use function Symfony\Component\String\u;
 
 class ProtocolClassDiscriminatorResolver implements ClassDiscriminatorResolverInterface
 {
-    public const string TYPE_KEY = 'serializerType';
-
     private array $responses = [];
     private array $events = [];
 
@@ -64,12 +62,12 @@ class ProtocolClassDiscriminatorResolver implements ClassDiscriminatorResolverIn
 
         return $this->getMappingForClass($class);
     }
-
     public function getTypeForMappedObject(object|string $object): ?string
     {
         $class = is_string($object) ? $object : $object::class;
 
-        var_dump([self::class, $class]);
+        // @todo what to do here?
+        // var_dump([self::class, $class]);
 
         return null;
     }

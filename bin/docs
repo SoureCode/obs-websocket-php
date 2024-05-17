@@ -1,0 +1,37 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use Symfony\Component\Filesystem\Filesystem;
+
+$projectDir = dirname(__DIR__);
+$url = 'https://phpdoc.org/phpDocumentor.phar';
+$pharFileName = 'phpdoc.phar';
+$pharFile = $projectDir . '/'. $pharFileName;
+
+$filesystem = new Filesystem();
+
+$filesystem->dumpFile($pharFile, file_get_contents($url));
+$filesystem->chmod($pharFile, 0755);
+
+$srcDir = $projectDir . '/src';
+$docsDir = $projectDir . '/docs';
+
+if($filesystem->exists($docsDir)) {
+    $filesystem->remove($docsDir);
+}
+
+if (!$filesystem->exists($docsDir)) {
+    $filesystem->mkdir($docsDir);
+}
+
+exec("php $pharFile run -d $srcDir -t $docsDir", $output, $returnVar);
+
+if ($returnVar !== 0) {
+    echo "Error generating documentation: " . implode("\n", $output);
+} else {
+    echo "Documentation generated successfully.";
+}
+
+unlink($pharFile);

@@ -95,9 +95,9 @@ class BaseClient
         $webSocketData = $webSocketMessage->d;
 
         if ($webSocketMessage->op === WebSocketOpCode::RequestResponse) {
-            $webSocketData['responseData'][ProtocolClassDiscriminatorResolver::TYPE_KEY] = $webSocketData['requestType'];
+            $webSocketData['responseData']['serializerType'] = $webSocketData['requestType'];
         } else if ($webSocketMessage->op === WebSocketOpCode::Event) {
-            $webSocketData['eventData'][ProtocolClassDiscriminatorResolver::TYPE_KEY] = $webSocketData['eventType'];
+            $webSocketData['eventData']['serializerType'] = $webSocketData['eventType'];
         }
 
         $message = $this->serializer->denormalize($webSocketData, $messageType, 'json');
@@ -210,7 +210,7 @@ class BaseClient
 
     private function dispatchEvent(WebSocketMessage $webSocketMessage)
     {
-        var_dump('event', $webSocketMessage->d::class, $webSocketMessage);
+        // @todo What to do here?
     }
 
     public function authenticate(#[SensitiveParameter] $plainPassword, ?EventSubscription $eventSubscriptions = EventSubscription::None): void
