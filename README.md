@@ -7,6 +7,8 @@ Almost everything is [generated](./src/OBS/Protocol) based on the [`protocol.jso
 Based on that there is a [BaseClient](./src/OBS/BaseClient.php) that handles all the requests and responses.
 And a [Client](./src/OBS/Client.php) that extends the BaseClient which contains all the available requests.
 
+Under the hood, it uses [textalk/websocket](https://github.com/Textalk/websocket-php) to connect to the OBS WebSocket.
+
 ## Features
 
 - Connect to OBS Studio via WebSocket
