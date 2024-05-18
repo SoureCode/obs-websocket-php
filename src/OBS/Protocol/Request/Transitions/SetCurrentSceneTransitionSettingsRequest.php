@@ -26,7 +26,7 @@ final readonly class SetCurrentSceneTransitionSettingsRequest implements Request
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type bool
+     * @type ?bool
      */
     public ?bool $overlay;
     public function __construct(array $transitionSettings, ?bool $overlay = null)

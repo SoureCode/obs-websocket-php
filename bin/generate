@@ -244,6 +244,26 @@ foreach ($protocol['enums'] as $enum) {
     $filesystem->dumpFile($enumFile, $code);
 }
 
+function isOptional(bool $optional, string $description)
+{
+    if ($optional) {
+        return true;
+    }
+
+
+    if (str_contains($description, 'null')) {
+        // "Can be null"
+        // "`null` if"
+        // "else `null`"
+
+        if (str_contains($description, 'null')) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 foreach ($protocol['requests'] as $request) {
     $requestType = $request['requestType'];
     $responseType = $requestType;
@@ -294,7 +314,7 @@ foreach ($protocol['requests'] as $request) {
         $responseNode->addAttribute($factory->attribute('Deprecated'));
     }
 
-    usort($requestFields, static fn($a, $b) => ($a['valueOptional'] ?? false) <=> ($b['valueOptional'] ?? false));
+    usort($requestFields, static fn($a, $b) => (isOptional($a['valueOptional'] ?? false, $a['valueDescription']) ? 1 : 0) <=> (isOptional($b['valueOptional'] ?? false, $b['valueDescription']) ? 1 : 0));
 
     $requestConstructorNode = $factory
         ->method('__construct')
@@ -307,16 +327,24 @@ foreach ($protocol['requests'] as $request) {
         $valueType = $field['valueType'];
         $valueDescription = $field['valueDescription'];
         $valueRestriction = $field['valueRestriction'] ?? null;
-        $valueOptional = $field['valueOptional'] ?? false;
+        $isOptional = isOptional($field['valueOptional'] ?? false, $valueDescription);
         $valueOptionalBehaviour = $field['valueOptionalBehaviour'] ?? null;
 
         [$valueType, $realType] = resolveValueType($valueType, $valueDescription, $valueRestriction);
         [$propertyName, $originalName] = normalizeName($valueName);
 
+        $targetType = $valueType;
+        $targetRealType = $realType;
+
+        if ($isOptional && $valueType !== "mixed") {
+            $targetType = '?' . $valueType;
+            $targetRealType = '?' . $realType;
+        }
+
         $tags = [
             'since' => $initialVersion,
             'rpcVersion' => $rpcVersion,
-            'type' => $realType,
+            'type' => $targetRealType,
         ];
 
         if ($valueRestriction) {
@@ -325,7 +353,7 @@ foreach ($protocol['requests'] as $request) {
 
         $property = $factory->property($propertyName)
             ->makePublic()
-            ->setType($valueOptional ? '?' . $valueType : $valueType)
+            ->setType($targetType)
             ->setDocComment(formatDocComment($valueDescription, $tags, 4));
 
         if ($propertyName !== $originalName) {
@@ -335,9 +363,9 @@ foreach ($protocol['requests'] as $request) {
 
         $requestNode->addStmt($property);
 
-        $param = $factory->param($propertyName)->setType($valueOptional ? '?' . $valueType : $valueType);
+        $param = $factory->param($propertyName)->setType($targetType);
 
-        if ($valueOptional) {
+        if ($isOptional) {
             $param->setDefault(null);
         }
 
@@ -357,7 +385,7 @@ foreach ($protocol['requests'] as $request) {
     $clientMethod->addStmt(new Return_($factory->propertyFetch($factory->propertyFetch($requestCall, 'd'), 'responseData')));
     $clientNode->addStmt($clientMethod);
 
-    usort($responseFields, static fn($a, $b) => ($a['valueOptional'] ?? false) <=> ($b['valueOptional'] ?? false));
+    usort($responseFields, static fn($a, $b) => isOptional($a['valueOptional'] ?? false, $a['valueDescription']) <=> isOptional($b['valueOptional'] ?? false, $b['valueDescription']));
 
     $responseConstructorNode = $factory
         ->method('__construct')
@@ -370,16 +398,24 @@ foreach ($protocol['requests'] as $request) {
         $valueType = $field['valueType'];
         $valueDescription = $field['valueDescription'];
         $valueRestriction = $field['valueRestriction'] ?? null;
-        $valueOptional = $field['valueOptional'] ?? false;
+        $isOptional = isOptional($field['valueOptional'] ?? false, $valueDescription);
         $valueOptionalBehaviour = $field['valueOptionalBehaviour'] ?? null;
 
         [$valueType, $realType] = resolveValueType($valueType, $valueDescription, $valueRestriction);
         [$propertyName, $originalName] = normalizeName($valueName);
 
+        $targetType = $valueType;
+        $targetRealType = $realType;
+
+        if ($isOptional && $valueType !== "mixed") {
+            $targetType = '?' . $valueType;
+            $targetRealType = '?' . $realType;
+        }
+
         $tags = [
             'since' => $initialVersion,
             'rpcVersion' => $rpcVersion,
-            'var' => $realType,
+            'var' => $targetRealType,
         ];
 
         if ($valueRestriction) {
@@ -388,7 +424,7 @@ foreach ($protocol['requests'] as $request) {
 
         $property = $factory->property($propertyName)
             ->makePublic()
-            ->setType($valueOptional ? '?' . $valueType : $valueType)
+            ->setType($targetType)
             ->setDocComment(formatDocComment($valueDescription, $tags, 4));
 
         if ($propertyName !== $originalName) {
@@ -399,9 +435,9 @@ foreach ($protocol['requests'] as $request) {
         $responseNode->addStmt($property);
 
         $param = $factory->param($propertyName)
-            ->setType($valueOptional ? '?' . $valueType : $valueType);
+            ->setType($targetType);
 
-        if ($valueOptional) {
+        if ($isOptional) {
             $param->setDefault(null);
         }
 

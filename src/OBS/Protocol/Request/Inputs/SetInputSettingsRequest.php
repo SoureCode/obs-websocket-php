@@ -26,7 +26,7 @@ final readonly class SetInputSettingsRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $inputName;
     /**
@@ -34,7 +34,7 @@ final readonly class SetInputSettingsRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $inputUuid;
     /**
@@ -42,7 +42,7 @@ final readonly class SetInputSettingsRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type bool
+     * @type ?bool
      */
     public ?bool $overlay;
     public function __construct(array $inputSettings, ?string $inputName = null, ?string $inputUuid = null, ?bool $overlay = null)

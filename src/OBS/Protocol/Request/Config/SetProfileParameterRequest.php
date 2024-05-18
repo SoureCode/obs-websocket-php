@@ -34,10 +34,10 @@ final readonly class SetProfileParameterRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
-    public string $parameterValue;
-    public function __construct(string $parameterCategory, string $parameterName, string $parameterValue)
+    public ?string $parameterValue;
+    public function __construct(string $parameterCategory, string $parameterName, ?string $parameterValue = null)
     {
         $this->parameterCategory = $parameterCategory;
         $this->parameterName = $parameterName;

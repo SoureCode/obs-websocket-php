@@ -34,7 +34,7 @@ final readonly class SetSourceFilterNameRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sourceName;
     /**
@@ -42,7 +42,7 @@ final readonly class SetSourceFilterNameRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sourceUuid;
     public function __construct(string $filterName, string $newFilterName, ?string $sourceName = null, ?string $sourceUuid = null)

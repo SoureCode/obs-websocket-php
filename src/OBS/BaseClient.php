@@ -2,221 +2,146 @@
 
 namespace SoureCode\OBS;
 
-use SoureCode\OBS\Message\Embedding\Authentication;
-use SoureCode\OBS\Message\Receive\EventMessage;
-use SoureCode\OBS\Message\Receive\HelloMessage;
-use SoureCode\OBS\Message\Receive\IdentifiedMessage;
-use SoureCode\OBS\Message\Receive\RequestBatchResponseMessage;
-use SoureCode\OBS\Message\Receive\RequestResponseMessage;
-use SoureCode\OBS\Message\Send\IdentifyMessage;
-use SoureCode\OBS\Message\Send\ReidentifyMessage;
-use SoureCode\OBS\Message\Send\RequestBatchMessage;
-use SoureCode\OBS\Message\Send\RequestMessage;
-use SoureCode\OBS\Message\WebSocketMessage;
+use Psr\Log\LoggerInterface;
+use RuntimeException;
+use SensitiveParameter;
+use SoureCode\OBS\WebSocket\Embedding\Authentication;
+use SoureCode\OBS\WebSocket\OBSMessage;
+use SoureCode\OBS\WebSocket\Receive\EventMessage;
+use SoureCode\OBS\WebSocket\Receive\HelloMessage;
+use SoureCode\OBS\WebSocket\Receive\IdentifiedMessage;
+use SoureCode\OBS\WebSocket\Receive\RequestResponseMessage;
+use SoureCode\OBS\WebSocket\Send\IdentifyMessage;
+use SoureCode\OBS\WebSocket\Send\ReidentifyMessage;
 use SoureCode\OBS\Protocol\Enum\EventSubscription;
 use SoureCode\OBS\Protocol\Enum\WebSocketCloseCode;
 use SoureCode\OBS\Protocol\Enum\WebSocketOpCode;
+use SoureCode\OBS\Protocol\RequestInterface;
 use SoureCode\OBS\Protocol\ResponseInterface;
-use SensitiveParameter;
-use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use Symfony\Component\Serializer\Normalizer\BackedEnumNormalizer;
-use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
-use Symfony\Component\Serializer\Serializer;
-use Symfony\Component\Uid\Ulid;
+use SoureCode\OBS\WebSocket\Serializer\OBSMessageSerializer;
 use WebSocket\Client as WebSocketClient;
+use WebSocket\Connection;
+use WebSocket\Message\Close;
+use WebSocket\Message\Message;
+use WebSocket\Message\Text;
+use WebSocket\Middleware\MiddlewareInterface;
 
 class BaseClient
 {
     private WebSocketClient $client;
-    private Serializer $serializer;
-    private string $url;
+    private OBSMessageSerializer $serializer;
 
-    public function __construct(string $url)
+    public function __construct(
+        private readonly string $url,
+        ?OBSMessageSerializer   $obsMessageSerializer = null,
+    )
     {
-        $this->url = $url;
-
+        $this->serializer = $obsMessageSerializer ?? new OBSMessageSerializer();
         $this->client = new WebSocketClient($this->url);
-
-        $discriminator = new ProtocolClassDiscriminatorResolver();
-
-        $this->serializer = new Serializer([
-            new BackedEnumNormalizer(),
-            new ObjectNormalizer(classDiscriminatorResolver: $discriminator),
-        ], [
-            new JsonEncoder(),
-        ]);
     }
 
-    public function send(string $message)
+    public function send(string $message): void
     {
-        $this->client->send($message);
+        $this->client->send(new Text($message));
     }
 
     /**
-     * @return WebSocketMessage<HelloMessage>
+     * @return OBSMessage<HelloMessage>
      */
-    public function hello(): WebSocketMessage
+    public function hello(): OBSMessage
     {
         return $this->safeReceive(WebSocketOpCode::Hello, HelloMessage::class);
     }
 
-    private function receive(): WebSocketMessage
+    private function receive(): OBSMessage
     {
-        $this->ensureConnected();
-
         $data = $this->client->receive();
 
-        if ($data === null) {
-            $this->ensureConnected();
+        if ($data instanceof Close) {
+            $closeStatus = $data->getCloseStatus();
 
-            throw new \RuntimeException('Unexpected null');
+            if ($closeStatus !== null) {
+
+                $closeCode = WebSocketCloseCode::tryFrom($closeStatus);
+
+                if ($closeCode === null) {
+                    throw new RuntimeException(message: sprintf("Connection closed unexpectedly with %d", $closeStatus));
+                }
+
+                throw new RuntimeException(message: sprintf("Connection closed unexpectedly with %d - %s", $closeCode->value, $closeCode->name));
+            }
+
+            throw new RuntimeException('Connection closed unexpectedly');
         }
 
-        return $this->decode($data);
-    }
-
-    private function decode(mixed $data): WebSocketMessage
-    {
-        $webSocketMessage = $this->serializer->deserialize($data, WebSocketMessage::class, 'json');
-
-        $messageType = match ($webSocketMessage->op) {
-            WebSocketOpCode::Hello => HelloMessage::class,
-            WebSocketOpCode::Identify => IdentifyMessage::class,
-            WebSocketOpCode::Identified => IdentifiedMessage::class,
-            WebSocketOpCode::Reidentify => ReidentifyMessage::class,
-            WebSocketOpCode::Event => EventMessage::class,
-            WebSocketOpCode::Request => RequestMessage::class,
-            WebSocketOpCode::RequestResponse => RequestResponseMessage::class,
-            WebSocketOpCode::RequestBatch => RequestBatchMessage::class,
-            WebSocketOpCode::RequestBatchResponse => RequestBatchResponseMessage::class,
-            default => throw new \Exception('Unknown message type')
-        };
-
-        $webSocketData = $webSocketMessage->d;
-
-        if ($webSocketMessage->op === WebSocketOpCode::RequestResponse) {
-            $webSocketData['responseData']['serializerType'] = $webSocketData['requestType'];
-        } else if ($webSocketMessage->op === WebSocketOpCode::Event) {
-            $webSocketData['eventData']['serializerType'] = $webSocketData['eventType'];
+        if (!$data instanceof Text) {
+            throw new RuntimeException('Unexpected message type');
         }
 
-        $message = $this->serializer->denormalize($webSocketData, $messageType, 'json');
-
-        return new WebSocketMessage($webSocketMessage->op, $message);
+        return $this->serializer->deserialize($data->getContent());
     }
 
     /**
-     * @return WebSocketMessage<IdentifiedMessage>
+     * @return OBSMessage<IdentifiedMessage>
      */
-    public function identify(#[SensitiveParameter] $plainPassword, Authentication $authentication, ?EventSubscription $eventSubscriptions = EventSubscription::None): WebSocketMessage
+    public function identify(#[SensitiveParameter] $plainPassword, Authentication $authentication, ?EventSubscription $eventSubscriptions = EventSubscription::None): OBSMessage
     {
-        $this->ensureConnected();
-
         $auth = base64_encode(hash('sha256', $plainPassword . $authentication->salt, true));
         $response = base64_encode(hash('sha256', $auth . $authentication->challenge, true));
 
         $message = new IdentifyMessage(1, $response, $eventSubscriptions);
-        $webSocketMessage = new WebSocketMessage(WebSocketOpCode::Identify, $message);
+        $obsMessage = new OBSMessage(WebSocketOpCode::Identify, $message);
 
-        $this->send($this->serializer->serialize($webSocketMessage, 'json'));
+        $this->send($this->serializer->serialize($obsMessage));
 
         return $this->identified();
     }
 
     /**
-     * @return WebSocketMessage<IdentifiedMessage>
+     * @return OBSMessage<IdentifiedMessage>
      */
-    public function identified(): WebSocketMessage
+    public function identified(): OBSMessage
     {
         return $this->safeReceive(WebSocketOpCode::Identified, IdentifiedMessage::class);
     }
 
-    public function reidentify(?EventSubscription $eventSubscriptions = EventSubscription::None): WebSocketMessage
+    public function reidentify(?EventSubscription $eventSubscriptions = EventSubscription::None): OBSMessage
     {
         $message = new ReidentifyMessage($eventSubscriptions);
-        $webSocketMessage = new WebSocketMessage(WebSocketOpCode::Reidentify, $message);
+        $obsMessage = new OBSMessage(WebSocketOpCode::Reidentify, $message);
 
-        $this->send($this->serializer->serialize($webSocketMessage, 'json'));
+        $this->send($this->serializer->serialize($obsMessage));
 
         return $this->identified();
     }
 
-    public function encode(mixed $request): string
-    {
-        $classType = $request::class;
-        $className = substr($classType, strrpos($classType, '\\') + 1);
-        $requestType = substr($className, 0, -7);
-        $requestId = Ulid::generate();
-
-        $message = new RequestMessage(
-            $requestType,
-            $requestId,
-            $request,
-        );
-
-        $webSocketMessage = new WebSocketMessage(WebSocketOpCode::Request, $message);
-
-        return $this->serializer->serialize($webSocketMessage, 'json');
-    }
 
     /**
      * @template T of ResponseInterface
-     * @return WebSocketMessage<RequestResponseMessage<T>>
+     * @return OBSMessage<RequestResponseMessage<T>>
      */
-    public function request(mixed $request): WebSocketMessage
+    public function request(RequestInterface $request): OBSMessage
     {
-        $this->ensureConnected();
-
-        $this->send($this->encode($request));
+        $this->send($this->serializer->serializeRequest($request));
 
         return $this->safeReceive(WebSocketOpCode::RequestResponse, RequestResponseMessage::class);
     }
 
-    private function safeReceive(WebSocketOpCode $code, string $className): WebSocketMessage
+    private function safeReceive(WebSocketOpCode $code, string $className): OBSMessage
     {
         while (true) {
-            $webSocketMessage = $this->receive();
+            $obsMessage = $this->receive();
 
-            if ($webSocketMessage->op === $code && $webSocketMessage->d instanceof $className) {
-                return $webSocketMessage;
-            }
-
-            if ($webSocketMessage->op === WebSocketOpCode::Event) {
-                $this->dispatchEvent($webSocketMessage);
-            } else {
-                throw new \RuntimeException('Unexpected message of type ' . $webSocketMessage->op->name);
+            if ($obsMessage->op === $code && $obsMessage->d instanceof $className) {
+                return $obsMessage;
             }
         }
-    }
-
-    private function ensureConnected(): void
-    {
-        if (!$this->client->isConnected()) {
-            $closeStatus = $this->client->getCloseStatus();
-
-            if ($closeStatus === null) {
-                return;
-            }
-
-            $closeCode = WebSocketCloseCode::tryFrom($closeStatus);
-
-            if ($closeCode === null) {
-                throw new \RuntimeException(message: sprintf("Connection closed unexpectedly with %d", $closeStatus));
-            }
-
-            throw new \RuntimeException(message: sprintf("Connection closed unexpectedly with %d - %s", $closeCode->value, $closeCode->name));
-        }
-    }
-
-    private function dispatchEvent(WebSocketMessage $webSocketMessage)
-    {
-        // @todo What to do here?
     }
 
     public function authenticate(#[SensitiveParameter] $plainPassword, ?EventSubscription $eventSubscriptions = EventSubscription::None): void
     {
         if (!$this->client->isConnected()) {
-            $this->client = new WebSocketClient($this->url);
+            $this->client->connect();
         }
 
         $helloMessage = $this->hello();
@@ -232,13 +157,41 @@ class BaseClient
     public function pollEvent(): EventMessage
     {
         while (true) {
-            $this->ensureConnected();
+            $obsMessage = $this->receive();
 
-            $webSocketMessage = $this->receive();
-
-            if ($webSocketMessage->op === WebSocketOpCode::Event) {
-                return $webSocketMessage->d;
+            if ($obsMessage->op === WebSocketOpCode::Event) {
+                return $obsMessage->d;
             }
         }
+    }
+
+    public function addMiddleware(MiddlewareInterface $middleware): static
+    {
+        $this->client->addMiddleware($middleware);
+
+        return $this;
+    }
+
+    public function setLogger(LoggerInterface $logger)
+    {
+        $this->client->setLogger($logger);
+
+        return $this;
+    }
+
+    public function on(callable $callback): static
+    {
+        $this->client->onText(function (WebSocketClient $client, Connection $connection, Message $message) use ($callback) {
+            $obsMessage = $this->serializer->deserialize($message->getContent());
+
+            $callback($obsMessage, $this, $client, $connection, $message);
+        });
+
+        return $this;
+    }
+
+    public function start(): void
+    {
+        $this->client->start();
     }
 }

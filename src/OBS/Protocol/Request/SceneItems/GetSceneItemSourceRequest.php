@@ -26,7 +26,7 @@ final readonly class GetSceneItemSourceRequest implements RequestInterface
      *
      * @since 5.4.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sceneName;
     /**
@@ -34,7 +34,7 @@ final readonly class GetSceneItemSourceRequest implements RequestInterface
      *
      * @since 5.4.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sceneUuid;
     public function __construct(int $sceneItemId, ?string $sceneName = null, ?string $sceneUuid = null)

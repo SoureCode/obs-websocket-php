@@ -18,7 +18,7 @@ final readonly class SleepRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type int
+     * @type ?int
      */
     public ?int $sleepMillis;
     /**
@@ -26,7 +26,7 @@ final readonly class SleepRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type int
+     * @type ?int
      */
     public ?int $sleepFrames;
     public function __construct(?int $sleepMillis = null, ?int $sleepFrames = null)

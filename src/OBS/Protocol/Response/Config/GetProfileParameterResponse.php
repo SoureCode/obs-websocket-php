@@ -18,18 +18,18 @@ final readonly class GetProfileParameterResponse implements ResponseInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @var string
+     * @var ?string
      */
-    public string $parameterValue;
+    public ?string $parameterValue;
     /**
      * Default value associated with the parameter. `null` if no default
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @var string
+     * @var ?string
      */
-    public string $defaultParameterValue;
-    public function __construct(string $parameterValue, string $defaultParameterValue)
+    public ?string $defaultParameterValue;
+    public function __construct(?string $parameterValue = null, ?string $defaultParameterValue = null)
     {
         $this->parameterValue = $parameterValue;
         $this->defaultParameterValue = $defaultParameterValue;

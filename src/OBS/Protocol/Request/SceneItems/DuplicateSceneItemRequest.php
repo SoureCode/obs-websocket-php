@@ -28,7 +28,7 @@ final readonly class DuplicateSceneItemRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sceneName;
     /**
@@ -36,7 +36,7 @@ final readonly class DuplicateSceneItemRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sceneUuid;
     /**
@@ -44,7 +44,7 @@ final readonly class DuplicateSceneItemRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $destinationSceneName;
     /**
@@ -52,7 +52,7 @@ final readonly class DuplicateSceneItemRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $destinationSceneUuid;
     public function __construct(int $sceneItemId, ?string $sceneName = null, ?string $sceneUuid = null, ?string $destinationSceneName = null, ?string $destinationSceneUuid = null)

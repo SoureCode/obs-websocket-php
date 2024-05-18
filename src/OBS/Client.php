@@ -325,7 +325,7 @@ final class Client extends BaseClient
     {
         return $this->request(new GetProfileParameterRequest($parameterCategory, $parameterName))->d->responseData;
     }
-    public function setProfileParameter(string $parameterCategory, string $parameterName, string $parameterValue): SetProfileParameterResponse
+    public function setProfileParameter(string $parameterCategory, string $parameterName, ?string $parameterValue = null): SetProfileParameterResponse
     {
         return $this->request(new SetProfileParameterRequest($parameterCategory, $parameterName, $parameterValue))->d->responseData;
     }

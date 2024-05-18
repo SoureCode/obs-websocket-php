@@ -18,7 +18,7 @@ final readonly class SetSceneSceneTransitionOverrideRequest implements RequestIn
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sceneName;
     /**
@@ -26,7 +26,7 @@ final readonly class SetSceneSceneTransitionOverrideRequest implements RequestIn
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sceneUuid;
     /**
@@ -34,7 +34,7 @@ final readonly class SetSceneSceneTransitionOverrideRequest implements RequestIn
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $transitionName;
     /**
@@ -42,7 +42,7 @@ final readonly class SetSceneSceneTransitionOverrideRequest implements RequestIn
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type int
+     * @type ?int
      */
     public ?int $transitionDuration;
     public function __construct(?string $sceneName = null, ?string $sceneUuid = null, ?string $transitionName = null, ?int $transitionDuration = null)

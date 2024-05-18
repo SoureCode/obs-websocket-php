@@ -18,7 +18,7 @@ final readonly class SetCurrentProgramSceneRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sceneName;
     /**
@@ -26,7 +26,7 @@ final readonly class SetCurrentProgramSceneRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sceneUuid;
     public function __construct(?string $sceneName = null, ?string $sceneUuid = null)

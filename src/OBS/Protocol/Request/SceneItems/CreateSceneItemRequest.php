@@ -20,7 +20,7 @@ final readonly class CreateSceneItemRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sceneName;
     /**
@@ -28,7 +28,7 @@ final readonly class CreateSceneItemRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sceneUuid;
     /**
@@ -36,7 +36,7 @@ final readonly class CreateSceneItemRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sourceName;
     /**
@@ -44,7 +44,7 @@ final readonly class CreateSceneItemRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sourceUuid;
     /**
@@ -52,7 +52,7 @@ final readonly class CreateSceneItemRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type bool
+     * @type ?bool
      */
     public ?bool $sceneItemEnabled;
     public function __construct(?string $sceneName = null, ?string $sceneUuid = null, ?string $sourceName = null, ?string $sourceUuid = null, ?bool $sceneItemEnabled = null)

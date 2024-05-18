@@ -24,7 +24,7 @@ final readonly class GetInputAudioMonitorTypeRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $inputName;
     /**
@@ -32,7 +32,7 @@ final readonly class GetInputAudioMonitorTypeRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $inputUuid;
     public function __construct(?string $inputName = null, ?string $inputUuid = null)

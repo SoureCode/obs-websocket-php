@@ -21,7 +21,7 @@ final readonly class GetPersistentDataResponse implements ResponseInterface
      * @var mixed
      */
     public mixed $slotValue;
-    public function __construct(mixed $slotValue)
+    public function __construct(mixed $slotValue = null)
     {
         $this->slotValue = $slotValue;
     }

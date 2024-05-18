@@ -37,7 +37,7 @@ final readonly class CallVendorRequestRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type array
+     * @type ?array
      */
     public ?array $requestData;
     public function __construct(string $vendorName, string $requestType, ?array $requestData = null)

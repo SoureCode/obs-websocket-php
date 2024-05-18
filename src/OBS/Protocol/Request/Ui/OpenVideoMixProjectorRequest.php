@@ -34,7 +34,7 @@ final readonly class OpenVideoMixProjectorRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type int
+     * @type ?int
      */
     public ?int $monitorIndex;
     /**
@@ -42,7 +42,7 @@ final readonly class OpenVideoMixProjectorRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $projectorGeometry;
     public function __construct(string $videoMixType, ?int $monitorIndex = null, ?string $projectorGeometry = null)

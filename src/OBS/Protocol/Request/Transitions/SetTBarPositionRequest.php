@@ -28,7 +28,7 @@ final readonly class SetTBarPositionRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type bool
+     * @type ?bool
      */
     public ?bool $release;
     public function __construct(int $position, ?bool $release = null)

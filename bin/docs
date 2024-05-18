@@ -26,7 +26,7 @@ if (!$filesystem->exists($docsDir)) {
     $filesystem->mkdir($docsDir);
 }
 
-exec("php $pharFile run -d $srcDir -t $docsDir", $output, $returnVar);
+exec("php $pharFile run -d $srcDir -t $docsDir --title 'OBS WebSocket PHP'", $output, $returnVar);
 
 if ($returnVar !== 0) {
     echo "Error generating documentation: " . implode("\n", $output);

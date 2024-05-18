@@ -26,11 +26,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/SoureCode-OBS-BaseClient.html#method_receive"
         },                {
-            "fqsen": "\\SoureCode\\OBS\\BaseClient\u003A\u003Adecode\u0028\u0029",
-            "name": "decode",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-BaseClient.html#method_decode"
-        },                {
             "fqsen": "\\SoureCode\\OBS\\BaseClient\u003A\u003Aidentify\u0028\u0029",
             "name": "identify",
             "summary": "",
@@ -46,11 +41,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/SoureCode-OBS-BaseClient.html#method_reidentify"
         },                {
-            "fqsen": "\\SoureCode\\OBS\\BaseClient\u003A\u003Aencode\u0028\u0029",
-            "name": "encode",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-BaseClient.html#method_encode"
-        },                {
             "fqsen": "\\SoureCode\\OBS\\BaseClient\u003A\u003Arequest\u0028\u0029",
             "name": "request",
             "summary": "",
@@ -61,16 +51,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/SoureCode-OBS-BaseClient.html#method_safeReceive"
         },                {
-            "fqsen": "\\SoureCode\\OBS\\BaseClient\u003A\u003AensureConnected\u0028\u0029",
-            "name": "ensureConnected",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-BaseClient.html#method_ensureConnected"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\BaseClient\u003A\u003AdispatchEvent\u0028\u0029",
-            "name": "dispatchEvent",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-BaseClient.html#method_dispatchEvent"
-        },                {
             "fqsen": "\\SoureCode\\OBS\\BaseClient\u003A\u003Aauthenticate\u0028\u0029",
             "name": "authenticate",
             "summary": "",
@@ -80,6 +60,26 @@ Search.appendIndex(
             "name": "pollEvent",
             "summary": "Receive\u0020events\u0020from\u0020the\u0020WebSocket\u0020connection\u0020until\u0020an\u0020event\u0020is\u0020received,\u0020everything\u0020else\u0020is\u0020ignored.",
             "url": "classes/SoureCode-OBS-BaseClient.html#method_pollEvent"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\BaseClient\u003A\u003AaddMiddleware\u0028\u0029",
+            "name": "addMiddleware",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-BaseClient.html#method_addMiddleware"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\BaseClient\u003A\u003AsetLogger\u0028\u0029",
+            "name": "setLogger",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-BaseClient.html#method_setLogger"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\BaseClient\u003A\u003Aon\u0028\u0029",
+            "name": "on",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-BaseClient.html#method_on"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\BaseClient\u003A\u003Astart\u0028\u0029",
+            "name": "start",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-BaseClient.html#method_start"
         },                {
             "fqsen": "\\SoureCode\\OBS\\BaseClient\u003A\u003A\u0024client",
             "name": "client",
@@ -800,316 +800,6 @@ Search.appendIndex(
             "name": "openSourceProjector",
             "summary": "",
             "url": "classes/SoureCode-OBS-Client.html#method_openSourceProjector"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Embedding\\Authentication",
-            "name": "Authentication",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Embedding-Authentication.html"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Embedding\\Authentication\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Embedding-Authentication.html#method___construct"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Embedding\\Authentication\u003A\u003A\u0024challenge",
-            "name": "challenge",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Embedding-Authentication.html#property_challenge"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Embedding\\Authentication\u003A\u003A\u0024salt",
-            "name": "salt",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Embedding-Authentication.html#property_salt"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Embedding\\BatchRequest",
-            "name": "BatchRequest",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Embedding-BatchRequest.html"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Embedding\\BatchRequest\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Embedding-BatchRequest.html#method___construct"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Embedding\\BatchRequest\u003A\u003A\u0024requestType",
-            "name": "requestType",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Embedding-BatchRequest.html#property_requestType"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Embedding\\BatchRequest\u003A\u003A\u0024requestId",
-            "name": "requestId",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Embedding-BatchRequest.html#property_requestId"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Embedding\\BatchRequest\u003A\u003A\u0024requestData",
-            "name": "requestData",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Embedding-BatchRequest.html#property_requestData"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Embedding\\ResponseStatus",
-            "name": "ResponseStatus",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Embedding-ResponseStatus.html"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Embedding\\ResponseStatus\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Embedding-ResponseStatus.html#method___construct"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Embedding\\ResponseStatus\u003A\u003A\u0024result",
-            "name": "result",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Embedding-ResponseStatus.html#property_result"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Embedding\\ResponseStatus\u003A\u003A\u0024code",
-            "name": "code",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Embedding-ResponseStatus.html#property_code"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Embedding\\ResponseStatus\u003A\u003A\u0024comment",
-            "name": "comment",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Embedding-ResponseStatus.html#property_comment"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Receive\\EventMessage",
-            "name": "EventMessage",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Receive-EventMessage.html"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Receive\\EventMessage\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Receive-EventMessage.html#method___construct"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Receive\\EventMessage\u003A\u003A\u0024eventType",
-            "name": "eventType",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Receive-EventMessage.html#property_eventType"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Receive\\EventMessage\u003A\u003A\u0024eventIntent",
-            "name": "eventIntent",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Receive-EventMessage.html#property_eventIntent"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Receive\\EventMessage\u003A\u003A\u0024eventData",
-            "name": "eventData",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Receive-EventMessage.html#property_eventData"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Receive\\HelloMessage",
-            "name": "HelloMessage",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Receive-HelloMessage.html"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Receive\\HelloMessage\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Receive-HelloMessage.html#method___construct"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Receive\\HelloMessage\u003A\u003A\u0024obsWebSocketVersion",
-            "name": "obsWebSocketVersion",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Receive-HelloMessage.html#property_obsWebSocketVersion"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Receive\\HelloMessage\u003A\u003A\u0024rpcVersion",
-            "name": "rpcVersion",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Receive-HelloMessage.html#property_rpcVersion"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Receive\\HelloMessage\u003A\u003A\u0024authentication",
-            "name": "authentication",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Receive-HelloMessage.html#property_authentication"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Receive\\IdentifiedMessage",
-            "name": "IdentifiedMessage",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Receive-IdentifiedMessage.html"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Receive\\IdentifiedMessage\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Receive-IdentifiedMessage.html#method___construct"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Receive\\IdentifiedMessage\u003A\u003A\u0024negotiatedRpcVersion",
-            "name": "negotiatedRpcVersion",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Receive-IdentifiedMessage.html#property_negotiatedRpcVersion"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Receive\\RequestBatchResponseMessage",
-            "name": "RequestBatchResponseMessage",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Receive-RequestBatchResponseMessage.html"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Receive\\RequestBatchResponseMessage\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Receive-RequestBatchResponseMessage.html#method___construct"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Receive\\RequestBatchResponseMessage\u003A\u003A\u0024requestId",
-            "name": "requestId",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Receive-RequestBatchResponseMessage.html#property_requestId"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Receive\\RequestBatchResponseMessage\u003A\u003A\u0024results",
-            "name": "results",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Receive-RequestBatchResponseMessage.html#property_results"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Receive\\RequestResponseMessage",
-            "name": "RequestResponseMessage",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Receive-RequestResponseMessage.html"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Receive\\RequestResponseMessage\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Receive-RequestResponseMessage.html#method___construct"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Receive\\RequestResponseMessage\u003A\u003A\u0024requestType",
-            "name": "requestType",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Receive-RequestResponseMessage.html#property_requestType"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Receive\\RequestResponseMessage\u003A\u003A\u0024requestId",
-            "name": "requestId",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Receive-RequestResponseMessage.html#property_requestId"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Receive\\RequestResponseMessage\u003A\u003A\u0024requestStatus",
-            "name": "requestStatus",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Receive-RequestResponseMessage.html#property_requestStatus"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Receive\\RequestResponseMessage\u003A\u003A\u0024responseData",
-            "name": "responseData",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Receive-RequestResponseMessage.html#property_responseData"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\ReceiveMessageInterface",
-            "name": "ReceiveMessageInterface",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-ReceiveMessageInterface.html"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Send\\IdentifyMessage",
-            "name": "IdentifyMessage",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Send-IdentifyMessage.html"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Send\\IdentifyMessage\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Send-IdentifyMessage.html#method___construct"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Send\\IdentifyMessage\u003A\u003A\u0024rpcVersion",
-            "name": "rpcVersion",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Send-IdentifyMessage.html#property_rpcVersion"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Send\\IdentifyMessage\u003A\u003A\u0024authentication",
-            "name": "authentication",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Send-IdentifyMessage.html#property_authentication"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Send\\IdentifyMessage\u003A\u003A\u0024eventSubscriptions",
-            "name": "eventSubscriptions",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Send-IdentifyMessage.html#property_eventSubscriptions"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Send\\ReidentifyMessage",
-            "name": "ReidentifyMessage",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Send-ReidentifyMessage.html"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Send\\ReidentifyMessage\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Send-ReidentifyMessage.html#method___construct"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Send\\ReidentifyMessage\u003A\u003A\u0024eventSubscriptions",
-            "name": "eventSubscriptions",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Send-ReidentifyMessage.html#property_eventSubscriptions"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Send\\RequestBatchMessage",
-            "name": "RequestBatchMessage",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Send-RequestBatchMessage.html"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Send\\RequestBatchMessage\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Send-RequestBatchMessage.html#method___construct"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Send\\RequestBatchMessage\u003A\u003A\u0024requestId",
-            "name": "requestId",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Send-RequestBatchMessage.html#property_requestId"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Send\\RequestBatchMessage\u003A\u003A\u0024requests",
-            "name": "requests",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Send-RequestBatchMessage.html#property_requests"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Send\\RequestBatchMessage\u003A\u003A\u0024haltOnFailure",
-            "name": "haltOnFailure",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Send-RequestBatchMessage.html#property_haltOnFailure"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Send\\RequestBatchMessage\u003A\u003A\u0024executionType",
-            "name": "executionType",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Send-RequestBatchMessage.html#property_executionType"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Send\\RequestMessage",
-            "name": "RequestMessage",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Send-RequestMessage.html"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Send\\RequestMessage\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Send-RequestMessage.html#method___construct"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Send\\RequestMessage\u003A\u003A\u0024requestType",
-            "name": "requestType",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Send-RequestMessage.html#property_requestType"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Send\\RequestMessage\u003A\u003A\u0024requestId",
-            "name": "requestId",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Send-RequestMessage.html#property_requestId"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Send\\RequestMessage\u003A\u003A\u0024requestData",
-            "name": "requestData",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-Send-RequestMessage.html#property_requestData"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\SendMessageInterface",
-            "name": "SendMessageInterface",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-SendMessageInterface.html"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\WebSocketMessage",
-            "name": "WebSocketMessage",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-WebSocketMessage.html"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\WebSocketMessage\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-WebSocketMessage.html#method___construct"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\WebSocketMessage\u003A\u003A\u0024op",
-            "name": "op",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-WebSocketMessage.html#property_op"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\WebSocketMessage\u003A\u003A\u0024d",
-            "name": "d",
-            "summary": "",
-            "url": "classes/SoureCode-OBS-Message-WebSocketMessage.html#property_d"
         },                {
             "fqsen": "\\SoureCode\\OBS\\Protocol\\Enum\\EventSubscription",
             "name": "EventSubscription",
@@ -7231,6 +6921,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/SoureCode-OBS-Protocol-Response-Scenes-GetSceneListResponse.html#method___construct"
         },                {
+            "fqsen": "\\SoureCode\\OBS\\Protocol\\Response\\Scenes\\GetSceneListResponse\u003A\u003A\u0024scenes",
+            "name": "scenes",
+            "summary": "Array\u0020of\u0020scenes",
+            "url": "classes/SoureCode-OBS-Protocol-Response-Scenes-GetSceneListResponse.html#property_scenes"
+        },                {
             "fqsen": "\\SoureCode\\OBS\\Protocol\\Response\\Scenes\\GetSceneListResponse\u003A\u003A\u0024currentProgramSceneName",
             "name": "currentProgramSceneName",
             "summary": "Current\u0020program\u0020scene\u0020name.\u0020Can\u0020be\u0020\u0060null\u0060\u0020if\u0020internal\u0020state\u0020desync",
@@ -7250,11 +6945,6 @@ Search.appendIndex(
             "name": "currentPreviewSceneUuid",
             "summary": "Current\u0020preview\u0020scene\u0020UUID.\u0020\u0060null\u0060\u0020if\u0020not\u0020in\u0020studio\u0020mode",
             "url": "classes/SoureCode-OBS-Protocol-Response-Scenes-GetSceneListResponse.html#property_currentPreviewSceneUuid"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Protocol\\Response\\Scenes\\GetSceneListResponse\u003A\u003A\u0024scenes",
-            "name": "scenes",
-            "summary": "Array\u0020of\u0020scenes",
-            "url": "classes/SoureCode-OBS-Protocol-Response-Scenes-GetSceneListResponse.html#property_scenes"
         },                {
             "fqsen": "\\SoureCode\\OBS\\Protocol\\Response\\Scenes\\GetSceneSceneTransitionOverrideResponse",
             "name": "GetSceneSceneTransitionOverrideResponse",
@@ -7511,15 +7201,15 @@ Search.appendIndex(
             "summary": "Whether\u0020the\u0020transition\u0020uses\u0020a\u0020fixed\u0020\u0028unconfigurable\u0029\u0020duration",
             "url": "classes/SoureCode-OBS-Protocol-Response-Transitions-GetCurrentSceneTransitionResponse.html#property_transitionFixed"
         },                {
-            "fqsen": "\\SoureCode\\OBS\\Protocol\\Response\\Transitions\\GetCurrentSceneTransitionResponse\u003A\u003A\u0024transitionDuration",
-            "name": "transitionDuration",
-            "summary": "Configured\u0020transition\u0020duration\u0020in\u0020milliseconds.\u0020\u0060null\u0060\u0020if\u0020transition\u0020is\u0020fixed",
-            "url": "classes/SoureCode-OBS-Protocol-Response-Transitions-GetCurrentSceneTransitionResponse.html#property_transitionDuration"
-        },                {
             "fqsen": "\\SoureCode\\OBS\\Protocol\\Response\\Transitions\\GetCurrentSceneTransitionResponse\u003A\u003A\u0024transitionConfigurable",
             "name": "transitionConfigurable",
             "summary": "Whether\u0020the\u0020transition\u0020supports\u0020being\u0020configured",
             "url": "classes/SoureCode-OBS-Protocol-Response-Transitions-GetCurrentSceneTransitionResponse.html#property_transitionConfigurable"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\Protocol\\Response\\Transitions\\GetCurrentSceneTransitionResponse\u003A\u003A\u0024transitionDuration",
+            "name": "transitionDuration",
+            "summary": "Configured\u0020transition\u0020duration\u0020in\u0020milliseconds.\u0020\u0060null\u0060\u0020if\u0020transition\u0020is\u0020fixed",
+            "url": "classes/SoureCode-OBS-Protocol-Response-Transitions-GetCurrentSceneTransitionResponse.html#property_transitionDuration"
         },                {
             "fqsen": "\\SoureCode\\OBS\\Protocol\\Response\\Transitions\\GetCurrentSceneTransitionResponse\u003A\u003A\u0024transitionSettings",
             "name": "transitionSettings",
@@ -7536,6 +7226,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/SoureCode-OBS-Protocol-Response-Transitions-GetSceneTransitionListResponse.html#method___construct"
         },                {
+            "fqsen": "\\SoureCode\\OBS\\Protocol\\Response\\Transitions\\GetSceneTransitionListResponse\u003A\u003A\u0024transitions",
+            "name": "transitions",
+            "summary": "Array\u0020of\u0020transitions",
+            "url": "classes/SoureCode-OBS-Protocol-Response-Transitions-GetSceneTransitionListResponse.html#property_transitions"
+        },                {
             "fqsen": "\\SoureCode\\OBS\\Protocol\\Response\\Transitions\\GetSceneTransitionListResponse\u003A\u003A\u0024currentSceneTransitionName",
             "name": "currentSceneTransitionName",
             "summary": "Name\u0020of\u0020the\u0020current\u0020scene\u0020transition.\u0020Can\u0020be\u0020null",
@@ -7550,11 +7245,6 @@ Search.appendIndex(
             "name": "currentSceneTransitionKind",
             "summary": "Kind\u0020of\u0020the\u0020current\u0020scene\u0020transition.\u0020Can\u0020be\u0020null",
             "url": "classes/SoureCode-OBS-Protocol-Response-Transitions-GetSceneTransitionListResponse.html#property_currentSceneTransitionKind"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Protocol\\Response\\Transitions\\GetSceneTransitionListResponse\u003A\u003A\u0024transitions",
-            "name": "transitions",
-            "summary": "Array\u0020of\u0020transitions",
-            "url": "classes/SoureCode-OBS-Protocol-Response-Transitions-GetSceneTransitionListResponse.html#property_transitions"
         },                {
             "fqsen": "\\SoureCode\\OBS\\Protocol\\Response\\Transitions\\GetTransitionKindListResponse",
             "name": "GetTransitionKindListResponse",
@@ -7716,40 +7406,425 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/SoureCode-OBS-Protocol-ResponseInterface.html"
         },                {
-            "fqsen": "\\SoureCode\\OBS\\ProtocolClassDiscriminatorResolver",
-            "name": "ProtocolClassDiscriminatorResolver",
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Embedding\\Authentication",
+            "name": "Authentication",
             "summary": "",
-            "url": "classes/SoureCode-OBS-ProtocolClassDiscriminatorResolver.html"
+            "url": "classes/SoureCode-OBS-WebSocket-Embedding-Authentication.html"
         },                {
-            "fqsen": "\\SoureCode\\OBS\\ProtocolClassDiscriminatorResolver\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Embedding\\Authentication\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/SoureCode-OBS-ProtocolClassDiscriminatorResolver.html#method___construct"
+            "url": "classes/SoureCode-OBS-WebSocket-Embedding-Authentication.html#method___construct"
         },                {
-            "fqsen": "\\SoureCode\\OBS\\ProtocolClassDiscriminatorResolver\u003A\u003AgetMappingForClass\u0028\u0029",
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Embedding\\Authentication\u003A\u003A\u0024challenge",
+            "name": "challenge",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Embedding-Authentication.html#property_challenge"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Embedding\\Authentication\u003A\u003A\u0024salt",
+            "name": "salt",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Embedding-Authentication.html#property_salt"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Embedding\\BatchRequest",
+            "name": "BatchRequest",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Embedding-BatchRequest.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Embedding\\BatchRequest\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Embedding-BatchRequest.html#method___construct"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Embedding\\BatchRequest\u003A\u003A\u0024requestType",
+            "name": "requestType",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Embedding-BatchRequest.html#property_requestType"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Embedding\\BatchRequest\u003A\u003A\u0024requestId",
+            "name": "requestId",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Embedding-BatchRequest.html#property_requestId"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Embedding\\BatchRequest\u003A\u003A\u0024requestData",
+            "name": "requestData",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Embedding-BatchRequest.html#property_requestData"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Embedding\\ResponseStatus",
+            "name": "ResponseStatus",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Embedding-ResponseStatus.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Embedding\\ResponseStatus\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Embedding-ResponseStatus.html#method___construct"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Embedding\\ResponseStatus\u003A\u003A\u0024result",
+            "name": "result",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Embedding-ResponseStatus.html#property_result"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Embedding\\ResponseStatus\u003A\u003A\u0024code",
+            "name": "code",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Embedding-ResponseStatus.html#property_code"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Embedding\\ResponseStatus\u003A\u003A\u0024comment",
+            "name": "comment",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Embedding-ResponseStatus.html#property_comment"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Middleware\\OBSAuthenticationHandler",
+            "name": "OBSAuthenticationHandler",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Middleware-OBSAuthenticationHandler.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Middleware\\OBSAuthenticationHandler\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Middleware-OBSAuthenticationHandler.html#method___construct"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Middleware\\OBSAuthenticationHandler\u003A\u003AprocessIncoming\u0028\u0029",
+            "name": "processIncoming",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Middleware-OBSAuthenticationHandler.html#method_processIncoming"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Middleware\\OBSAuthenticationHandler\u003A\u003A\u0024serializer",
+            "name": "serializer",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Middleware-OBSAuthenticationHandler.html#property_serializer"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Middleware\\OBSAuthenticationHandler\u003A\u003A\u0024plainPassword",
+            "name": "plainPassword",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Middleware-OBSAuthenticationHandler.html#property_plainPassword"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Middleware\\OBSAuthenticationHandler\u003A\u003A\u0024eventSubscriptions",
+            "name": "eventSubscriptions",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Middleware-OBSAuthenticationHandler.html#property_eventSubscriptions"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Middleware\\OBSCloseHandler",
+            "name": "OBSCloseHandler",
+            "summary": "Base\u0020on\u0020WebSocket\\Middleware\\CloseHandler\u0020class.",
+            "url": "classes/SoureCode-OBS-WebSocket-Middleware-OBSCloseHandler.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Middleware\\OBSCloseHandler\u003A\u003AprocessIncoming\u0028\u0029",
+            "name": "processIncoming",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Middleware-OBSCloseHandler.html#method_processIncoming"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Middleware\\OBSCloseHandler\u003A\u003AprocessOutgoing\u0028\u0029",
+            "name": "processOutgoing",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Middleware-OBSCloseHandler.html#method_processOutgoing"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\OBSMessage",
+            "name": "OBSMessage",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-OBSMessage.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\OBSMessage\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-OBSMessage.html#method___construct"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\OBSMessage\u003A\u003A\u0024op",
+            "name": "op",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-OBSMessage.html#property_op"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\OBSMessage\u003A\u003A\u0024d",
+            "name": "d",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-OBSMessage.html#property_d"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Receive\\EventMessage",
+            "name": "EventMessage",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Receive-EventMessage.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Receive\\EventMessage\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Receive-EventMessage.html#method___construct"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Receive\\EventMessage\u003A\u003A\u0024eventType",
+            "name": "eventType",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Receive-EventMessage.html#property_eventType"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Receive\\EventMessage\u003A\u003A\u0024eventIntent",
+            "name": "eventIntent",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Receive-EventMessage.html#property_eventIntent"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Receive\\EventMessage\u003A\u003A\u0024eventData",
+            "name": "eventData",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Receive-EventMessage.html#property_eventData"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Receive\\HelloMessage",
+            "name": "HelloMessage",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Receive-HelloMessage.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Receive\\HelloMessage\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Receive-HelloMessage.html#method___construct"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Receive\\HelloMessage\u003A\u003A\u0024obsWebSocketVersion",
+            "name": "obsWebSocketVersion",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Receive-HelloMessage.html#property_obsWebSocketVersion"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Receive\\HelloMessage\u003A\u003A\u0024rpcVersion",
+            "name": "rpcVersion",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Receive-HelloMessage.html#property_rpcVersion"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Receive\\HelloMessage\u003A\u003A\u0024authentication",
+            "name": "authentication",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Receive-HelloMessage.html#property_authentication"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Receive\\IdentifiedMessage",
+            "name": "IdentifiedMessage",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Receive-IdentifiedMessage.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Receive\\IdentifiedMessage\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Receive-IdentifiedMessage.html#method___construct"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Receive\\IdentifiedMessage\u003A\u003A\u0024negotiatedRpcVersion",
+            "name": "negotiatedRpcVersion",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Receive-IdentifiedMessage.html#property_negotiatedRpcVersion"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Receive\\RequestBatchResponseMessage",
+            "name": "RequestBatchResponseMessage",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Receive-RequestBatchResponseMessage.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Receive\\RequestBatchResponseMessage\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Receive-RequestBatchResponseMessage.html#method___construct"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Receive\\RequestBatchResponseMessage\u003A\u003A\u0024requestId",
+            "name": "requestId",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Receive-RequestBatchResponseMessage.html#property_requestId"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Receive\\RequestBatchResponseMessage\u003A\u003A\u0024results",
+            "name": "results",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Receive-RequestBatchResponseMessage.html#property_results"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Receive\\RequestResponseMessage",
+            "name": "RequestResponseMessage",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Receive-RequestResponseMessage.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Receive\\RequestResponseMessage\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Receive-RequestResponseMessage.html#method___construct"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Receive\\RequestResponseMessage\u003A\u003A\u0024requestType",
+            "name": "requestType",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Receive-RequestResponseMessage.html#property_requestType"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Receive\\RequestResponseMessage\u003A\u003A\u0024requestId",
+            "name": "requestId",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Receive-RequestResponseMessage.html#property_requestId"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Receive\\RequestResponseMessage\u003A\u003A\u0024requestStatus",
+            "name": "requestStatus",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Receive-RequestResponseMessage.html#property_requestStatus"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Receive\\RequestResponseMessage\u003A\u003A\u0024responseData",
+            "name": "responseData",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Receive-RequestResponseMessage.html#property_responseData"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\ReceiveMessageInterface",
+            "name": "ReceiveMessageInterface",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-ReceiveMessageInterface.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Send\\IdentifyMessage",
+            "name": "IdentifyMessage",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Send-IdentifyMessage.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Send\\IdentifyMessage\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Send-IdentifyMessage.html#method___construct"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Send\\IdentifyMessage\u003A\u003A\u0024rpcVersion",
+            "name": "rpcVersion",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Send-IdentifyMessage.html#property_rpcVersion"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Send\\IdentifyMessage\u003A\u003A\u0024authentication",
+            "name": "authentication",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Send-IdentifyMessage.html#property_authentication"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Send\\IdentifyMessage\u003A\u003A\u0024eventSubscriptions",
+            "name": "eventSubscriptions",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Send-IdentifyMessage.html#property_eventSubscriptions"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Send\\ReidentifyMessage",
+            "name": "ReidentifyMessage",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Send-ReidentifyMessage.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Send\\ReidentifyMessage\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Send-ReidentifyMessage.html#method___construct"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Send\\ReidentifyMessage\u003A\u003A\u0024eventSubscriptions",
+            "name": "eventSubscriptions",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Send-ReidentifyMessage.html#property_eventSubscriptions"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Send\\RequestBatchMessage",
+            "name": "RequestBatchMessage",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Send-RequestBatchMessage.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Send\\RequestBatchMessage\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Send-RequestBatchMessage.html#method___construct"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Send\\RequestBatchMessage\u003A\u003A\u0024requestId",
+            "name": "requestId",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Send-RequestBatchMessage.html#property_requestId"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Send\\RequestBatchMessage\u003A\u003A\u0024requests",
+            "name": "requests",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Send-RequestBatchMessage.html#property_requests"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Send\\RequestBatchMessage\u003A\u003A\u0024haltOnFailure",
+            "name": "haltOnFailure",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Send-RequestBatchMessage.html#property_haltOnFailure"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Send\\RequestBatchMessage\u003A\u003A\u0024executionType",
+            "name": "executionType",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Send-RequestBatchMessage.html#property_executionType"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Send\\RequestMessage",
+            "name": "RequestMessage",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Send-RequestMessage.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Send\\RequestMessage\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Send-RequestMessage.html#method___construct"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Send\\RequestMessage\u003A\u003A\u0024requestType",
+            "name": "requestType",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Send-RequestMessage.html#property_requestType"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Send\\RequestMessage\u003A\u003A\u0024requestId",
+            "name": "requestId",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Send-RequestMessage.html#property_requestId"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Send\\RequestMessage\u003A\u003A\u0024requestData",
+            "name": "requestData",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Send-RequestMessage.html#property_requestData"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\SendMessageInterface",
+            "name": "SendMessageInterface",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-SendMessageInterface.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Serializer\\OBSMessageSerializer",
+            "name": "OBSMessageSerializer",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Serializer-OBSMessageSerializer.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Serializer\\OBSMessageSerializer\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Serializer-OBSMessageSerializer.html#method___construct"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Serializer\\OBSMessageSerializer\u003A\u003AserializeRequest\u0028\u0029",
+            "name": "serializeRequest",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Serializer-OBSMessageSerializer.html#method_serializeRequest"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Serializer\\OBSMessageSerializer\u003A\u003Aserialize\u0028\u0029",
+            "name": "serialize",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Serializer-OBSMessageSerializer.html#method_serialize"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Serializer\\OBSMessageSerializer\u003A\u003Adeserialize\u0028\u0029",
+            "name": "deserialize",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Serializer-OBSMessageSerializer.html#method_deserialize"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Serializer\\OBSMessageSerializer\u003A\u003A\u0024serializer",
+            "name": "serializer",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Serializer-OBSMessageSerializer.html#property_serializer"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Serializer\\ProtocolClassDiscriminatorResolver",
+            "name": "ProtocolClassDiscriminatorResolver",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Serializer-ProtocolClassDiscriminatorResolver.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Serializer\\ProtocolClassDiscriminatorResolver\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-WebSocket-Serializer-ProtocolClassDiscriminatorResolver.html#method___construct"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Serializer\\ProtocolClassDiscriminatorResolver\u003A\u003AgetMappingForClass\u0028\u0029",
             "name": "getMappingForClass",
             "summary": "",
-            "url": "classes/SoureCode-OBS-ProtocolClassDiscriminatorResolver.html#method_getMappingForClass"
+            "url": "classes/SoureCode-OBS-WebSocket-Serializer-ProtocolClassDiscriminatorResolver.html#method_getMappingForClass"
         },                {
-            "fqsen": "\\SoureCode\\OBS\\ProtocolClassDiscriminatorResolver\u003A\u003AgetMappingForMappedObject\u0028\u0029",
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Serializer\\ProtocolClassDiscriminatorResolver\u003A\u003AgetMappingForMappedObject\u0028\u0029",
             "name": "getMappingForMappedObject",
             "summary": "",
-            "url": "classes/SoureCode-OBS-ProtocolClassDiscriminatorResolver.html#method_getMappingForMappedObject"
+            "url": "classes/SoureCode-OBS-WebSocket-Serializer-ProtocolClassDiscriminatorResolver.html#method_getMappingForMappedObject"
         },                {
-            "fqsen": "\\SoureCode\\OBS\\ProtocolClassDiscriminatorResolver\u003A\u003AgetTypeForMappedObject\u0028\u0029",
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Serializer\\ProtocolClassDiscriminatorResolver\u003A\u003AgetTypeForMappedObject\u0028\u0029",
             "name": "getTypeForMappedObject",
             "summary": "",
-            "url": "classes/SoureCode-OBS-ProtocolClassDiscriminatorResolver.html#method_getTypeForMappedObject"
+            "url": "classes/SoureCode-OBS-WebSocket-Serializer-ProtocolClassDiscriminatorResolver.html#method_getTypeForMappedObject"
         },                {
-            "fqsen": "\\SoureCode\\OBS\\ProtocolClassDiscriminatorResolver\u003A\u003A\u0024responses",
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Serializer\\ProtocolClassDiscriminatorResolver\u003A\u003A\u0024responses",
             "name": "responses",
             "summary": "",
-            "url": "classes/SoureCode-OBS-ProtocolClassDiscriminatorResolver.html#property_responses"
+            "url": "classes/SoureCode-OBS-WebSocket-Serializer-ProtocolClassDiscriminatorResolver.html#property_responses"
         },                {
-            "fqsen": "\\SoureCode\\OBS\\ProtocolClassDiscriminatorResolver\u003A\u003A\u0024events",
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Serializer\\ProtocolClassDiscriminatorResolver\u003A\u003A\u0024events",
             "name": "events",
             "summary": "",
-            "url": "classes/SoureCode-OBS-ProtocolClassDiscriminatorResolver.html#property_events"
+            "url": "classes/SoureCode-OBS-WebSocket-Serializer-ProtocolClassDiscriminatorResolver.html#property_events"
         },                {
             "fqsen": "\\",
             "name": "\\",
@@ -7765,26 +7840,6 @@ Search.appendIndex(
             "name": "SoureCode",
             "summary": "",
             "url": "namespaces/sourecode.html"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Embedding",
-            "name": "Embedding",
-            "summary": "",
-            "url": "namespaces/sourecode-obs-message-embedding.html"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Receive",
-            "name": "Receive",
-            "summary": "",
-            "url": "namespaces/sourecode-obs-message-receive.html"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message",
-            "name": "Message",
-            "summary": "",
-            "url": "namespaces/sourecode-obs-message.html"
-        },                {
-            "fqsen": "\\SoureCode\\OBS\\Message\\Send",
-            "name": "Send",
-            "summary": "",
-            "url": "namespaces/sourecode-obs-message-send.html"
         },                {
             "fqsen": "\\SoureCode\\OBS\\Protocol\\Enum",
             "name": "Enum",
@@ -7990,5 +8045,35 @@ Search.appendIndex(
             "name": "Ui",
             "summary": "",
             "url": "namespaces/sourecode-obs-protocol-response-ui.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Embedding",
+            "name": "Embedding",
+            "summary": "",
+            "url": "namespaces/sourecode-obs-websocket-embedding.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Middleware",
+            "name": "Middleware",
+            "summary": "",
+            "url": "namespaces/sourecode-obs-websocket-middleware.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket",
+            "name": "WebSocket",
+            "summary": "",
+            "url": "namespaces/sourecode-obs-websocket.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Receive",
+            "name": "Receive",
+            "summary": "",
+            "url": "namespaces/sourecode-obs-websocket-receive.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Send",
+            "name": "Send",
+            "summary": "",
+            "url": "namespaces/sourecode-obs-websocket-send.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\WebSocket\\Serializer",
+            "name": "Serializer",
+            "summary": "",
+            "url": "namespaces/sourecode-obs-websocket-serializer.html"
         }            ]
 );

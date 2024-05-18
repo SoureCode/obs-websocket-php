@@ -14,30 +14,6 @@ use SoureCode\OBS\Protocol\ResponseInterface;
 final readonly class GetSceneTransitionListResponse implements ResponseInterface
 {
     /**
-     * Name of the current scene transition. Can be null
-     *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @var string
-     */
-    public string $currentSceneTransitionName;
-    /**
-     * UUID of the current scene transition. Can be null
-     *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @var string
-     */
-    public string $currentSceneTransitionUuid;
-    /**
-     * Kind of the current scene transition. Can be null
-     *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @var string
-     */
-    public string $currentSceneTransitionKind;
-    /**
      * Array of transitions
      *
      * @since 5.0.0
@@ -45,11 +21,35 @@ final readonly class GetSceneTransitionListResponse implements ResponseInterface
      * @var array<object>
      */
     public array $transitions;
-    public function __construct(string $currentSceneTransitionName, string $currentSceneTransitionUuid, string $currentSceneTransitionKind, array $transitions)
+    /**
+     * Name of the current scene transition. Can be null
+     *
+     * @since 5.0.0
+     * @rpcVersion 1
+     * @var ?string
+     */
+    public ?string $currentSceneTransitionName;
+    /**
+     * UUID of the current scene transition. Can be null
+     *
+     * @since 5.0.0
+     * @rpcVersion 1
+     * @var ?string
+     */
+    public ?string $currentSceneTransitionUuid;
+    /**
+     * Kind of the current scene transition. Can be null
+     *
+     * @since 5.0.0
+     * @rpcVersion 1
+     * @var ?string
+     */
+    public ?string $currentSceneTransitionKind;
+    public function __construct(array $transitions, ?string $currentSceneTransitionName = null, ?string $currentSceneTransitionUuid = null, ?string $currentSceneTransitionKind = null)
     {
+        $this->transitions = $transitions;
         $this->currentSceneTransitionName = $currentSceneTransitionName;
         $this->currentSceneTransitionUuid = $currentSceneTransitionUuid;
         $this->currentSceneTransitionKind = $currentSceneTransitionKind;
-        $this->transitions = $transitions;
     }
 }

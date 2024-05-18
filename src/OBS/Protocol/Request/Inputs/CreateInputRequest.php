@@ -34,7 +34,7 @@ final readonly class CreateInputRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sceneName;
     /**
@@ -42,7 +42,7 @@ final readonly class CreateInputRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sceneUuid;
     /**
@@ -50,7 +50,7 @@ final readonly class CreateInputRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type array
+     * @type ?array
      */
     public ?array $inputSettings;
     /**
@@ -58,7 +58,7 @@ final readonly class CreateInputRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type bool
+     * @type ?bool
      */
     public ?bool $sceneItemEnabled;
     public function __construct(string $inputName, string $inputKind, ?string $sceneName = null, ?string $sceneUuid = null, ?array $inputSettings = null, ?bool $sceneItemEnabled = null)

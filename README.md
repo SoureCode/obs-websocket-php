@@ -7,7 +7,7 @@ Almost everything is [generated](./src/OBS/Protocol) based on the [`protocol.jso
 Based on that there is a [BaseClient](./src/OBS/BaseClient.php) that handles all the requests and responses.
 And a [Client](./src/OBS/Client.php) that extends the BaseClient which contains all the available requests.
 
-Under the hood, it uses [textalk/websocket](https://github.com/Textalk/websocket-php) to connect to the OBS WebSocket.
+Under the hood, it uses [phrity/websocket](https://github.com/sirn-se/websocket-php) to connect to the OBS WebSocket.
 
 ## Features
 
@@ -29,8 +29,9 @@ composer require sourecode/obs-websocket-php
 
 ## Usage
 
-- [Sending Requests](./index.php)
-- [Listening to Events](./events.php)
+- [Sending Requests](examples/request.php)
+- [Event Loop](examples/events.php)
+- [Subscription](examples/subscription.php)
 
 ## Documentation
 

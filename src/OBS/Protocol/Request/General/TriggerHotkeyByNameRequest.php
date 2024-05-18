@@ -28,7 +28,7 @@ final readonly class TriggerHotkeyByNameRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $contextName;
     public function __construct(string $hotkeyName, ?string $contextName = null)

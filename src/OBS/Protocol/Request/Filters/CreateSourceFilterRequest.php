@@ -34,7 +34,7 @@ final readonly class CreateSourceFilterRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sourceName;
     /**
@@ -42,7 +42,7 @@ final readonly class CreateSourceFilterRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sourceUuid;
     /**
@@ -50,7 +50,7 @@ final readonly class CreateSourceFilterRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type array
+     * @type ?array
      */
     public ?array $filterSettings;
     public function __construct(string $filterName, string $filterKind, ?string $sourceName = null, ?string $sourceUuid = null, ?array $filterSettings = null)

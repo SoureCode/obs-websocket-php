@@ -34,7 +34,7 @@ final readonly class SetSourceFilterSettingsRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sourceName;
     /**
@@ -42,7 +42,7 @@ final readonly class SetSourceFilterSettingsRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sourceUuid;
     /**
@@ -50,7 +50,7 @@ final readonly class SetSourceFilterSettingsRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type bool
+     * @type ?bool
      */
     public ?bool $overlay;
     public function __construct(string $filterName, array $filterSettings, ?string $sourceName = null, ?string $sourceUuid = null, ?bool $overlay = null)

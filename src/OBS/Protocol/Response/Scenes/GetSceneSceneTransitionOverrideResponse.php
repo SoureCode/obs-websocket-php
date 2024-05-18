@@ -20,18 +20,18 @@ final readonly class GetSceneSceneTransitionOverrideResponse implements Response
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @var string
+     * @var ?string
      */
-    public string $transitionName;
+    public ?string $transitionName;
     /**
      * Duration of the overridden scene transition, else `null`
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @var int
+     * @var ?int
      */
-    public int $transitionDuration;
-    public function __construct(string $transitionName, int $transitionDuration)
+    public ?int $transitionDuration;
+    public function __construct(?string $transitionName = null, ?int $transitionDuration = null)
     {
         $this->transitionName = $transitionName;
         $this->transitionDuration = $transitionDuration;

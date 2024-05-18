@@ -39,7 +39,7 @@ final readonly class SaveSourceScreenshotRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sourceName;
     /**
@@ -47,7 +47,7 @@ final readonly class SaveSourceScreenshotRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sourceUuid;
     /**
@@ -55,7 +55,7 @@ final readonly class SaveSourceScreenshotRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type int
+     * @type ?int
      */
     public ?int $imageWidth;
     /**
@@ -63,7 +63,7 @@ final readonly class SaveSourceScreenshotRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type int
+     * @type ?int
      */
     public ?int $imageHeight;
     /**
@@ -71,7 +71,7 @@ final readonly class SaveSourceScreenshotRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type int
+     * @type ?int
      */
     public ?int $imageCompressionQuality;
     public function __construct(string $imageFormat, string $imageFilePath, ?string $sourceName = null, ?string $sourceUuid = null, ?int $imageWidth = null, ?int $imageHeight = null, ?int $imageCompressionQuality = null)

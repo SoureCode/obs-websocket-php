@@ -37,18 +37,18 @@ final readonly class GetMediaInputStatusResponse implements ResponseInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @var int
+     * @var ?int
      */
-    public int $mediaDuration;
+    public ?int $mediaDuration;
     /**
      * Position of the cursor in milliseconds. `null` if not playing
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @var int
+     * @var ?int
      */
-    public int $mediaCursor;
-    public function __construct(string $mediaState, int $mediaDuration, int $mediaCursor)
+    public ?int $mediaCursor;
+    public function __construct(string $mediaState, ?int $mediaDuration = null, ?int $mediaCursor = null)
     {
         $this->mediaState = $mediaState;
         $this->mediaDuration = $mediaDuration;

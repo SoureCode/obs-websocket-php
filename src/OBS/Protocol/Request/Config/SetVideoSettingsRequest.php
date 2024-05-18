@@ -20,7 +20,7 @@ final readonly class SetVideoSettingsRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type int
+     * @type ?int
      */
     public ?int $fpsNumerator;
     /**
@@ -28,7 +28,7 @@ final readonly class SetVideoSettingsRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type int
+     * @type ?int
      */
     public ?int $fpsDenominator;
     /**
@@ -36,7 +36,7 @@ final readonly class SetVideoSettingsRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type int
+     * @type ?int
      */
     public ?int $baseWidth;
     /**
@@ -44,7 +44,7 @@ final readonly class SetVideoSettingsRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type int
+     * @type ?int
      */
     public ?int $baseHeight;
     /**
@@ -52,7 +52,7 @@ final readonly class SetVideoSettingsRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type int
+     * @type ?int
      */
     public ?int $outputWidth;
     /**
@@ -60,7 +60,7 @@ final readonly class SetVideoSettingsRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type int
+     * @type ?int
      */
     public ?int $outputHeight;
     public function __construct(?int $fpsNumerator = null, ?int $fpsDenominator = null, ?int $baseWidth = null, ?int $baseHeight = null, ?int $outputWidth = null, ?int $outputHeight = null)

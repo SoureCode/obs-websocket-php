@@ -46,14 +46,6 @@ final readonly class GetCurrentSceneTransitionResponse implements ResponseInterf
      */
     public bool $transitionFixed;
     /**
-     * Configured transition duration in milliseconds. `null` if transition is fixed
-     *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @var int
-     */
-    public int $transitionDuration;
-    /**
      * Whether the transition supports being configured
      *
      * @since 5.0.0
@@ -62,21 +54,29 @@ final readonly class GetCurrentSceneTransitionResponse implements ResponseInterf
      */
     public bool $transitionConfigurable;
     /**
+     * Configured transition duration in milliseconds. `null` if transition is fixed
+     *
+     * @since 5.0.0
+     * @rpcVersion 1
+     * @var ?int
+     */
+    public ?int $transitionDuration;
+    /**
      * Object of settings for the transition. `null` if transition is not configurable
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @var array
+     * @var ?array
      */
-    public array $transitionSettings;
-    public function __construct(string $transitionName, string $transitionUuid, string $transitionKind, bool $transitionFixed, int $transitionDuration, bool $transitionConfigurable, array $transitionSettings)
+    public ?array $transitionSettings;
+    public function __construct(string $transitionName, string $transitionUuid, string $transitionKind, bool $transitionFixed, bool $transitionConfigurable, ?int $transitionDuration = null, ?array $transitionSettings = null)
     {
         $this->transitionName = $transitionName;
         $this->transitionUuid = $transitionUuid;
         $this->transitionKind = $transitionKind;
         $this->transitionFixed = $transitionFixed;
-        $this->transitionDuration = $transitionDuration;
         $this->transitionConfigurable = $transitionConfigurable;
+        $this->transitionDuration = $transitionDuration;
         $this->transitionSettings = $transitionSettings;
     }
 }

@@ -28,7 +28,7 @@ final readonly class GetSceneItemIdRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sceneName;
     /**
@@ -36,7 +36,7 @@ final readonly class GetSceneItemIdRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sceneUuid;
     /**
@@ -44,7 +44,7 @@ final readonly class GetSceneItemIdRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type int
+     * @type ?int
      */
     public ?int $searchOffset;
     public function __construct(string $sourceName, ?string $sceneName = null, ?string $sceneUuid = null, ?int $searchOffset = null)

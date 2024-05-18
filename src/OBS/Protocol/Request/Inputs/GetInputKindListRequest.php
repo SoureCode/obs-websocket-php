@@ -18,7 +18,7 @@ final readonly class GetInputKindListRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type bool
+     * @type ?bool
      */
     public ?bool $unversioned;
     public function __construct(?bool $unversioned = null)

@@ -18,7 +18,7 @@ final readonly class SetInputVolumeRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $inputName;
     /**
@@ -26,7 +26,7 @@ final readonly class SetInputVolumeRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $inputUuid;
     /**
@@ -34,7 +34,7 @@ final readonly class SetInputVolumeRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type int
+     * @type ?int
      */
     public ?int $inputVolumeMul;
     /**
@@ -42,7 +42,7 @@ final readonly class SetInputVolumeRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type int
+     * @type ?int
      */
     public ?int $inputVolumeDb;
     public function __construct(?string $inputName = null, ?string $inputUuid = null, ?int $inputVolumeMul = null, ?int $inputVolumeDb = null)

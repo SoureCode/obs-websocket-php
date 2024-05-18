@@ -18,13 +18,13 @@
   },
   "require": {
     "php": "^8.3",
-    "textalk/websocket": "^1.6",
     "symfony/string": "^7.0",
     "symfony/serializer": "^7.0",
     "symfony/property-access": "^7.0",
     "symfony/uid": "^7.0",
     "symfony/clock": "^7.0",
-    "symfony/finder": "^7.0"
+    "symfony/finder": "^7.0",
+    "phrity/websocket": "^2.2"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",

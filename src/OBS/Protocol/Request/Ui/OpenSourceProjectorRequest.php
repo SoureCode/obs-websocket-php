@@ -20,7 +20,7 @@ final readonly class OpenSourceProjectorRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sourceName;
     /**
@@ -28,7 +28,7 @@ final readonly class OpenSourceProjectorRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $sourceUuid;
     /**
@@ -36,7 +36,7 @@ final readonly class OpenSourceProjectorRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type int
+     * @type ?int
      */
     public ?int $monitorIndex;
     /**
@@ -44,7 +44,7 @@ final readonly class OpenSourceProjectorRequest implements RequestInterface
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $projectorGeometry;
     public function __construct(?string $sourceName = null, ?string $sourceUuid = null, ?int $monitorIndex = null, ?string $projectorGeometry = null)

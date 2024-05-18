@@ -21,7 +21,7 @@ final readonly class TriggerHotkeyByKeySequenceRequest implements RequestInterfa
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type string
+     * @type ?string
      */
     public ?string $keyId;
     /**
@@ -29,7 +29,7 @@ final readonly class TriggerHotkeyByKeySequenceRequest implements RequestInterfa
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type array
+     * @type ?array
      */
     public ?array $keyModifiers;
     /**
@@ -37,7 +37,7 @@ final readonly class TriggerHotkeyByKeySequenceRequest implements RequestInterfa
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type bool
+     * @type ?bool
      */
     #[SerializedName('keyModifiers.shift')]
     public ?bool $keyModifiersShift;
@@ -46,7 +46,7 @@ final readonly class TriggerHotkeyByKeySequenceRequest implements RequestInterfa
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type bool
+     * @type ?bool
      */
     #[SerializedName('keyModifiers.control')]
     public ?bool $keyModifiersControl;
@@ -55,7 +55,7 @@ final readonly class TriggerHotkeyByKeySequenceRequest implements RequestInterfa
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type bool
+     * @type ?bool
      */
     #[SerializedName('keyModifiers.alt')]
     public ?bool $keyModifiersAlt;
@@ -64,7 +64,7 @@ final readonly class TriggerHotkeyByKeySequenceRequest implements RequestInterfa
      *
      * @since 5.0.0
      * @rpcVersion 1
-     * @type bool
+     * @type ?bool
      */
     #[SerializedName('keyModifiers.command')]
     public ?bool $keyModifiersCommand;
