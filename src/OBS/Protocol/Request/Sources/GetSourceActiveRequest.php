@@ -3,9 +3,10 @@
 namespace SoureCode\OBS\Protocol\Request\Sources;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Gets the active and show state of a source.
- * 
+ *
  * **Compatible with inputs and scenes.**
  *
  * @since 5.0.0
@@ -18,17 +19,13 @@ final readonly class GetSourceActiveRequest implements RequestInterface
     /**
      * Name of the source to get the active state of
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $sourceName;
     /**
      * UUID of the source to get the active state of
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $sourceUuid;
     public function __construct(?string $sourceName = null, ?string $sourceUuid = null)

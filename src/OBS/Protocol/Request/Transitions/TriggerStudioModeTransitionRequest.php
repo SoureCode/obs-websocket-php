@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Transitions;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Triggers the current scene transition. Same functionality as the `Transition` button in studio mode.
  *

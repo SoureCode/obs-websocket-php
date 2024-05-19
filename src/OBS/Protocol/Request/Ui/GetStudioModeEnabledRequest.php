@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Ui;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Gets whether studio is enabled.
  *

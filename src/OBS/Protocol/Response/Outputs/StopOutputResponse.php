@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Outputs;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Stops an output.
  *

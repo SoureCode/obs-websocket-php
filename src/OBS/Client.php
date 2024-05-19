@@ -283,7 +283,8 @@ use SoureCode\OBS\Protocol\Request\Ui\OpenVideoMixProjectorRequest;
 use SoureCode\OBS\Protocol\Response\Ui\OpenVideoMixProjectorResponse;
 use SoureCode\OBS\Protocol\Request\Ui\OpenSourceProjectorRequest;
 use SoureCode\OBS\Protocol\Response\Ui\OpenSourceProjectorResponse;
-final class Client extends BaseClient
+
+class Client extends BaseClient
 {
     public function getPersistentData(string $realm, string $slotName): GetPersistentDataResponse
     {

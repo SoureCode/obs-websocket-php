@@ -3,9 +3,10 @@
 namespace SoureCode\OBS\Protocol\Response\SceneItems;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Sets the index position of a scene item in a scene.
- * 
+ *
  * Scenes and Groups
  *
  * @since 5.0.0

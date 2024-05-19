@@ -3,9 +3,10 @@
 namespace SoureCode\OBS\Protocol\Request\Config;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Gets the current video settings.
- * 
+ *
  * Note: To get the true FPS value, divide the FPS numerator by the FPS denominator. Example: `60000/1001`
  *
  * @since 5.0.0

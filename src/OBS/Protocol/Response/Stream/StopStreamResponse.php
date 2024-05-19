@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Stream;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Stops the stream output.
  *

@@ -7,11 +7,18 @@ use SoureCode\OBS\Protocol\ResponseInterface;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Serializer\Mapping\ClassDiscriminatorMapping;
 use Symfony\Component\Serializer\Mapping\ClassDiscriminatorResolverInterface;
+
 use function Symfony\Component\String\u;
 
 class ProtocolClassDiscriminatorResolver implements ClassDiscriminatorResolverInterface
 {
+    /**
+     * @var array<string, string>
+     */
     private array $responses = [];
+    /**
+     * @var array<string, string>
+     */
     private array $events = [];
 
     public function __construct()

@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Inputs;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Gets the default settings for an input kind.
  *
@@ -16,8 +17,6 @@ final readonly class GetInputDefaultSettingsResponse implements ResponseInterfac
     /**
      * Object of default settings for the input kind
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var array
      */
     public array $defaultInputSettings;

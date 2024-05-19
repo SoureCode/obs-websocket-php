@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Record;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Stops the record output.
  *
@@ -16,8 +17,6 @@ final readonly class StopRecordResponse implements ResponseInterface
     /**
      * File name for the saved recording
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var string
      */
     public string $outputPath;

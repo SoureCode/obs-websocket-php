@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\General;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Broadcasts a `CustomEvent` to all WebSocket clients. Receivers are clients which are identified and subscribed.
  *

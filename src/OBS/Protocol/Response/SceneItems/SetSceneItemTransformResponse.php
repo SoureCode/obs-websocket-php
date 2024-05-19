@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\SceneItems;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Sets the transform and crop info of a scene item.
  *

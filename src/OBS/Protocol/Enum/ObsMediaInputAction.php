@@ -2,9 +2,7 @@
 
 namespace SoureCode\OBS\Protocol\Enum;
 
-use JetBrains\PhpStorm\Deprecated;
-#[Deprecated]
-enum ObsMediaInputAction : string
+enum ObsMediaInputAction: string
 {
     /**
      * No action.

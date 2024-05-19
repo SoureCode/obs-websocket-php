@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\General;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Gets statistics about OBS, obs-websocket, and the current session.
  *

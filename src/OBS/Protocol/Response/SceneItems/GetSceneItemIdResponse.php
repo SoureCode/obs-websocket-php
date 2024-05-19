@@ -3,9 +3,10 @@
 namespace SoureCode\OBS\Protocol\Response\SceneItems;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Searches a scene for a source, and returns its id.
- * 
+ *
  * Scenes and Groups
  *
  * @since 5.0.0
@@ -18,8 +19,6 @@ final readonly class GetSceneItemIdResponse implements ResponseInterface
     /**
      * Numeric ID of the scene item
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var int
      */
     public int $sceneItemId;

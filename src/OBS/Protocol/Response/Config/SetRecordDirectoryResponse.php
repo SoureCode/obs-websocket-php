@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Config;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Sets the current directory that the record output writes files to.
  *

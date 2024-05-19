@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Stream;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Sends CEA-608 caption text over the stream output.
  *

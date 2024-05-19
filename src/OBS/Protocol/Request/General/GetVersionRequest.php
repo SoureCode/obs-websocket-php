@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\General;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Gets data about the current plugin and RPC version.
  *

@@ -22,7 +22,6 @@ class RequestBatchMessage implements SendMessageInterface
         public array $requests,
         public bool $haltOnFailure = false,
         public ?RequestBatchExecutionType $executionType = RequestBatchExecutionType::SerialRealtime,
-    )
-    {
+    ) {
     }
 }

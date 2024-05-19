@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Event\General;
 
 use SoureCode\OBS\Protocol\EventInterface;
+
 /**
  * Custom event emitted by `BroadcastCustomEvent`.
  *
@@ -10,15 +11,14 @@ use SoureCode\OBS\Protocol\EventInterface;
  * @rpcVersion 1
  * @complexity 1
  * @category general
+ * @eventSubscription General
  */
-final readonly class CustomEvent implements EventInterface
+final readonly class CustomEventEvent implements EventInterface
 {
     /**
      * Custom event data
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type array
+     * @var array
      */
     public array $eventData;
     public function __construct(array $eventData)

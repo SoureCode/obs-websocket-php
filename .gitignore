@@ -1,3 +1,5 @@
 vendor/
 composer.lock
 .phpdoc/
+tools/
+.php-cs-fixer.cache

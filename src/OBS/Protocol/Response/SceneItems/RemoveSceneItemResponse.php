@@ -3,9 +3,10 @@
 namespace SoureCode\OBS\Protocol\Response\SceneItems;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Removes a scene item from a scene.
- * 
+ *
  * Scenes only
  *
  * @since 5.0.0

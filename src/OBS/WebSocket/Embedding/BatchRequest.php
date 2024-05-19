@@ -10,7 +10,6 @@ final readonly class BatchRequest
         public string $requestType,
         public ?string $requestId,
         public ?RequestInterface $requestData = null,
-    )
-    {
+    ) {
     }
 }

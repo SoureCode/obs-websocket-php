@@ -11,7 +11,6 @@ final readonly class EventMessage implements ReceiveMessageInterface
         public string $eventType,
         public int $eventIntent,
         public ?EventInterface $eventData = null,
-    )
-    {
+    ) {
     }
 }

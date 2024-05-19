@@ -17,10 +17,10 @@ use SoureCode\OBS\Protocol\Enum\EventSubscription;
 use SoureCode\OBS\Protocol\Enum\WebSocketCloseCode;
 use SoureCode\OBS\Protocol\Enum\WebSocketOpCode;
 use SoureCode\OBS\Protocol\RequestInterface;
-use SoureCode\OBS\Protocol\ResponseInterface;
 use SoureCode\OBS\WebSocket\Serializer\OBSMessageSerializer;
 use WebSocket\Client as WebSocketClient;
 use WebSocket\Connection;
+use WebSocket\Exception\Exception;
 use WebSocket\Message\Close;
 use WebSocket\Message\Message;
 use WebSocket\Message\Text;
@@ -34,8 +34,7 @@ class BaseClient
     public function __construct(
         private readonly string $url,
         ?OBSMessageSerializer   $obsMessageSerializer = null,
-    )
-    {
+    ) {
         $this->serializer = $obsMessageSerializer ?? new OBSMessageSerializer();
         $this->client = new WebSocketClient($this->url);
     }
@@ -45,9 +44,6 @@ class BaseClient
         $this->client->send(new Text($message));
     }
 
-    /**
-     * @return OBSMessage<HelloMessage>
-     */
     public function hello(): OBSMessage
     {
         return $this->safeReceive(WebSocketOpCode::Hello, HelloMessage::class);
@@ -81,9 +77,6 @@ class BaseClient
         return $this->serializer->deserialize($data->getContent());
     }
 
-    /**
-     * @return OBSMessage<IdentifiedMessage>
-     */
     public function identify(#[SensitiveParameter] $plainPassword, Authentication $authentication, ?EventSubscription $eventSubscriptions = EventSubscription::None): OBSMessage
     {
         $auth = base64_encode(hash('sha256', $plainPassword . $authentication->salt, true));
@@ -97,9 +90,6 @@ class BaseClient
         return $this->identified();
     }
 
-    /**
-     * @return OBSMessage<IdentifiedMessage>
-     */
     public function identified(): OBSMessage
     {
         return $this->safeReceive(WebSocketOpCode::Identified, IdentifiedMessage::class);
@@ -115,11 +105,6 @@ class BaseClient
         return $this->identified();
     }
 
-
-    /**
-     * @template T of ResponseInterface
-     * @return OBSMessage<RequestResponseMessage<T>>
-     */
     public function request(RequestInterface $request): OBSMessage
     {
         $this->send($this->serializer->serializeRequest($request));
@@ -172,19 +157,49 @@ class BaseClient
         return $this;
     }
 
-    public function setLogger(LoggerInterface $logger)
+    public function setLogger(LoggerInterface $logger): static
     {
         $this->client->setLogger($logger);
 
         return $this;
     }
 
+    /**
+     * @param callable(OBSMessage, BaseClient, WebSocketClient, Connection, Message): void $callback
+     * @return $this
+     */
     public function on(callable $callback): static
     {
         $this->client->onText(function (WebSocketClient $client, Connection $connection, Message $message) use ($callback) {
             $obsMessage = $this->serializer->deserialize($message->getContent());
 
             $callback($obsMessage, $this, $client, $connection, $message);
+        });
+
+        return $this;
+    }
+
+    /**
+     * @param callable(BaseClient, WebSocketClient, ?Connection, Exception): void $callback
+     * @return $this
+     */
+    public function onError(callable $callback): static
+    {
+        $this->client->onError(function (WebSocketClient $client, Connection|null $connection, Exception $exception) use ($callback) {
+            $callback($this, $client, $connection, $exception);
+        });
+
+        return $this;
+    }
+
+    /**
+     * @param callable(BaseClient, WebSocketClient, Connection, Close): void $callback
+     * @return $this
+     */
+    public function onClose(callable $callback): static
+    {
+        $this->client->onClose(function (WebSocketClient $client, Connection $connection, Close $message) use ($callback) {
+            $callback($this, $client, $connection, $message);
         });
 
         return $this;

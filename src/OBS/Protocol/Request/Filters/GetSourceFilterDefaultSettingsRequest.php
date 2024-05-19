@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Filters;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Gets the default settings for a filter kind.
  *
@@ -16,9 +17,7 @@ final readonly class GetSourceFilterDefaultSettingsRequest implements RequestInt
     /**
      * Filter kind to get the default settings for
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type string
+     * @var string
      */
     public string $filterKind;
     public function __construct(string $filterKind)

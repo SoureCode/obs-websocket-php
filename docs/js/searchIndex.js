@@ -76,6 +76,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/SoureCode-OBS-BaseClient.html#method_on"
         },                {
+            "fqsen": "\\SoureCode\\OBS\\BaseClient\u003A\u003AonError\u0028\u0029",
+            "name": "onError",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-BaseClient.html#method_onError"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\BaseClient\u003A\u003AonClose\u0028\u0029",
+            "name": "onClose",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-BaseClient.html#method_onClose"
+        },                {
             "fqsen": "\\SoureCode\\OBS\\BaseClient\u003A\u003Astart\u0028\u0029",
             "name": "start",
             "summary": "",
@@ -800,6 +810,21 @@ Search.appendIndex(
             "name": "openSourceProjector",
             "summary": "",
             "url": "classes/SoureCode-OBS-Client.html#method_openSourceProjector"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\Integration\\Symfony\\SoureCodeObsWebSocketPhpBundle",
+            "name": "SoureCodeObsWebSocketPhpBundle",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-Integration-Symfony-SoureCodeObsWebSocketPhpBundle.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\Integration\\Symfony\\SoureCodeObsWebSocketPhpBundle\u003A\u003Aconfigure\u0028\u0029",
+            "name": "configure",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-Integration-Symfony-SoureCodeObsWebSocketPhpBundle.html#method_configure"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\Integration\\Symfony\\SoureCodeObsWebSocketPhpBundle\u003A\u003AloadExtension\u0028\u0029",
+            "name": "loadExtension",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-Integration-Symfony-SoureCodeObsWebSocketPhpBundle.html#method_loadExtension"
         },                {
             "fqsen": "\\SoureCode\\OBS\\Protocol\\Enum\\EventSubscription",
             "name": "EventSubscription",
@@ -1546,20 +1571,20 @@ Search.appendIndex(
             "summary": "New\u0020settings\u0020object\u0020of\u0020the\u0020filter",
             "url": "classes/SoureCode-OBS-Protocol-Event-Filters-SourceFilterSettingsChangedEvent.html#property_filterSettings"
         },                {
-            "fqsen": "\\SoureCode\\OBS\\Protocol\\Event\\General\\CustomEvent",
-            "name": "CustomEvent",
+            "fqsen": "\\SoureCode\\OBS\\Protocol\\Event\\General\\CustomEventEvent",
+            "name": "CustomEventEvent",
             "summary": "Custom\u0020event\u0020emitted\u0020by\u0020\u0060BroadcastCustomEvent\u0060.",
-            "url": "classes/SoureCode-OBS-Protocol-Event-General-CustomEvent.html"
+            "url": "classes/SoureCode-OBS-Protocol-Event-General-CustomEventEvent.html"
         },                {
-            "fqsen": "\\SoureCode\\OBS\\Protocol\\Event\\General\\CustomEvent\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\SoureCode\\OBS\\Protocol\\Event\\General\\CustomEventEvent\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/SoureCode-OBS-Protocol-Event-General-CustomEvent.html#method___construct"
+            "url": "classes/SoureCode-OBS-Protocol-Event-General-CustomEventEvent.html#method___construct"
         },                {
-            "fqsen": "\\SoureCode\\OBS\\Protocol\\Event\\General\\CustomEvent\u003A\u003A\u0024eventData",
+            "fqsen": "\\SoureCode\\OBS\\Protocol\\Event\\General\\CustomEventEvent\u003A\u003A\u0024eventData",
             "name": "eventData",
             "summary": "Custom\u0020event\u0020data",
-            "url": "classes/SoureCode-OBS-Protocol-Event-General-CustomEvent.html#property_eventData"
+            "url": "classes/SoureCode-OBS-Protocol-Event-General-CustomEventEvent.html#property_eventData"
         },                {
             "fqsen": "\\SoureCode\\OBS\\Protocol\\Event\\General\\ExitStartedEvent",
             "name": "ExitStartedEvent",
@@ -1571,30 +1596,30 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/SoureCode-OBS-Protocol-Event-General-ExitStartedEvent.html#method___construct"
         },                {
-            "fqsen": "\\SoureCode\\OBS\\Protocol\\Event\\General\\VendorEvent",
-            "name": "VendorEvent",
+            "fqsen": "\\SoureCode\\OBS\\Protocol\\Event\\General\\VendorEventEvent",
+            "name": "VendorEventEvent",
             "summary": "An\u0020event\u0020has\u0020been\u0020emitted\u0020from\u0020a\u0020vendor.",
-            "url": "classes/SoureCode-OBS-Protocol-Event-General-VendorEvent.html"
+            "url": "classes/SoureCode-OBS-Protocol-Event-General-VendorEventEvent.html"
         },                {
-            "fqsen": "\\SoureCode\\OBS\\Protocol\\Event\\General\\VendorEvent\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\SoureCode\\OBS\\Protocol\\Event\\General\\VendorEventEvent\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/SoureCode-OBS-Protocol-Event-General-VendorEvent.html#method___construct"
+            "url": "classes/SoureCode-OBS-Protocol-Event-General-VendorEventEvent.html#method___construct"
         },                {
-            "fqsen": "\\SoureCode\\OBS\\Protocol\\Event\\General\\VendorEvent\u003A\u003A\u0024vendorName",
+            "fqsen": "\\SoureCode\\OBS\\Protocol\\Event\\General\\VendorEventEvent\u003A\u003A\u0024vendorName",
             "name": "vendorName",
             "summary": "Name\u0020of\u0020the\u0020vendor\u0020emitting\u0020the\u0020event",
-            "url": "classes/SoureCode-OBS-Protocol-Event-General-VendorEvent.html#property_vendorName"
+            "url": "classes/SoureCode-OBS-Protocol-Event-General-VendorEventEvent.html#property_vendorName"
         },                {
-            "fqsen": "\\SoureCode\\OBS\\Protocol\\Event\\General\\VendorEvent\u003A\u003A\u0024eventType",
+            "fqsen": "\\SoureCode\\OBS\\Protocol\\Event\\General\\VendorEventEvent\u003A\u003A\u0024eventType",
             "name": "eventType",
             "summary": "Vendor\u002Dprovided\u0020event\u0020typedef",
-            "url": "classes/SoureCode-OBS-Protocol-Event-General-VendorEvent.html#property_eventType"
+            "url": "classes/SoureCode-OBS-Protocol-Event-General-VendorEventEvent.html#property_eventType"
         },                {
-            "fqsen": "\\SoureCode\\OBS\\Protocol\\Event\\General\\VendorEvent\u003A\u003A\u0024eventData",
+            "fqsen": "\\SoureCode\\OBS\\Protocol\\Event\\General\\VendorEventEvent\u003A\u003A\u0024eventData",
             "name": "eventData",
             "summary": "Vendor\u002Dprovided\u0020event\u0020data.\u0020\u007B\u007D\u0020if\u0020event\u0020does\u0020not\u0020provide\u0020any\u0020data",
-            "url": "classes/SoureCode-OBS-Protocol-Event-General-VendorEvent.html#property_eventData"
+            "url": "classes/SoureCode-OBS-Protocol-Event-General-VendorEventEvent.html#property_eventData"
         },                {
             "fqsen": "\\SoureCode\\OBS\\Protocol\\Event\\Inputs\\InputActiveStateChangedEvent",
             "name": "InputActiveStateChangedEvent",
@@ -7840,6 +7865,16 @@ Search.appendIndex(
             "name": "SoureCode",
             "summary": "",
             "url": "namespaces/sourecode.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\Integration\\Symfony",
+            "name": "Symfony",
+            "summary": "",
+            "url": "namespaces/sourecode-obs-integration-symfony.html"
+        },                {
+            "fqsen": "\\SoureCode\\OBS\\Integration",
+            "name": "Integration",
+            "summary": "",
+            "url": "namespaces/sourecode-obs-integration.html"
         },                {
             "fqsen": "\\SoureCode\\OBS\\Protocol\\Enum",
             "name": "Enum",

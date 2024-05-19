@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Record;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Toggles the status of the record output.
  *
@@ -16,8 +17,6 @@ final readonly class ToggleRecordResponse implements ResponseInterface
     /**
      * The new active state of the output
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var bool
      */
     public bool $outputActive;

@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Filters;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Creates a new filter, adding it to the specified source.
  *

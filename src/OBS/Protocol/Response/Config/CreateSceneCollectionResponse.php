@@ -3,9 +3,10 @@
 namespace SoureCode\OBS\Protocol\Response\Config;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Creates a new scene collection, switching to it in the process.
- * 
+ *
  * Note: This will block until the collection has finished changing.
  *
  * @since 5.0.0

@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Config;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Creates a new profile, switching to it in the process
  *
@@ -16,9 +17,7 @@ final readonly class CreateProfileRequest implements RequestInterface
     /**
      * Name for the new profile
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type string
+     * @var string
      */
     public string $profileName;
     public function __construct(string $profileName)

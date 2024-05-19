@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Filters;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Sets the name of a source filter (rename).
  *

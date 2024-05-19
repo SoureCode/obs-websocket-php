@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Inputs;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Sets the audio sync offset of an input.
  *

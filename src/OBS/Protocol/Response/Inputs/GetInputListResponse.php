@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Inputs;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Gets an array of all inputs in OBS.
  *
@@ -16,8 +17,6 @@ final readonly class GetInputListResponse implements ResponseInterface
     /**
      * Array of inputs
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var array<object>
      */
     public array $inputs;

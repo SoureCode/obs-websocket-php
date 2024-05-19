@@ -2,7 +2,7 @@
 
 namespace SoureCode\OBS\Protocol\Enum;
 
-enum RequestStatus : int
+enum RequestStatus: int
 {
     /**
      * Unknown status, should never be used.
@@ -41,7 +41,7 @@ enum RequestStatus : int
     case UnknownRequestType = 204;
     /**
      * Generic error code.
-     * 
+     *
      * Note: A comment is required to be provided by obs-websocket.
      *
      * @since 5.0.0
@@ -57,7 +57,7 @@ enum RequestStatus : int
     case UnsupportedRequestBatchExecutionType = 206;
     /**
      * The server is not ready to handle the request.
-     * 
+     *
      * Note: This usually occurs during OBS scene collection change or exit. Requests may be tried again after a delay if this code is given.
      *
      * @since 5.3.0
@@ -80,7 +80,7 @@ enum RequestStatus : int
     case MissingRequestData = 301;
     /**
      * Generic invalid request field message.
-     * 
+     *
      * Note: A comment is required to be provided by obs-websocket.
      *
      * @since 5.0.0
@@ -166,7 +166,7 @@ enum RequestStatus : int
     case StudioModeNotActive = 506;
     /**
      * The resource was not found.
-     * 
+     *
      * Note: Resources are any kind of object in obs-websocket, like inputs, profiles, outputs, etc.
      *
      * @since 5.0.0
@@ -210,7 +210,7 @@ enum RequestStatus : int
     case InvalidInputKind = 605;
     /**
      * The resource does not support being configured.
-     * 
+     *
      * This is particularly relevant to transitions, where they do not always have changeable settings.
      *
      * @since 5.0.0
@@ -240,7 +240,7 @@ enum RequestStatus : int
     case ResourceActionFailed = 701;
     /**
      * Processing the request failed unexpectedly.
-     * 
+     *
      * Note: A comment is required to be provided by obs-websocket.
      *
      * @since 5.0.0

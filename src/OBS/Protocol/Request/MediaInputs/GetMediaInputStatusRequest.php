@@ -3,11 +3,12 @@
 namespace SoureCode\OBS\Protocol\Request\MediaInputs;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Gets the status of a media input.
- * 
+ *
  * Media States:
- * 
+ *
  * - `OBS_MEDIA_STATE_NONE`
  * - `OBS_MEDIA_STATE_PLAYING`
  * - `OBS_MEDIA_STATE_OPENING`
@@ -27,17 +28,13 @@ final readonly class GetMediaInputStatusRequest implements RequestInterface
     /**
      * Name of the media input
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the media input
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $inputUuid;
     public function __construct(?string $inputName = null, ?string $inputUuid = null)

@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Inputs;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Toggles the audio mute state of an input.
  *
@@ -16,17 +17,13 @@ final readonly class ToggleInputMuteRequest implements RequestInterface
     /**
      * Name of the input to toggle the mute state of
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the input to toggle the mute state of
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $inputUuid;
     public function __construct(?string $inputName = null, ?string $inputUuid = null)

@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Outputs;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Gets the list of available outputs.
  *
@@ -16,8 +17,6 @@ final readonly class GetOutputListResponse implements ResponseInterface
     /**
      * Array of outputs
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var array<object>
      */
     public array $outputs;

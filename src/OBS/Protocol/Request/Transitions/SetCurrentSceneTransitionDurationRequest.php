@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Transitions;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Sets the duration of the current scene transition, if it is not fixed.
  *
@@ -16,9 +17,7 @@ final readonly class SetCurrentSceneTransitionDurationRequest implements Request
     /**
      * Duration in milliseconds
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type int
+     * @var int
      */
     public int $transitionDuration;
     public function __construct(int $transitionDuration)

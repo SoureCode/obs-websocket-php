@@ -11,7 +11,6 @@ final readonly class IdentifyMessage implements SendMessageInterface
         public int $rpcVersion,
         public ?string $authentication,
         public ?EventSubscription $eventSubscriptions = EventSubscription::All,
-    )
-    {
+    ) {
     }
 }

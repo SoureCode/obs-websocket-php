@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Config;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Sets the value of a "slot" from the selected persistent data realm.
  *

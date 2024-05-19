@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Config;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Gets an array of all scene collections
  *

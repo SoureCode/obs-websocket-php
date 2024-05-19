@@ -30,8 +30,7 @@ class OBSAuthenticationHandler implements ProcessIncomingInterface, LoggerAwareI
         private readonly string             $plainPassword,
         private readonly ?EventSubscription $eventSubscriptions = EventSubscription::None,
         ?OBSMessageSerializer               $serializer = null,
-    )
-    {
+    ) {
         $this->serializer = $serializer ?? new OBSMessageSerializer();
     }
 

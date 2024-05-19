@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\MediaInputs;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Triggers an action on a media input.
  *

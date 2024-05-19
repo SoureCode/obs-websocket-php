@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Config;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Gets a parameter from the current profile's configuration.
  *
@@ -16,16 +17,12 @@ final readonly class GetProfileParameterResponse implements ResponseInterface
     /**
      * Value associated with the parameter. `null` if not set and no default
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var ?string
      */
     public ?string $parameterValue;
     /**
      * Default value associated with the parameter. `null` if no default
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var ?string
      */
     public ?string $defaultParameterValue;

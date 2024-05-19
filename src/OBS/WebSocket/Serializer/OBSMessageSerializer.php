@@ -27,8 +27,7 @@ class OBSMessageSerializer
 
     public function __construct(
         ?SerializerInterface $serializer = null,
-    )
-    {
+    ) {
         $discriminator = new ProtocolClassDiscriminatorResolver();
 
         $this->serializer = $serializer ?? new Serializer([
@@ -83,7 +82,7 @@ class OBSMessageSerializer
 
         if ($webSocketMessage->op === WebSocketOpCode::RequestResponse) {
             $webSocketData['responseData']['serializerType'] = $webSocketData['requestType'];
-        } else if ($webSocketMessage->op === WebSocketOpCode::Event) {
+        } elseif ($webSocketMessage->op === WebSocketOpCode::Event) {
             $webSocketData['eventData']['serializerType'] = $webSocketData['eventType'];
         }
 

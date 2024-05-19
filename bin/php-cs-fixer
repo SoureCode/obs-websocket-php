@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . '/utils.php';
+
+$args = $argv;
+array_shift($args);
+
+if (count($args)  === 0) {
+    $args = [
+        'fix',
+        directory('src'),
+    ];
+}
+
+Tool::PHP_CS_FIXER->run($args);

@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Filters;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Gets the default settings for a filter kind.
  *
@@ -16,8 +17,6 @@ final readonly class GetSourceFilterDefaultSettingsResponse implements ResponseI
     /**
      * Object of default settings for the filter kind
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var array
      */
     public array $defaultFilterSettings;

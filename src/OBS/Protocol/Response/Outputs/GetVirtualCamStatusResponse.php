@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Outputs;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Gets the status of the virtualcam output.
  *
@@ -16,8 +17,6 @@ final readonly class GetVirtualCamStatusResponse implements ResponseInterface
     /**
      * Whether the output is active
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var bool
      */
     public bool $outputActive;

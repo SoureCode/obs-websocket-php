@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Event\Filters;
 
 use SoureCode\OBS\Protocol\EventInterface;
+
 /**
  * A source filter's enable state has changed.
  *
@@ -10,31 +11,26 @@ use SoureCode\OBS\Protocol\EventInterface;
  * @rpcVersion 1
  * @complexity 3
  * @category filters
+ * @eventSubscription Filters
  */
 final readonly class SourceFilterEnableStateChangedEvent implements EventInterface
 {
     /**
      * Name of the source the filter is on
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type string
+     * @var string
      */
     public string $sourceName;
     /**
      * Name of the filter
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type string
+     * @var string
      */
     public string $filterName;
     /**
      * Whether the filter is enabled
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type bool
+     * @var bool
      */
     public bool $filterEnabled;
     public function __construct(string $sourceName, string $filterName, bool $filterEnabled)

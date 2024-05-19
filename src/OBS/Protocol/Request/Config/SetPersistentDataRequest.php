@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Config;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Sets the value of a "slot" from the selected persistent data realm.
  *
@@ -16,25 +17,19 @@ final readonly class SetPersistentDataRequest implements RequestInterface
     /**
      * The data realm to select. `OBS_WEBSOCKET_DATA_REALM_GLOBAL` or `OBS_WEBSOCKET_DATA_REALM_PROFILE`
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type string
+     * @var string
      */
     public string $realm;
     /**
      * The name of the slot to retrieve data from
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type string
+     * @var string
      */
     public string $slotName;
     /**
      * The value to apply to the slot
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type mixed
+     * @var mixed
      */
     public mixed $slotValue;
     public function __construct(string $realm, string $slotName, mixed $slotValue)

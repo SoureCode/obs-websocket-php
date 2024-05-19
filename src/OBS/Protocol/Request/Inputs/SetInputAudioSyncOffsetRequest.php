@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Inputs;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Sets the audio sync offset of an input.
  *
@@ -16,25 +17,19 @@ final readonly class SetInputAudioSyncOffsetRequest implements RequestInterface
     /**
      * New audio sync offset in milliseconds
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type int
+     * @var int
      */
     public int $inputAudioSyncOffset;
     /**
      * Name of the input to set the audio sync offset of
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the input to set the audio sync offset of
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $inputUuid;
     public function __construct(int $inputAudioSyncOffset, ?string $inputName = null, ?string $inputUuid = null)

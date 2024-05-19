@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Outputs;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Gets the filename of the last replay buffer save file.
  *
@@ -16,8 +17,6 @@ final readonly class GetLastReplayBufferReplayResponse implements ResponseInterf
     /**
      * File path
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var string
      */
     public string $savedReplayPath;

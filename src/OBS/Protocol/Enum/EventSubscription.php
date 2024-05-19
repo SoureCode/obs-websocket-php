@@ -2,7 +2,7 @@
 
 namespace SoureCode\OBS\Protocol\Enum;
 
-enum EventSubscription : int
+enum EventSubscription: int
 {
     /**
      * Subcription value used to disable all events.

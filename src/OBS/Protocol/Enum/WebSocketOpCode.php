@@ -2,7 +2,7 @@
 
 namespace SoureCode\OBS\Protocol\Enum;
 
-enum WebSocketOpCode : int
+enum WebSocketOpCode: int
 {
     /**
      * The initial message sent by obs-websocket to newly connected clients.

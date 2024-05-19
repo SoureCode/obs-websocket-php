@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Transitions;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Sets the duration of the current scene transition, if it is not fixed.
  *

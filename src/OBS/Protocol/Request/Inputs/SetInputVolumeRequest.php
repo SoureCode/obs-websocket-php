@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Inputs;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Sets the volume setting of an input.
  *
@@ -16,33 +17,25 @@ final readonly class SetInputVolumeRequest implements RequestInterface
     /**
      * Name of the input to set the volume of
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the input to set the volume of
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $inputUuid;
     /**
      * Volume setting in mul
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?int
+     * @var ?int
      */
     public ?int $inputVolumeMul;
     /**
      * Volume setting in dB
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?int
+     * @var ?int
      */
     public ?int $inputVolumeDb;
     public function __construct(?string $inputName = null, ?string $inputUuid = null, ?int $inputVolumeMul = null, ?int $inputVolumeDb = null)

@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Outputs;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Sets the settings of an output.
  *
@@ -16,17 +17,13 @@ final readonly class SetOutputSettingsRequest implements RequestInterface
     /**
      * Output name
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type string
+     * @var string
      */
     public string $outputName;
     /**
      * Output settings
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type array
+     * @var array
      */
     public array $outputSettings;
     public function __construct(string $outputName, array $outputSettings)

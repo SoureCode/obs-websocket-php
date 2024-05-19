@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Ui;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Gets a list of connected monitors and information about them.
  *

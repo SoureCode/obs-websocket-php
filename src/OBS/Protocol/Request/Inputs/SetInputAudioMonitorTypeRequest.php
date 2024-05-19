@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Inputs;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Sets the audio monitor type of an input.
  *
@@ -16,25 +17,19 @@ final readonly class SetInputAudioMonitorTypeRequest implements RequestInterface
     /**
      * Audio monitor type
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type string
+     * @var string
      */
     public string $monitorType;
     /**
      * Name of the input to set the audio monitor type of
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the input to set the audio monitor type of
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $inputUuid;
     public function __construct(string $monitorType, ?string $inputName = null, ?string $inputUuid = null)

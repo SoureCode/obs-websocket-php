@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Scenes;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Gets an array of all scenes in OBS.
  *

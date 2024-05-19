@@ -3,9 +3,10 @@
 namespace SoureCode\OBS\Protocol\Request\Transitions;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Sets the current scene transition.
- * 
+ *
  * Small note: While the namespace of scene transitions is generally unique, that uniqueness is not a guarantee as it is with other resources like inputs.
  *
  * @since 5.0.0
@@ -18,9 +19,7 @@ final readonly class SetCurrentSceneTransitionRequest implements RequestInterfac
     /**
      * Name of the transition to make active
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type string
+     * @var string
      */
     public string $transitionName;
     public function __construct(string $transitionName)

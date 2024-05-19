@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\General;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Sleeps for a time duration or number of frames. Only available in request batches with types `SERIAL_REALTIME` or `SERIAL_FRAME`.
  *

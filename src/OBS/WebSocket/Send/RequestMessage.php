@@ -11,7 +11,6 @@ final readonly class RequestMessage implements SendMessageInterface
         public string $requestType,
         public string $requestId,
         public ?RequestInterface $requestData = null,
-    )
-    {
+    ) {
     }
 }

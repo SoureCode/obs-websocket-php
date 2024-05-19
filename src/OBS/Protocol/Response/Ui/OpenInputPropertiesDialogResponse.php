@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Ui;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Opens the properties dialog of an input.
  *

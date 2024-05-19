@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Ui;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Enables or disables studio mode
  *
@@ -16,9 +17,7 @@ final readonly class SetStudioModeEnabledRequest implements RequestInterface
     /**
      * True == Enabled, False == Disabled
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type bool
+     * @var bool
      */
     public bool $studioModeEnabled;
     public function __construct(bool $studioModeEnabled)

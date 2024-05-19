@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Config;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Creates a new profile, switching to it in the process
  *

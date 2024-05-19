@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Outputs;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Gets the settings of an output.
  *
@@ -16,8 +17,6 @@ final readonly class GetOutputSettingsResponse implements ResponseInterface
     /**
      * Output settings
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var array
      */
     public array $outputSettings;

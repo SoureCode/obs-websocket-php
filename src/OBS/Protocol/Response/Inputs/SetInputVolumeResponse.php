@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Inputs;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Sets the volume setting of an input.
  *

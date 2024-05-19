@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Stream;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Starts the stream output.
  *

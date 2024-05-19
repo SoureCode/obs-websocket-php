@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Config;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Gets a parameter from the current profile's configuration.
  *
@@ -16,17 +17,13 @@ final readonly class GetProfileParameterRequest implements RequestInterface
     /**
      * Category of the parameter to get
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type string
+     * @var string
      */
     public string $parameterCategory;
     /**
      * Name of the parameter to get
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type string
+     * @var string
      */
     public string $parameterName;
     public function __construct(string $parameterCategory, string $parameterName)

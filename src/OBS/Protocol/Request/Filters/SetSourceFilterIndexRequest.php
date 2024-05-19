@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Filters;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Sets the index position of a filter on a source.
  *
@@ -16,33 +17,25 @@ final readonly class SetSourceFilterIndexRequest implements RequestInterface
     /**
      * Name of the filter
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type string
+     * @var string
      */
     public string $filterName;
     /**
      * New index position of the filter
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type int
+     * @var int
      */
     public int $filterIndex;
     /**
      * Name of the source the filter is on
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $sourceName;
     /**
      * UUID of the source the filter is on
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $sourceUuid;
     public function __construct(string $filterName, int $filterIndex, ?string $sourceName = null, ?string $sourceUuid = null)

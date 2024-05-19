@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Outputs;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Stops an output.
  *
@@ -16,9 +17,7 @@ final readonly class StopOutputRequest implements RequestInterface
     /**
      * Output name
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type string
+     * @var string
      */
     public string $outputName;
     public function __construct(string $outputName)

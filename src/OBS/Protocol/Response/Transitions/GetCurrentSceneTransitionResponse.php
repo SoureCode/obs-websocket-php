@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Transitions;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Gets information about the current scene transition.
  *
@@ -16,56 +17,42 @@ final readonly class GetCurrentSceneTransitionResponse implements ResponseInterf
     /**
      * Name of the transition
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var string
      */
     public string $transitionName;
     /**
      * UUID of the transition
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var string
      */
     public string $transitionUuid;
     /**
      * Kind of the transition
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var string
      */
     public string $transitionKind;
     /**
      * Whether the transition uses a fixed (unconfigurable) duration
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var bool
      */
     public bool $transitionFixed;
     /**
      * Whether the transition supports being configured
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var bool
      */
     public bool $transitionConfigurable;
     /**
      * Configured transition duration in milliseconds. `null` if transition is fixed
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var ?int
      */
     public ?int $transitionDuration;
     /**
      * Object of settings for the transition. `null` if transition is not configurable
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var ?array
      */
     public ?array $transitionSettings;

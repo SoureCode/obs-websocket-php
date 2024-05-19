@@ -3,9 +3,10 @@
 namespace SoureCode\OBS\Protocol\Request\SceneItems;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Gets the enable state of a scene item.
- * 
+ *
  * Scenes and Groups
  *
  * @since 5.0.0
@@ -18,25 +19,19 @@ final readonly class GetSceneItemEnabledRequest implements RequestInterface
     /**
      * Numeric ID of the scene item
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type int
+     * @var int
      */
     public int $sceneItemId;
     /**
      * Name of the scene the item is in
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $sceneName;
     /**
      * UUID of the scene the item is in
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $sceneUuid;
     public function __construct(int $sceneItemId, ?string $sceneName = null, ?string $sceneUuid = null)

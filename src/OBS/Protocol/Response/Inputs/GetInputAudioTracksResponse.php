@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Inputs;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Gets the enable state of all audio tracks of an input.
  *
@@ -16,8 +17,6 @@ final readonly class GetInputAudioTracksResponse implements ResponseInterface
     /**
      * Object of audio tracks and associated enable states
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var array
      */
     public array $inputAudioTracks;

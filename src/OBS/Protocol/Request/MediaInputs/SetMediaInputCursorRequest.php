@@ -3,9 +3,10 @@
 namespace SoureCode\OBS\Protocol\Request\MediaInputs;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Sets the cursor position of a media input.
- * 
+ *
  * This request does not perform bounds checking of the cursor position.
  *
  * @since 5.0.0
@@ -18,25 +19,19 @@ final readonly class SetMediaInputCursorRequest implements RequestInterface
     /**
      * New cursor position to set
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type int
+     * @var int
      */
     public int $mediaCursor;
     /**
      * Name of the media input
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the media input
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $inputUuid;
     public function __construct(int $mediaCursor, ?string $inputName = null, ?string $inputUuid = null)

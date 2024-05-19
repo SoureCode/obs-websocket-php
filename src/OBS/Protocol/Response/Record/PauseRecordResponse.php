@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Record;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Pauses the record output.
  *

@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Event\Scenes;
 
 use SoureCode\OBS\Protocol\EventInterface;
+
 /**
  * The current program scene has changed.
  *
@@ -10,23 +11,20 @@ use SoureCode\OBS\Protocol\EventInterface;
  * @rpcVersion 1
  * @complexity 1
  * @category scenes
+ * @eventSubscription Scenes
  */
 final readonly class CurrentProgramSceneChangedEvent implements EventInterface
 {
     /**
      * Name of the scene that was switched to
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type string
+     * @var string
      */
     public string $sceneName;
     /**
      * UUID of the scene that was switched to
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type string
+     * @var string
      */
     public string $sceneUuid;
     public function __construct(string $sceneName, string $sceneUuid)

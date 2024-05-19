@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Transitions;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Sets the settings of the current scene transition.
  *
@@ -16,17 +17,13 @@ final readonly class SetCurrentSceneTransitionSettingsRequest implements Request
     /**
      * Settings object to apply to the transition. Can be `{}`
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type array
+     * @var array
      */
     public array $transitionSettings;
     /**
      * Whether to overlay over the current settings or replace them
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?bool
+     * @var ?bool
      */
     public ?bool $overlay;
     public function __construct(array $transitionSettings, ?bool $overlay = null)

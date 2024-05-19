@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Outputs;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Saves the contents of the replay buffer output.
  *

@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Scenes;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Sets the scene transition overridden for a scene.
  *
@@ -16,33 +17,25 @@ final readonly class SetSceneSceneTransitionOverrideRequest implements RequestIn
     /**
      * Name of the scene
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $sceneName;
     /**
      * UUID of the scene
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $sceneUuid;
     /**
      * Name of the scene transition to use as override. Specify `null` to remove
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $transitionName;
     /**
      * Duration to use for any overridden transition. Specify `null` to remove
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?int
+     * @var ?int
      */
     public ?int $transitionDuration;
     public function __construct(?string $sceneName = null, ?string $sceneUuid = null, ?string $transitionName = null, ?int $transitionDuration = null)

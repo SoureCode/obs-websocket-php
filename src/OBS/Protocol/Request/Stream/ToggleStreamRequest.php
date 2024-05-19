@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Stream;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Toggles the status of the stream output.
  *

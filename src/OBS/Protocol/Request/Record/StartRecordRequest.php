@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Record;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Starts the record output.
  *

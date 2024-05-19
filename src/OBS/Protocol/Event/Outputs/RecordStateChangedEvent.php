@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Event\Outputs;
 
 use SoureCode\OBS\Protocol\EventInterface;
+
 /**
  * The state of the record output has changed.
  *
@@ -10,31 +11,26 @@ use SoureCode\OBS\Protocol\EventInterface;
  * @rpcVersion 1
  * @complexity 2
  * @category outputs
+ * @eventSubscription Outputs
  */
 final readonly class RecordStateChangedEvent implements EventInterface
 {
     /**
      * Whether the output is active
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type bool
+     * @var bool
      */
     public bool $outputActive;
     /**
      * The specific state of the output
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type string
+     * @var string
      */
     public string $outputState;
     /**
      * File name for the saved recording, if record stopped. `null` otherwise
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type string
+     * @var string
      */
     public string $outputPath;
     public function __construct(bool $outputActive, string $outputState, string $outputPath)

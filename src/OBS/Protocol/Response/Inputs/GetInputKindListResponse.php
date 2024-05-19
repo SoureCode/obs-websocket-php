@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Inputs;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Gets an array of all available input kinds in OBS.
  *
@@ -16,8 +17,6 @@ final readonly class GetInputKindListResponse implements ResponseInterface
     /**
      * Array of input kinds
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var array<string>
      */
     public array $inputKinds;

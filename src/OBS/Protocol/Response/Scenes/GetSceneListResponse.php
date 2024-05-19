@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Scenes;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Gets an array of all scenes in OBS.
  *
@@ -16,40 +17,30 @@ final readonly class GetSceneListResponse implements ResponseInterface
     /**
      * Array of scenes
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var array<object>
      */
     public array $scenes;
     /**
      * Current program scene name. Can be `null` if internal state desync
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var ?string
      */
     public ?string $currentProgramSceneName;
     /**
      * Current program scene UUID. Can be `null` if internal state desync
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var ?string
      */
     public ?string $currentProgramSceneUuid;
     /**
      * Current preview scene name. `null` if not in studio mode
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var ?string
      */
     public ?string $currentPreviewSceneName;
     /**
      * Current preview scene UUID. `null` if not in studio mode
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var ?string
      */
     public ?string $currentPreviewSceneUuid;

@@ -3,9 +3,10 @@
 namespace SoureCode\OBS\Protocol\Response\SceneItems;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Duplicates a scene item, copying all transform and crop info.
- * 
+ *
  * Scenes only
  *
  * @since 5.0.0
@@ -18,8 +19,6 @@ final readonly class DuplicateSceneItemResponse implements ResponseInterface
     /**
      * Numeric ID of the duplicated scene item
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var int
      */
     public int $sceneItemId;

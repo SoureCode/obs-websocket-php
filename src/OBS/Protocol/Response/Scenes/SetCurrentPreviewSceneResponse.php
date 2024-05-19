@@ -3,9 +3,10 @@
 namespace SoureCode\OBS\Protocol\Response\Scenes;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Sets the current preview scene.
- * 
+ *
  * Only available when studio mode is enabled.
  *
  * @since 5.0.0

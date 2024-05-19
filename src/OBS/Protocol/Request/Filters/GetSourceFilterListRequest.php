@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Filters;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Gets an array of all of a source's filters.
  *
@@ -16,17 +17,13 @@ final readonly class GetSourceFilterListRequest implements RequestInterface
     /**
      * Name of the source
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $sourceName;
     /**
      * UUID of the source
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $sourceUuid;
     public function __construct(?string $sourceName = null, ?string $sourceUuid = null)

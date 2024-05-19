@@ -11,7 +11,6 @@ final readonly class HelloMessage implements ReceiveMessageInterface
         public string $obsWebSocketVersion,
         public int $rpcVersion,
         public ?Authentication $authentication
-    )
-    {
+    ) {
     }
 }

@@ -10,10 +10,8 @@ final readonly class RequestBatchResponseMessage implements ReceiveMessageInterf
         public string $requestId,
         /**
          * @todo type of object(?)
-         * @var array<array>
          */
         public array $results
-    )
-    {
+    ) {
     }
 }

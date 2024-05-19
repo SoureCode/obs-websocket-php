@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Scenes;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Creates a new scene in OBS.
  *
@@ -16,8 +17,6 @@ final readonly class CreateSceneResponse implements ResponseInterface
     /**
      * UUID of the created scene
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var string
      */
     public string $sceneUuid;

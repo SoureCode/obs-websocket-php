@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Config;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Gets the current stream service settings (stream destination).
  *

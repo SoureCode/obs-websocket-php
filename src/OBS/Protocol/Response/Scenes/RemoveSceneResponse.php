@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Scenes;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Removes a scene from OBS.
  *

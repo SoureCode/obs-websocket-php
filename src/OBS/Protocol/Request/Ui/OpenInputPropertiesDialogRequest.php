@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Ui;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Opens the properties dialog of an input.
  *
@@ -16,17 +17,13 @@ final readonly class OpenInputPropertiesDialogRequest implements RequestInterfac
     /**
      * Name of the input to open the dialog of
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the input to open the dialog of
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $inputUuid;
     public function __construct(?string $inputName = null, ?string $inputUuid = null)

@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Ui;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Enables or disables studio mode
  *

@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Transitions;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Gets an array of all scene transitions in OBS.
  *

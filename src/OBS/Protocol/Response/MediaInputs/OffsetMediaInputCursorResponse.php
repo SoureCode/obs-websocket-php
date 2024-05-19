@@ -3,9 +3,10 @@
 namespace SoureCode\OBS\Protocol\Response\MediaInputs;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Offsets the current cursor position of a media input by the specified value.
- * 
+ *
  * This request does not perform bounds checking of the cursor position.
  *
  * @since 5.0.0

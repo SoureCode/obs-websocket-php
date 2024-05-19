@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . '/utils.php';
+
+$args = $argv;
+array_shift($args);
+
+if (count($args)  === 0) {
+    $args =[
+        'analyse',
+        '--no-progress',
+    ];
+}
+
+Tool::PHP_STAN->run($args);
+
+// baseline: ./bin/phpstan analyse --level 8 --configuration phpstan.neon.dist . --generate-baseline

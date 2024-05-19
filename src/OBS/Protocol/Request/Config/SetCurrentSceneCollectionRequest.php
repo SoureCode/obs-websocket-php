@@ -3,9 +3,10 @@
 namespace SoureCode\OBS\Protocol\Request\Config;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Switches to a scene collection.
- * 
+ *
  * Note: This will block until the collection has finished changing.
  *
  * @since 5.0.0
@@ -18,9 +19,7 @@ final readonly class SetCurrentSceneCollectionRequest implements RequestInterfac
     /**
      * Name of the scene collection to switch to
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type string
+     * @var string
      */
     public string $sceneCollectionName;
     public function __construct(string $sceneCollectionName)

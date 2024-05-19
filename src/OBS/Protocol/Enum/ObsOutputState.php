@@ -2,9 +2,7 @@
 
 namespace SoureCode\OBS\Protocol\Enum;
 
-use JetBrains\PhpStorm\Deprecated;
-#[Deprecated]
-enum ObsOutputState : string
+enum ObsOutputState: string
 {
     /**
      * Unknown state.

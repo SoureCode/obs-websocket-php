@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Ui;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Opens the filters dialog of an input.
  *

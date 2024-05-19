@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Inputs;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Gets the names of all special inputs.
  *
@@ -16,48 +17,36 @@ final readonly class GetSpecialInputsResponse implements ResponseInterface
     /**
      * Name of the Desktop Audio input
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var string
      */
     public string $desktop1;
     /**
      * Name of the Desktop Audio 2 input
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var string
      */
     public string $desktop2;
     /**
      * Name of the Mic/Auxiliary Audio input
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var string
      */
     public string $mic1;
     /**
      * Name of the Mic/Auxiliary Audio 2 input
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var string
      */
     public string $mic2;
     /**
      * Name of the Mic/Auxiliary Audio 3 input
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var string
      */
     public string $mic3;
     /**
      * Name of the Mic/Auxiliary Audio 4 input
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var string
      */
     public string $mic4;

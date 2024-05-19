@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Inputs;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Gets the current volume setting of an input.
  *
@@ -16,16 +17,12 @@ final readonly class GetInputVolumeResponse implements ResponseInterface
     /**
      * Volume setting in mul
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var int
      */
     public int $inputVolumeMul;
     /**
      * Volume setting in dB
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var int
      */
     public int $inputVolumeDb;

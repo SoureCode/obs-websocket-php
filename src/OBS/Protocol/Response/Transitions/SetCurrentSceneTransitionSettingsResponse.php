@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Transitions;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Sets the settings of the current scene transition.
  *

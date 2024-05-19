@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Filters;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Gets the info for a specific source filter.
  *
@@ -16,32 +17,24 @@ final readonly class GetSourceFilterResponse implements ResponseInterface
     /**
      * Whether the filter is enabled
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var bool
      */
     public bool $filterEnabled;
     /**
      * Index of the filter in the list, beginning at 0
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var int
      */
     public int $filterIndex;
     /**
      * The kind of filter
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var string
      */
     public string $filterKind;
     /**
      * Settings object associated with the filter
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var array
      */
     public array $filterSettings;

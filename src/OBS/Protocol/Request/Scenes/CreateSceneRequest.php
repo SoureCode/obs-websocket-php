@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Scenes;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Creates a new scene in OBS.
  *
@@ -16,9 +17,7 @@ final readonly class CreateSceneRequest implements RequestInterface
     /**
      * Name for the new scene
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type string
+     * @var string
      */
     public string $sceneName;
     public function __construct(string $sceneName)

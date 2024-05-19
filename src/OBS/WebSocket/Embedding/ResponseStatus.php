@@ -8,7 +8,6 @@ final readonly class ResponseStatus
         public bool $result,
         public int $code,
         public ?string $comment = null,
-    )
-    {
+    ) {
     }
 }

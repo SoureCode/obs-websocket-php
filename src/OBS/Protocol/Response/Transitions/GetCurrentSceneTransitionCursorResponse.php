@@ -3,9 +3,10 @@
 namespace SoureCode\OBS\Protocol\Response\Transitions;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Gets the cursor position of the current scene transition.
- * 
+ *
  * Note: `transitionCursor` will return 1.0 when the transition is inactive.
  *
  * @since 5.0.0
@@ -18,8 +19,6 @@ final readonly class GetCurrentSceneTransitionCursorResponse implements Response
     /**
      * Cursor position, between 0.0 and 1.0
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var float
      */
     public float $transitionCursor;

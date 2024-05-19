@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Inputs;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Sets the audio balance of an input.
  *
@@ -16,25 +17,19 @@ final readonly class SetInputAudioBalanceRequest implements RequestInterface
     /**
      * New audio balance value
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type int
+     * @var int
      */
     public int $inputAudioBalance;
     /**
      * Name of the input to set the audio balance of
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the input to set the audio balance of
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type ?string
+     * @var ?string
      */
     public ?string $inputUuid;
     public function __construct(int $inputAudioBalance, ?string $inputName = null, ?string $inputUuid = null)

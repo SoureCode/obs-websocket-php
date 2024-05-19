@@ -2,7 +2,7 @@
 
 namespace SoureCode\OBS\Protocol\Enum;
 
-enum WebSocketCloseCode : int
+enum WebSocketCloseCode: int
 {
     /**
      * For internal use only to tell the request handler not to perform any close action.
@@ -62,7 +62,7 @@ enum WebSocketCloseCode : int
     case NotIdentified = 4007;
     /**
      * The client sent an `Identify` message while already identified.
-     * 
+     *
      * Note: Once a client has identified, only `Reidentify` may be used to change session parameters.
      *
      * @since 5.0.0
@@ -85,7 +85,7 @@ enum WebSocketCloseCode : int
     case UnsupportedRpcVersion = 4010;
     /**
      * The websocket session has been invalidated by the obs-websocket server.
-     * 
+     *
      * Note: This is the code used by the `Kick` button in the UI Session List. If you receive this code, you must not automatically reconnect.
      *
      * @since 5.0.0

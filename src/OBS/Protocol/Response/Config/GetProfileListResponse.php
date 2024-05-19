@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Config;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Gets an array of all profiles
  *
@@ -16,16 +17,12 @@ final readonly class GetProfileListResponse implements ResponseInterface
     /**
      * The name of the current profile
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var string
      */
     public string $currentProfileName;
     /**
      * Array of all available profiles
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var array<string>
      */
     public array $profiles;

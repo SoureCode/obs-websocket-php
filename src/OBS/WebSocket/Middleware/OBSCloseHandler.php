@@ -37,7 +37,7 @@ class OBSCloseHandler implements LoggerAwareInterface, ProcessIncomingInterface,
             // Remote sent Close; acknowledge and close for further reading
             $enum = WebSocketCloseCode::tryFrom($message->getCloseStatus());
 
-            if($enum){
+            if($enum) {
                 $this->logger->info("[close-handler] Received 'close', status: {$enum->value} - {$enum->name}");
             } else {
                 $this->logger->error("[close-handler] Received 'close', status: {$message->getCloseStatus()} - Unknown");

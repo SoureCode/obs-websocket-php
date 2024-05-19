@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Outputs;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Gets the status of an output.
  *
@@ -16,64 +17,48 @@ final readonly class GetOutputStatusResponse implements ResponseInterface
     /**
      * Whether the output is active
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var bool
      */
     public bool $outputActive;
     /**
      * Whether the output is reconnecting
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var bool
      */
     public bool $outputReconnecting;
     /**
      * Current formatted timecode string for the output
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var string
      */
     public string $outputTimecode;
     /**
      * Current duration in milliseconds for the output
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var int
      */
     public int $outputDuration;
     /**
      * Congestion of the output
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var int
      */
     public int $outputCongestion;
     /**
      * Number of bytes sent by the output
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var int
      */
     public int $outputBytes;
     /**
      * Number of frames skipped by the output's process
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var int
      */
     public int $outputSkippedFrames;
     /**
      * Total number of frames delivered by the output's process
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var int
      */
     public int $outputTotalFrames;

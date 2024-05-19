@@ -8,7 +8,6 @@ final readonly class IdentifiedMessage implements ReceiveMessageInterface
 {
     public function __construct(
         public int $negotiatedRpcVersion
-    )
-    {
+    ) {
     }
 }

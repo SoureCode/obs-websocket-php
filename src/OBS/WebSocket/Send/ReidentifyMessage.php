@@ -9,7 +9,6 @@ final readonly class ReidentifyMessage implements SendMessageInterface
 {
     public function __construct(
         public ?EventSubscription $eventSubscriptions = EventSubscription::All,
-    )
-    {
+    ) {
     }
 }

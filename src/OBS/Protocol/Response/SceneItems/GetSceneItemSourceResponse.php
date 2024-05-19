@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\SceneItems;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Gets the source associated with a scene item.
  *
@@ -16,16 +17,12 @@ final readonly class GetSceneItemSourceResponse implements ResponseInterface
     /**
      * Name of the source associated with the scene item
      *
-     * @since 5.4.0
-     * @rpcVersion 1
      * @var string
      */
     public string $sourceName;
     /**
      * UUID of the source associated with the scene item
      *
-     * @since 5.4.0
-     * @rpcVersion 1
      * @var string
      */
     public string $sourceUuid;

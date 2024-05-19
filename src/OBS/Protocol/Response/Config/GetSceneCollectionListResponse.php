@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Response\Config;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Gets an array of all scene collections
  *
@@ -16,16 +17,12 @@ final readonly class GetSceneCollectionListResponse implements ResponseInterface
     /**
      * The name of the current scene collection
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var string
      */
     public string $currentSceneCollectionName;
     /**
      * Array of all available scene collections
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var array<string>
      */
     public array $sceneCollections;

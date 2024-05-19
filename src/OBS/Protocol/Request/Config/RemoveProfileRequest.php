@@ -3,6 +3,7 @@
 namespace SoureCode\OBS\Protocol\Request\Config;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Removes a profile. If the current profile is chosen, it will change to a different profile first.
  *
@@ -16,9 +17,7 @@ final readonly class RemoveProfileRequest implements RequestInterface
     /**
      * Name of the profile to remove
      *
-     * @since 5.0.0
-     * @rpcVersion 1
-     * @type string
+     * @var string
      */
     public string $profileName;
     public function __construct(string $profileName)

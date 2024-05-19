@@ -3,9 +3,10 @@
 namespace SoureCode\OBS\Protocol\Response\Filters;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Gets an array of all available source filter kinds.
- * 
+ *
  * Similar to `GetInputKindList`
  *
  * @since 5.4.0
@@ -18,8 +19,6 @@ final readonly class GetSourceFilterKindListResponse implements ResponseInterfac
     /**
      * Array of source filter kinds
      *
-     * @since 5.4.0
-     * @rpcVersion 1
      * @var array<string>
      */
     public array $sourceFilterKinds;

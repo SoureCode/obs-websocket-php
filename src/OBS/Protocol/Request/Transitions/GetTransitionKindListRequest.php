@@ -3,9 +3,10 @@
 namespace SoureCode\OBS\Protocol\Request\Transitions;
 
 use SoureCode\OBS\Protocol\RequestInterface;
+
 /**
  * Gets an array of all available transition kinds.
- * 
+ *
  * Similar to `GetInputKindList`
  *
  * @since 5.0.0

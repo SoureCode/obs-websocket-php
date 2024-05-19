@@ -3,9 +3,10 @@
 namespace SoureCode\OBS\Protocol\Response\Transitions;
 
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 /**
  * Gets an array of all available transition kinds.
- * 
+ *
  * Similar to `GetInputKindList`
  *
  * @since 5.0.0
@@ -18,8 +19,6 @@ final readonly class GetTransitionKindListResponse implements ResponseInterface
     /**
      * Array of transition kinds
      *
-     * @since 5.0.0
-     * @rpcVersion 1
      * @var array<string>
      */
     public array $transitionKinds;
