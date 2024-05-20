@@ -6,6 +6,7 @@ use Psr\Log\LoggerInterface;
 use RuntimeException;
 use SensitiveParameter;
 use SoureCode\OBS\WebSocket\Embedding\Authentication;
+use SoureCode\OBS\WebSocket\Embedding\ResponseStatus;
 use SoureCode\OBS\WebSocket\OBSMessage;
 use SoureCode\OBS\WebSocket\Receive\EventMessage;
 use SoureCode\OBS\WebSocket\Receive\HelloMessage;
@@ -129,6 +130,14 @@ class BaseClient
             $obsMessage = $this->receive();
 
             if ($obsMessage->op === $code && $obsMessage->d instanceof $className) {
+                if ($obsMessage->d instanceof RequestResponseMessage) {
+                    $status = $obsMessage->d->requestStatus;
+
+                    if (!$status->result) {
+                        throw new RuntimeException(message: sprintf('Request failed with %d - %s', $status->code, $status->comment));
+                    }
+                }
+
                 return $obsMessage;
             }
         }

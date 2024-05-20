@@ -1,9 +1,10 @@
 <?php
+
 namespace SoureCode\OBS\Generator;
 
 use PhpParser\BuilderFactory;
 
-final  class Attribute
+final class Attribute
 {
     protected function __construct(
         /**

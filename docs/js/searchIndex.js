@@ -101,6 +101,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/SoureCode-OBS-BaseClient.html#property_serializer"
         },                {
+            "fqsen": "\\SoureCode\\OBS\\BaseClient\u003A\u003A\u0024logger",
+            "name": "logger",
+            "summary": "",
+            "url": "classes/SoureCode-OBS-BaseClient.html#property_logger"
+        },                {
             "fqsen": "\\SoureCode\\OBS\\BaseClient\u003A\u003A\u0024url",
             "name": "url",
             "summary": "",

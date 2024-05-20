@@ -9,8 +9,12 @@ array_shift($args);
 if (count($args)  === 0) {
     $args = [
         'fix',
-        directory('src'),
     ];
-}
 
-Tool::PHP_CS_FIXER->run($args);
+    Tool::PHP_CS_FIXER->run([...$args, directory('src')]);
+    Tool::PHP_CS_FIXER->run([...$args, directory('bin')]);
+    Tool::PHP_CS_FIXER->run([...$args, directory('lib')]);
+    Tool::PHP_CS_FIXER->run([...$args, directory('examples')]);
+} else {
+    Tool::PHP_CS_FIXER->run($args);
+}

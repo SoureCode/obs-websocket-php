@@ -17,11 +17,11 @@ final readonly class GetInputAudioTracksResponse implements ResponseInterface
     /**
      * Object of audio tracks and associated enable states
      *
-     * @var array
+     * @var array{1: bool, 2: bool, 3: bool, 4: bool, 5: bool, 6:bool}
      */
     public array $inputAudioTracks;
     /**
-     * @param array $inputAudioTracks
+     * @param array{1: bool, 2: bool, 3: bool, 4: bool, 5: bool, 6:bool} $inputAudioTracks
      */
     public function __construct(array $inputAudioTracks)
     {

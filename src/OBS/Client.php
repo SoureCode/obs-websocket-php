@@ -538,7 +538,7 @@ class Client extends BaseClient
         return $this->request(new GetInputAudioTracksRequest($inputName, $inputUuid))->d->responseData;
     }
     /**
-     * @param array $inputAudioTracks
+     * @param array{1: bool, 2: bool, 3: bool, 4: bool, 5: bool, 6:bool} $inputAudioTracks
      */
     public function setInputAudioTracks(array $inputAudioTracks, ?string $inputName = null, ?string $inputUuid = null): SetInputAudioTracksResponse
     {

@@ -4,6 +4,7 @@ namespace SoureCode\OBS\Generator;
 
 use JetBrains\PhpStorm\Deprecated;
 use SoureCode\OBS\Protocol\EventInterface;
+
 use function Symfony\Component\String\u;
 
 final class EventGenerator extends ClassGenerator

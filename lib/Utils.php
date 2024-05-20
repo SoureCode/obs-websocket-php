@@ -6,10 +6,14 @@ use JetBrains\PhpStorm\Deprecated;
 use PhpParser\Node\Expr\BinaryOp\BitwiseOr;
 use PhpParser\Node\Expr\ClassConstFetch;
 use SoureCode\OBS\Protocol\EventInterface;
+use SoureCode\OBS\Protocol\Request\Inputs\SetInputAudioTracksRequest;
 use SoureCode\OBS\Protocol\RequestInterface;
+use SoureCode\OBS\Protocol\Response\Inputs\GetInputAudioTracksResponse;
+use SoureCode\OBS\Protocol\Response\Inputs\GetInputListResponse;
 use SoureCode\OBS\Protocol\Response\Inputs\GetSpecialInputsResponse;
 use SoureCode\OBS\Protocol\ResponseInterface;
 use Symfony\Component\Serializer\Attribute\SerializedName;
+
 use function Symfony\Component\String\u;
 
 class Utils
@@ -26,6 +30,15 @@ class Utils
     ];
 
     public const array DOC_TYPE_MAPPING = [
+        GetInputListResponse::class => [
+            'inputs' => 'array<array{inputKind: string, inputName: string, inputUuid: string, unversionedInputKind: string}>'
+        ],
+        GetInputAudioTracksResponse::class => [
+            'inputAudioTracks' => 'array{1: bool, 2: bool, 3: bool, 4: bool, 5: bool, 6:bool}'
+        ],
+        SetInputAudioTracksRequest::class => [
+            'inputAudioTracks' => 'array{1: bool, 2: bool, 3: bool, 4: bool, 5: bool, 6:bool}'
+        ],
     ];
 
     public const array TYPE_MAPPING = [

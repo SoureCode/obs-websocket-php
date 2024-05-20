@@ -231,11 +231,6 @@ parameters:
 			path: src/OBS/Client.php
 
 		-
-			message: "#^Method SoureCode\\\\OBS\\\\Client\\:\\:setInputAudioTracks\\(\\) has parameter \\$inputAudioTracks with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Client.php
-
-		-
 			message: "#^Method SoureCode\\\\OBS\\\\Client\\:\\:setInputSettings\\(\\) has parameter \\$inputSettings with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/OBS/Client.php
@@ -456,16 +451,6 @@ parameters:
 			path: src/OBS/Protocol/Request/Inputs/CreateInputRequest.php
 
 		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Request\\\\Inputs\\\\SetInputAudioTracksRequest\\:\\:__construct\\(\\) has parameter \\$inputAudioTracks with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Request/Inputs/SetInputAudioTracksRequest.php
-
-		-
-			message: "#^Property SoureCode\\\\OBS\\\\Protocol\\\\Request\\\\Inputs\\\\SetInputAudioTracksRequest\\:\\:\\$inputAudioTracks type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Request/Inputs/SetInputAudioTracksRequest.php
-
-		-
 			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Request\\\\Inputs\\\\SetInputSettingsRequest\\:\\:__construct\\(\\) has parameter \\$inputSettings with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/OBS/Protocol/Request/Inputs/SetInputSettingsRequest.php
@@ -544,16 +529,6 @@ parameters:
 			message: "#^Property SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\General\\\\CallVendorRequestResponse\\:\\:\\$responseData type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/OBS/Protocol/Response/General/CallVendorRequestResponse.php
-
-		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\Inputs\\\\GetInputAudioTracksResponse\\:\\:__construct\\(\\) has parameter \\$inputAudioTracks with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Response/Inputs/GetInputAudioTracksResponse.php
-
-		-
-			message: "#^Property SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\Inputs\\\\GetInputAudioTracksResponse\\:\\:\\$inputAudioTracks type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Response/Inputs/GetInputAudioTracksResponse.php
 
 		-
 			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\Inputs\\\\GetInputDefaultSettingsResponse\\:\\:__construct\\(\\) has parameter \\$defaultInputSettings with no value type specified in iterable type array\\.$#"

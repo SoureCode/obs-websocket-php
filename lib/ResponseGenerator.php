@@ -1,8 +1,10 @@
 <?php
+
 namespace SoureCode\OBS\Generator;
 
 use JetBrains\PhpStorm\Deprecated;
 use SoureCode\OBS\Protocol\ResponseInterface;
+
 use function Symfony\Component\String\u;
 
 final class ResponseGenerator extends ClassGenerator

@@ -1,4 +1,5 @@
 <?php
+
 namespace SoureCode\OBS\Generator;
 
 use PhpParser\BuilderFactory;

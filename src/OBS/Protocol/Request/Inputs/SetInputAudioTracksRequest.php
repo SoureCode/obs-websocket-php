@@ -17,7 +17,7 @@ final readonly class SetInputAudioTracksRequest implements RequestInterface
     /**
      * Track settings to apply
      *
-     * @var array
+     * @var array{1: bool, 2: bool, 3: bool, 4: bool, 5: bool, 6:bool}
      */
     public array $inputAudioTracks;
     /**
@@ -29,7 +29,7 @@ final readonly class SetInputAudioTracksRequest implements RequestInterface
      */
     public ?string $inputUuid;
     /**
-     * @param array $inputAudioTracks
+     * @param array{1: bool, 2: bool, 3: bool, 4: bool, 5: bool, 6:bool} $inputAudioTracks
      */
     public function __construct(array $inputAudioTracks, ?string $inputName = null, ?string $inputUuid = null)
     {

@@ -11,7 +11,7 @@ use PhpParser\Node\Stmt\Namespace_;
  * @phpstan-import-type EnumCaseProtocol from EnumCase
  * @phpstan-type EnumProtocol = array{enumType: string, enumIdentifiers: EnumCaseProtocol[]}
  */
-final  class EnumGenerator
+final class EnumGenerator
 {
     use AttributeAwareTrait;
 

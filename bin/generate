@@ -96,7 +96,7 @@ foreach ($protocol['requests'] as $request) {
             ->setType($property->type);
 
         if(!Utils::isNativeBuiltInType($property->type)) {
-            $paramTypes[] = $property->type . ' $' . $property->name;
+            $paramTypes[] = $property->docType . ' $' . $property->name;
         }
 
         if ($property->isOptional()) {

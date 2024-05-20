@@ -4,6 +4,7 @@ namespace SoureCode\OBS\Generator;
 
 use JetBrains\PhpStorm\Deprecated;
 use SoureCode\OBS\Protocol\RequestInterface;
+
 use function Symfony\Component\String\u;
 
 final class RequestGenerator extends ClassGenerator

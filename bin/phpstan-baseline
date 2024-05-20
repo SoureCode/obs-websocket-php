@@ -9,7 +9,12 @@ array_shift($args);
 if (count($args)  === 0) {
     $args =[
         'analyse',
-        '--no-progress',
+        '--level',
+        '8',
+        '--configuration',
+        'phpstan.neon.dist',
+        '.',
+        '--generate-baseline',
     ];
 }
 
