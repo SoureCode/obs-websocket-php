@@ -35,6 +35,9 @@ final readonly class CallVendorRequestRequest implements RequestInterface
      * @var ?array
      */
     public ?array $requestData;
+    /**
+     * @param ?array $requestData
+     */
     public function __construct(string $vendorName, string $requestType, ?array $requestData = null)
     {
         $this->vendorName = $vendorName;

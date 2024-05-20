@@ -40,6 +40,7 @@ final readonly class OpenSourceProjectorRequest implements RequestInterface
      * @var ?string
      */
     public ?string $projectorGeometry;
+
     public function __construct(?string $sourceName = null, ?string $sourceUuid = null, ?int $monitorIndex = null, ?string $projectorGeometry = null)
     {
         $this->sourceName = $sourceName;

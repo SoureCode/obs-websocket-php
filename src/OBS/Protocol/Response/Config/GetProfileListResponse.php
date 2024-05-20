@@ -26,6 +26,9 @@ final readonly class GetProfileListResponse implements ResponseInterface
      * @var array<string>
      */
     public array $profiles;
+    /**
+     * @param array<string> $profiles
+     */
     public function __construct(string $currentProfileName, array $profiles)
     {
         $this->currentProfileName = $currentProfileName;

@@ -32,6 +32,7 @@ final readonly class SetSceneNameRequest implements RequestInterface
      * @var ?string
      */
     public ?string $sceneUuid;
+
     public function __construct(string $newSceneName, ?string $sceneName = null, ?string $sceneUuid = null)
     {
         $this->newSceneName = $newSceneName;

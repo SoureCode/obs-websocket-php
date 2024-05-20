@@ -26,6 +26,9 @@ final readonly class SetCurrentSceneTransitionSettingsRequest implements Request
      * @var ?bool
      */
     public ?bool $overlay;
+    /**
+     * @param array $transitionSettings
+     */
     public function __construct(array $transitionSettings, ?bool $overlay = null)
     {
         $this->transitionSettings = $transitionSettings;

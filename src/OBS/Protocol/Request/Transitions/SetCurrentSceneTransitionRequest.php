@@ -22,6 +22,7 @@ final readonly class SetCurrentSceneTransitionRequest implements RequestInterfac
      * @var string
      */
     public string $transitionName;
+
     public function __construct(string $transitionName)
     {
         $this->transitionName = $transitionName;

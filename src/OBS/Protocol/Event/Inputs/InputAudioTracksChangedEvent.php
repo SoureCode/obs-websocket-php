@@ -33,6 +33,9 @@ final readonly class InputAudioTracksChangedEvent implements EventInterface
      * @var array
      */
     public array $inputAudioTracks;
+    /**
+     * @param array $inputAudioTracks
+     */
     public function __construct(string $inputName, string $inputUuid, array $inputAudioTracks)
     {
         $this->inputName = $inputName;

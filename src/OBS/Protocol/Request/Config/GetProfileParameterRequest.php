@@ -26,6 +26,7 @@ final readonly class GetProfileParameterRequest implements RequestInterface
      * @var string
      */
     public string $parameterName;
+
     public function __construct(string $parameterCategory, string $parameterName)
     {
         $this->parameterCategory = $parameterCategory;

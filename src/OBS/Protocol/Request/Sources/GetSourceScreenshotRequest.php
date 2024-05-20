@@ -55,6 +55,7 @@ final readonly class GetSourceScreenshotRequest implements RequestInterface
      * @var ?int
      */
     public ?int $imageCompressionQuality;
+
     public function __construct(string $imageFormat, ?string $sourceName = null, ?string $sourceUuid = null, ?int $imageWidth = null, ?int $imageHeight = null, ?int $imageCompressionQuality = null)
     {
         $this->imageFormat = $imageFormat;

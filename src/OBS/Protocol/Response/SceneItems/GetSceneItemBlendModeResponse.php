@@ -32,6 +32,7 @@ final readonly class GetSceneItemBlendModeResponse implements ResponseInterface
      * @var string
      */
     public string $sceneItemBlendMode;
+
     public function __construct(string $sceneItemBlendMode)
     {
         $this->sceneItemBlendMode = $sceneItemBlendMode;

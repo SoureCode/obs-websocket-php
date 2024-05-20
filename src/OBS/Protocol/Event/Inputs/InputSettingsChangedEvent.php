@@ -35,6 +35,9 @@ final readonly class InputSettingsChangedEvent implements EventInterface
      * @var array
      */
     public array $inputSettings;
+    /**
+     * @param array $inputSettings
+     */
     public function __construct(string $inputName, string $inputUuid, array $inputSettings)
     {
         $this->inputName = $inputName;

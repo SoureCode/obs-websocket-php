@@ -38,6 +38,9 @@ final readonly class GetSourceFilterResponse implements ResponseInterface
      * @var array
      */
     public array $filterSettings;
+    /**
+     * @param array $filterSettings
+     */
     public function __construct(bool $filterEnabled, int $filterIndex, string $filterKind, array $filterSettings)
     {
         $this->filterEnabled = $filterEnabled;

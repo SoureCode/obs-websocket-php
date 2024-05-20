@@ -27,6 +27,7 @@ final readonly class CurrentProgramSceneChangedEvent implements EventInterface
      * @var string
      */
     public string $sceneUuid;
+
     public function __construct(string $sceneName, string $sceneUuid)
     {
         $this->sceneName = $sceneName;

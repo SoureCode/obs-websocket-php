@@ -38,6 +38,9 @@ final readonly class SetInputSettingsRequest implements RequestInterface
      * @var ?bool
      */
     public ?bool $overlay;
+    /**
+     * @param array $inputSettings
+     */
     public function __construct(array $inputSettings, ?string $inputName = null, ?string $inputUuid = null, ?bool $overlay = null)
     {
         $this->inputSettings = $inputSettings;

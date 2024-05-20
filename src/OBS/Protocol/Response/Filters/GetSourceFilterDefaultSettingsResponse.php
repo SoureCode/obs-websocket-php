@@ -20,6 +20,9 @@ final readonly class GetSourceFilterDefaultSettingsResponse implements ResponseI
      * @var array
      */
     public array $defaultFilterSettings;
+    /**
+     * @param array $defaultFilterSettings
+     */
     public function __construct(array $defaultFilterSettings)
     {
         $this->defaultFilterSettings = $defaultFilterSettings;

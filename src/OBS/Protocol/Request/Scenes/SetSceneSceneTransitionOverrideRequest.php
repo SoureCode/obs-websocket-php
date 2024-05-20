@@ -38,6 +38,7 @@ final readonly class SetSceneSceneTransitionOverrideRequest implements RequestIn
      * @var ?int
      */
     public ?int $transitionDuration;
+
     public function __construct(?string $sceneName = null, ?string $sceneUuid = null, ?string $transitionName = null, ?int $transitionDuration = null)
     {
         $this->sceneName = $sceneName;

@@ -116,6 +116,11 @@ parameters:
 			path: lib/EventGenerator.php
 
 		-
+			message: "#^Parameter \\#1 \\$className of static method SoureCode\\\\OBS\\\\Generator\\\\Property\\:\\:fromEventProtocol\\(\\) expects class\\-string, string given\\.$#"
+			count: 1
+			path: lib/EventGenerator.php
+
+		-
 			message: "#^Method SoureCode\\\\OBS\\\\Generator\\\\Property\\:\\:doCountAttribute\\(\\) has parameter \\$attributes with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: lib/Property.php
@@ -146,12 +151,22 @@ parameters:
 			path: lib/RequestGenerator.php
 
 		-
+			message: "#^Parameter \\#1 \\$className of static method SoureCode\\\\OBS\\\\Generator\\\\Property\\:\\:fromRequestProtocol\\(\\) expects class\\-string, string given\\.$#"
+			count: 1
+			path: lib/RequestGenerator.php
+
+		-
 			message: "#^Class JetBrains\\\\PhpStorm\\\\Deprecated not found\\.$#"
 			count: 1
 			path: lib/ResponseGenerator.php
 
 		-
 			message: "#^Method SoureCode\\\\OBS\\\\Generator\\\\ResponseGenerator\\:\\:fromProtocol\\(\\) has parameter \\$protocol with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: lib/ResponseGenerator.php
+
+		-
+			message: "#^Parameter \\#1 \\$className of static method SoureCode\\\\OBS\\\\Generator\\\\Property\\:\\:fromRequestProtocol\\(\\) expects class\\-string, string given\\.$#"
 			count: 1
 			path: lib/ResponseGenerator.php
 
@@ -271,16 +286,6 @@ parameters:
 			path: src/OBS/Protocol/Enum/ObsOutputState.php
 
 		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Event\\\\Config\\\\ProfileListChangedEvent\\:\\:__construct\\(\\) has parameter \\$profiles with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Event/Config/ProfileListChangedEvent.php
-
-		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Event\\\\Config\\\\SceneCollectionListChangedEvent\\:\\:__construct\\(\\) has parameter \\$sceneCollections with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Event/Config/SceneCollectionListChangedEvent.php
-
-		-
 			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Event\\\\Filters\\\\SourceFilterCreatedEvent\\:\\:__construct\\(\\) has parameter \\$defaultFilterSettings with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/OBS/Protocol/Event/Filters/SourceFilterCreatedEvent.php
@@ -299,11 +304,6 @@ parameters:
 			message: "#^Property SoureCode\\\\OBS\\\\Protocol\\\\Event\\\\Filters\\\\SourceFilterCreatedEvent\\:\\:\\$filterSettings type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/OBS/Protocol/Event/Filters/SourceFilterCreatedEvent.php
-
-		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Event\\\\Filters\\\\SourceFilterListReindexedEvent\\:\\:__construct\\(\\) has parameter \\$filters with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Event/Filters/SourceFilterListReindexedEvent.php
 
 		-
 			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Event\\\\Filters\\\\SourceFilterSettingsChangedEvent\\:\\:__construct\\(\\) has parameter \\$filterSettings with no value type specified in iterable type array\\.$#"
@@ -376,16 +376,6 @@ parameters:
 			path: src/OBS/Protocol/Event/Inputs/InputSettingsChangedEvent.php
 
 		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Event\\\\Inputs\\\\InputVolumeMetersEvent\\:\\:__construct\\(\\) has parameter \\$inputs with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Event/Inputs/InputVolumeMetersEvent.php
-
-		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Event\\\\SceneItems\\\\SceneItemListReindexedEvent\\:\\:__construct\\(\\) has parameter \\$sceneItems with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Event/SceneItems/SceneItemListReindexedEvent.php
-
-		-
 			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Event\\\\SceneItems\\\\SceneItemTransformChangedEvent\\:\\:__construct\\(\\) has parameter \\$sceneItemTransform with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/OBS/Protocol/Event/SceneItems/SceneItemTransformChangedEvent.php
@@ -394,11 +384,6 @@ parameters:
 			message: "#^Property SoureCode\\\\OBS\\\\Protocol\\\\Event\\\\SceneItems\\\\SceneItemTransformChangedEvent\\:\\:\\$sceneItemTransform type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/OBS/Protocol/Event/SceneItems/SceneItemTransformChangedEvent.php
-
-		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Event\\\\Scenes\\\\SceneListChangedEvent\\:\\:__construct\\(\\) has parameter \\$scenes with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Event/Scenes/SceneListChangedEvent.php
 
 		-
 			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Request\\\\Config\\\\SetStreamServiceSettingsRequest\\:\\:__construct\\(\\) has parameter \\$streamServiceSettings with no value type specified in iterable type array\\.$#"
@@ -521,16 +506,6 @@ parameters:
 			path: src/OBS/Protocol/Request/Transitions/SetCurrentSceneTransitionSettingsRequest.php
 
 		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\Config\\\\GetProfileListResponse\\:\\:__construct\\(\\) has parameter \\$profiles with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Response/Config/GetProfileListResponse.php
-
-		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\Config\\\\GetSceneCollectionListResponse\\:\\:__construct\\(\\) has parameter \\$sceneCollections with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Response/Config/GetSceneCollectionListResponse.php
-
-		-
 			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\Config\\\\GetStreamServiceSettingsResponse\\:\\:__construct\\(\\) has parameter \\$streamServiceSettings with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/OBS/Protocol/Response/Config/GetStreamServiceSettingsResponse.php
@@ -549,16 +524,6 @@ parameters:
 			message: "#^Property SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\Filters\\\\GetSourceFilterDefaultSettingsResponse\\:\\:\\$defaultFilterSettings type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/OBS/Protocol/Response/Filters/GetSourceFilterDefaultSettingsResponse.php
-
-		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\Filters\\\\GetSourceFilterKindListResponse\\:\\:__construct\\(\\) has parameter \\$sourceFilterKinds with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Response/Filters/GetSourceFilterKindListResponse.php
-
-		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\Filters\\\\GetSourceFilterListResponse\\:\\:__construct\\(\\) has parameter \\$filters with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Response/Filters/GetSourceFilterListResponse.php
 
 		-
 			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\Filters\\\\GetSourceFilterResponse\\:\\:__construct\\(\\) has parameter \\$filterSettings with no value type specified in iterable type array\\.$#"
@@ -581,21 +546,6 @@ parameters:
 			path: src/OBS/Protocol/Response/General/CallVendorRequestResponse.php
 
 		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\General\\\\GetHotkeyListResponse\\:\\:__construct\\(\\) has parameter \\$hotkeys with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Response/General/GetHotkeyListResponse.php
-
-		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\General\\\\GetVersionResponse\\:\\:__construct\\(\\) has parameter \\$availableRequests with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Response/General/GetVersionResponse.php
-
-		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\General\\\\GetVersionResponse\\:\\:__construct\\(\\) has parameter \\$supportedImageFormats with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Response/General/GetVersionResponse.php
-
-		-
 			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\Inputs\\\\GetInputAudioTracksResponse\\:\\:__construct\\(\\) has parameter \\$inputAudioTracks with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/OBS/Protocol/Response/Inputs/GetInputAudioTracksResponse.php
@@ -616,21 +566,6 @@ parameters:
 			path: src/OBS/Protocol/Response/Inputs/GetInputDefaultSettingsResponse.php
 
 		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\Inputs\\\\GetInputKindListResponse\\:\\:__construct\\(\\) has parameter \\$inputKinds with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Response/Inputs/GetInputKindListResponse.php
-
-		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\Inputs\\\\GetInputListResponse\\:\\:__construct\\(\\) has parameter \\$inputs with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Response/Inputs/GetInputListResponse.php
-
-		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\Inputs\\\\GetInputPropertiesListPropertyItemsResponse\\:\\:__construct\\(\\) has parameter \\$propertyItems with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Response/Inputs/GetInputPropertiesListPropertyItemsResponse.php
-
-		-
 			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\Inputs\\\\GetInputSettingsResponse\\:\\:__construct\\(\\) has parameter \\$inputSettings with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/OBS/Protocol/Response/Inputs/GetInputSettingsResponse.php
@@ -639,11 +574,6 @@ parameters:
 			message: "#^Property SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\Inputs\\\\GetInputSettingsResponse\\:\\:\\$inputSettings type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/OBS/Protocol/Response/Inputs/GetInputSettingsResponse.php
-
-		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\Outputs\\\\GetOutputListResponse\\:\\:__construct\\(\\) has parameter \\$outputs with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Response/Outputs/GetOutputListResponse.php
 
 		-
 			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\Outputs\\\\GetOutputSettingsResponse\\:\\:__construct\\(\\) has parameter \\$outputSettings with no value type specified in iterable type array\\.$#"
@@ -656,16 +586,6 @@ parameters:
 			path: src/OBS/Protocol/Response/Outputs/GetOutputSettingsResponse.php
 
 		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\SceneItems\\\\GetGroupSceneItemListResponse\\:\\:__construct\\(\\) has parameter \\$sceneItems with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Response/SceneItems/GetGroupSceneItemListResponse.php
-
-		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\SceneItems\\\\GetSceneItemListResponse\\:\\:__construct\\(\\) has parameter \\$sceneItems with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Response/SceneItems/GetSceneItemListResponse.php
-
-		-
 			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\SceneItems\\\\GetSceneItemTransformResponse\\:\\:__construct\\(\\) has parameter \\$sceneItemTransform with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/OBS/Protocol/Response/SceneItems/GetSceneItemTransformResponse.php
@@ -676,16 +596,6 @@ parameters:
 			path: src/OBS/Protocol/Response/SceneItems/GetSceneItemTransformResponse.php
 
 		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\Scenes\\\\GetGroupListResponse\\:\\:__construct\\(\\) has parameter \\$groups with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Response/Scenes/GetGroupListResponse.php
-
-		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\Scenes\\\\GetSceneListResponse\\:\\:__construct\\(\\) has parameter \\$scenes with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Response/Scenes/GetSceneListResponse.php
-
-		-
 			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\Transitions\\\\GetCurrentSceneTransitionResponse\\:\\:__construct\\(\\) has parameter \\$transitionSettings with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/OBS/Protocol/Response/Transitions/GetCurrentSceneTransitionResponse.php
@@ -694,21 +604,6 @@ parameters:
 			message: "#^Property SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\Transitions\\\\GetCurrentSceneTransitionResponse\\:\\:\\$transitionSettings type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/OBS/Protocol/Response/Transitions/GetCurrentSceneTransitionResponse.php
-
-		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\Transitions\\\\GetSceneTransitionListResponse\\:\\:__construct\\(\\) has parameter \\$transitions with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Response/Transitions/GetSceneTransitionListResponse.php
-
-		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\Transitions\\\\GetTransitionKindListResponse\\:\\:__construct\\(\\) has parameter \\$transitionKinds with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Response/Transitions/GetTransitionKindListResponse.php
-
-		-
-			message: "#^Method SoureCode\\\\OBS\\\\Protocol\\\\Response\\\\Ui\\\\GetMonitorListResponse\\:\\:__construct\\(\\) has parameter \\$monitors with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/OBS/Protocol/Response/Ui/GetMonitorListResponse.php
 
 		-
 			message: "#^Cannot call method debug\\(\\) on Psr\\\\Log\\\\LoggerInterface\\|null\\.$#"

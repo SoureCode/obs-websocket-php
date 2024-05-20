@@ -20,6 +20,9 @@ final readonly class GetMonitorListResponse implements ResponseInterface
      * @var array<object>
      */
     public array $monitors;
+    /**
+     * @param array<object> $monitors
+     */
     public function __construct(array $monitors)
     {
         $this->monitors = $monitors;

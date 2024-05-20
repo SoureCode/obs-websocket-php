@@ -33,6 +33,7 @@ final readonly class RecordStateChangedEvent implements EventInterface
      * @var string
      */
     public string $outputPath;
+
     public function __construct(bool $outputActive, string $outputState, string $outputPath)
     {
         $this->outputActive = $outputActive;

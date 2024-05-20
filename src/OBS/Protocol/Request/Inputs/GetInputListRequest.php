@@ -20,6 +20,7 @@ final readonly class GetInputListRequest implements RequestInterface
      * @var ?string
      */
     public ?string $inputKind;
+
     public function __construct(?string $inputKind = null)
     {
         $this->inputKind = $inputKind;

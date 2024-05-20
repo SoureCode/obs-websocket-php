@@ -34,6 +34,7 @@ final readonly class GetInputPropertiesListPropertyItemsRequest implements Reque
      * @var ?string
      */
     public ?string $inputUuid;
+
     public function __construct(string $propertyName, ?string $inputName = null, ?string $inputUuid = null)
     {
         $this->propertyName = $propertyName;

@@ -12,6 +12,7 @@ final  class Property
     public function __construct(
         public string $name,
         public string $type,
+        public string $docType,
         public ?string $description = null,
         /**
          * @var Attribute[]
@@ -28,6 +29,7 @@ final  class Property
     /**
      * @param string $name
      * @param string $type
+     * @param string $docType
      * @param ?string $description
      * @param Attribute[] $attributes
      * @return self
@@ -35,12 +37,14 @@ final  class Property
     public static function create(
         string $name,
         string $type,
+        string $docType,
         ?string $description = null,
         array $attributes = [],
     ): self {
         return new self(
             $name,
             $type,
+            $docType,
             $description,
             $attributes,
         );
@@ -61,15 +65,19 @@ final  class Property
         return $property->getNode();
     }
 
-    public static function fromEventProtocol(array $protocol): Property
+    /**
+     * @param class-string $className
+     */
+    public static function fromEventProtocol(string $className, array $protocol): Property
     {
+        $valueName = $protocol['valueName'];
         $valueDescription = $protocol['valueDescription'];
 
-        [$valueType, $realType] = Utils::resolveValueType($protocol['valueType'], $valueDescription);
-        [$propertyName, $originalName] = Utils::normalizeName($protocol['valueName']);
+        [$valueType, $docType] = Utils::resolveValueType($className, $valueName, $protocol['valueType'], $valueDescription);
+        [$propertyName, $originalName] = Utils::normalizeName($valueName);
 
         $description = Utils::formatDocComment($valueDescription, [
-            'var' => $realType,
+            'var' => $docType,
         ], 4);
 
         $attributes = [];
@@ -81,12 +89,16 @@ final  class Property
         return self::create(
             $propertyName,
             $valueType,
+            $docType,
             $description,
             $attributes,
         );
     }
 
-    public static function fromRequestProtocol(array $protocol): Property
+    /**
+     * @param class-string $className
+     */
+    public static function fromRequestProtocol(string $className, array $protocol): Property
     {
         $valueName = $protocol['valueName'];
         $valueType = $protocol['valueType'];
@@ -94,15 +106,15 @@ final  class Property
         $valueRestriction = $protocol['valueRestriction'] ?? null;
         $isOptional = Utils::isOptional($protocol['valueOptional'] ?? false, $valueDescription);
 
-        [$valueType, $realType] = Utils::resolveValueType($valueType, $valueDescription, $valueRestriction);
+        [$valueType, $docType] = Utils::resolveValueType($className, $valueName, $valueType, $valueDescription, $valueRestriction);
         [$propertyName, $originalName] = Utils::normalizeName($valueName);
 
         $targetType = $valueType;
-        $targetRealType = $realType;
+        $targetRealType = $docType;
 
         if ($isOptional && $valueType !== "mixed") {
             $targetType = '?' . $valueType;
-            $targetRealType = '?' . $realType;
+            $targetRealType = '?' . $docType;
         }
 
         $tags = [
@@ -122,6 +134,7 @@ final  class Property
         return self::create(
             $propertyName,
             $targetType,
+            $targetRealType,
             $description,
             $attributes,
         );

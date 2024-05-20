@@ -39,6 +39,9 @@ final readonly class SceneItemTransformChangedEvent implements EventInterface
      * @var array
      */
     public array $sceneItemTransform;
+    /**
+     * @param array $sceneItemTransform
+     */
     public function __construct(string $sceneName, string $sceneUuid, int $sceneItemId, array $sceneItemTransform)
     {
         $this->sceneName = $sceneName;

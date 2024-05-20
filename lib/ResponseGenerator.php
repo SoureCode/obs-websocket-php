@@ -9,6 +9,9 @@ final class ResponseGenerator extends ClassGenerator
 {
     public static function fromProtocol(string $namespace, array $protocol): self
     {
+        /**
+         * @var class-string $className
+         */
         $className = $protocol['requestType'];
         $category = $protocol['category'];
         $deprecated = $protocol['deprecated'];
@@ -38,7 +41,7 @@ final class ResponseGenerator extends ClassGenerator
         $properties = [];
 
         foreach ($protocol['responseFields'] as $dataField) {
-            $properties[] = Property::fromRequestProtocol($dataField);
+            $properties[] = Property::fromRequestProtocol($className, $dataField);
         }
 
         return new self(

@@ -32,6 +32,9 @@ final readonly class SetInputAudioTracksRequest implements RequestInterface
      * @var ?string
      */
     public ?string $inputUuid;
+    /**
+     * @param array $inputAudioTracks
+     */
     public function __construct(array $inputAudioTracks, ?string $inputName = null, ?string $inputUuid = null)
     {
         $this->inputAudioTracks = $inputAudioTracks;

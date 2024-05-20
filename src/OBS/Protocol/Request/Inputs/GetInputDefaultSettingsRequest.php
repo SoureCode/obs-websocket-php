@@ -20,6 +20,7 @@ final readonly class GetInputDefaultSettingsRequest implements RequestInterface
      * @var string
      */
     public string $inputKind;
+
     public function __construct(string $inputKind)
     {
         $this->inputKind = $inputKind;

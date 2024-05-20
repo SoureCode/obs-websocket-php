@@ -39,6 +39,7 @@ final readonly class SceneItemEnableStateChangedEvent implements EventInterface
      * @var bool
      */
     public bool $sceneItemEnabled;
+
     public function __construct(string $sceneName, string $sceneUuid, int $sceneItemId, bool $sceneItemEnabled)
     {
         $this->sceneName = $sceneName;

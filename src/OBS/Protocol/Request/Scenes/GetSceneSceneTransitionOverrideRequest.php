@@ -28,6 +28,7 @@ final readonly class GetSceneSceneTransitionOverrideRequest implements RequestIn
      * @var ?string
      */
     public ?string $sceneUuid;
+
     public function __construct(?string $sceneName = null, ?string $sceneUuid = null)
     {
         $this->sceneName = $sceneName;

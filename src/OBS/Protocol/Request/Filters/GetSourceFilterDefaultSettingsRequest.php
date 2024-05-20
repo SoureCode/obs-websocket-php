@@ -20,6 +20,7 @@ final readonly class GetSourceFilterDefaultSettingsRequest implements RequestInt
      * @var string
      */
     public string $filterKind;
+
     public function __construct(string $filterKind)
     {
         $this->filterKind = $filterKind;

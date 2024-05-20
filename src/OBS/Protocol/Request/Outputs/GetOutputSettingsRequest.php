@@ -20,6 +20,7 @@ final readonly class GetOutputSettingsRequest implements RequestInterface
      * @var string
      */
     public string $outputName;
+
     public function __construct(string $outputName)
     {
         $this->outputName = $outputName;

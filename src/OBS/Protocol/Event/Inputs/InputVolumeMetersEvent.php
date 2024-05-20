@@ -21,6 +21,9 @@ final readonly class InputVolumeMetersEvent implements EventInterface
      * @var array<object>
      */
     public array $inputs;
+    /**
+     * @param array<object> $inputs
+     */
     public function __construct(array $inputs)
     {
         $this->inputs = $inputs;

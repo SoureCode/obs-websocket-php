@@ -38,6 +38,9 @@ final readonly class SetSceneItemTransformRequest implements RequestInterface
      * @var ?string
      */
     public ?string $sceneUuid;
+    /**
+     * @param array $sceneItemTransform
+     */
     public function __construct(int $sceneItemId, array $sceneItemTransform, ?string $sceneName = null, ?string $sceneUuid = null)
     {
         $this->sceneItemId = $sceneItemId;

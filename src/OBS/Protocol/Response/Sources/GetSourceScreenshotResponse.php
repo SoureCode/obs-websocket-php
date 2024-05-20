@@ -25,6 +25,7 @@ final readonly class GetSourceScreenshotResponse implements ResponseInterface
      * @var string
      */
     public string $imageData;
+
     public function __construct(string $imageData)
     {
         $this->imageData = $imageData;

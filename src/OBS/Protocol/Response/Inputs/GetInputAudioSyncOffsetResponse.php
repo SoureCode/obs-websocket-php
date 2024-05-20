@@ -22,6 +22,7 @@ final readonly class GetInputAudioSyncOffsetResponse implements ResponseInterfac
      * @var int
      */
     public int $inputAudioSyncOffset;
+
     public function __construct(int $inputAudioSyncOffset)
     {
         $this->inputAudioSyncOffset = $inputAudioSyncOffset;

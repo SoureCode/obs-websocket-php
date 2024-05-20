@@ -22,6 +22,7 @@ final readonly class GetSceneItemLockedResponse implements ResponseInterface
      * @var bool
      */
     public bool $sceneItemLocked;
+
     public function __construct(bool $sceneItemLocked)
     {
         $this->sceneItemLocked = $sceneItemLocked;

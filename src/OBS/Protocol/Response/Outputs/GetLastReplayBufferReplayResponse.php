@@ -20,6 +20,7 @@ final readonly class GetLastReplayBufferReplayResponse implements ResponseInterf
      * @var string
      */
     public string $savedReplayPath;
+
     public function __construct(string $savedReplayPath)
     {
         $this->savedReplayPath = $savedReplayPath;

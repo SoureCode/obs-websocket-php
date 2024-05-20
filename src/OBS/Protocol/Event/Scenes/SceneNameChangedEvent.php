@@ -33,6 +33,7 @@ final readonly class SceneNameChangedEvent implements EventInterface
      * @var string
      */
     public string $sceneName;
+
     public function __construct(string $sceneUuid, string $oldSceneName, string $sceneName)
     {
         $this->sceneUuid = $sceneUuid;

@@ -40,6 +40,7 @@ final readonly class SetSceneItemIndexRequest implements RequestInterface
      * @var ?string
      */
     public ?string $sceneUuid;
+
     public function __construct(int $sceneItemId, int $sceneItemIndex, ?string $sceneName = null, ?string $sceneUuid = null)
     {
         $this->sceneItemId = $sceneItemId;

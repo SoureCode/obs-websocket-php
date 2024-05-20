@@ -22,6 +22,7 @@ final readonly class CreateSceneItemResponse implements ResponseInterface
      * @var int
      */
     public int $sceneItemId;
+
     public function __construct(int $sceneItemId)
     {
         $this->sceneItemId = $sceneItemId;

@@ -20,6 +20,9 @@ final readonly class GetInputKindListResponse implements ResponseInterface
      * @var array<string>
      */
     public array $inputKinds;
+    /**
+     * @param array<string> $inputKinds
+     */
     public function __construct(array $inputKinds)
     {
         $this->inputKinds = $inputKinds;

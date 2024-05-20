@@ -56,6 +56,9 @@ final readonly class GetCurrentSceneTransitionResponse implements ResponseInterf
      * @var ?array
      */
     public ?array $transitionSettings;
+    /**
+     * @param ?array $transitionSettings
+     */
     public function __construct(string $transitionName, string $transitionUuid, string $transitionKind, bool $transitionFixed, bool $transitionConfigurable, ?int $transitionDuration = null, ?array $transitionSettings = null)
     {
         $this->transitionName = $transitionName;

@@ -23,6 +23,9 @@ final readonly class SceneListChangedEvent implements EventInterface
      * @var array<object>
      */
     public array $scenes;
+    /**
+     * @param array<object> $scenes
+     */
     public function __construct(array $scenes)
     {
         $this->scenes = $scenes;

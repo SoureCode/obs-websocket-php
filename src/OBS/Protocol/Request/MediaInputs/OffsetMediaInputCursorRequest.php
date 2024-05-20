@@ -34,6 +34,7 @@ final readonly class OffsetMediaInputCursorRequest implements RequestInterface
      * @var ?string
      */
     public ?string $inputUuid;
+
     public function __construct(int $mediaCursorOffset, ?string $inputName = null, ?string $inputUuid = null)
     {
         $this->mediaCursorOffset = $mediaCursorOffset;

@@ -20,6 +20,7 @@ final readonly class GetInputMuteResponse implements ResponseInterface
      * @var bool
      */
     public bool $inputMuted;
+
     public function __construct(bool $inputMuted)
     {
         $this->inputMuted = $inputMuted;

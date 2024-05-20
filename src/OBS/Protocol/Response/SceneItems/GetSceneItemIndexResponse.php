@@ -24,6 +24,7 @@ final readonly class GetSceneItemIndexResponse implements ResponseInterface
      * @var int
      */
     public int $sceneItemIndex;
+
     public function __construct(int $sceneItemIndex)
     {
         $this->sceneItemIndex = $sceneItemIndex;

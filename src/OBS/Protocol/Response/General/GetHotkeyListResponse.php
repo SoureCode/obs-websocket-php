@@ -22,6 +22,9 @@ final readonly class GetHotkeyListResponse implements ResponseInterface
      * @var array<string>
      */
     public array $hotkeys;
+    /**
+     * @param array<string> $hotkeys
+     */
     public function __construct(array $hotkeys)
     {
         $this->hotkeys = $hotkeys;

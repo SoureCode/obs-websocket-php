@@ -20,6 +20,7 @@ final readonly class SetStudioModeEnabledRequest implements RequestInterface
      * @var bool
      */
     public bool $studioModeEnabled;
+
     public function __construct(bool $studioModeEnabled)
     {
         $this->studioModeEnabled = $studioModeEnabled;

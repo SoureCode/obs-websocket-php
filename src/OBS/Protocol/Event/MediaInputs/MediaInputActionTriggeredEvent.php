@@ -33,6 +33,7 @@ final readonly class MediaInputActionTriggeredEvent implements EventInterface
      * @var string
      */
     public string $mediaAction;
+
     public function __construct(string $inputName, string $inputUuid, string $mediaAction)
     {
         $this->inputName = $inputName;

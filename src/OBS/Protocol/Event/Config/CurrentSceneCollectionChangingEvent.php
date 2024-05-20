@@ -24,6 +24,7 @@ final readonly class CurrentSceneCollectionChangingEvent implements EventInterfa
      * @var string
      */
     public string $sceneCollectionName;
+
     public function __construct(string $sceneCollectionName)
     {
         $this->sceneCollectionName = $sceneCollectionName;

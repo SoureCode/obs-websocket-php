@@ -32,6 +32,7 @@ final readonly class TriggerMediaInputActionRequest implements RequestInterface
      * @var ?string
      */
     public ?string $inputUuid;
+
     public function __construct(string $mediaAction, ?string $inputName = null, ?string $inputUuid = null)
     {
         $this->mediaAction = $mediaAction;

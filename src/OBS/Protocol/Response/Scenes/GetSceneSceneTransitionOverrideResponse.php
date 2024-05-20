@@ -28,6 +28,7 @@ final readonly class GetSceneSceneTransitionOverrideResponse implements Response
      * @var ?int
      */
     public ?int $transitionDuration;
+
     public function __construct(?string $transitionName = null, ?int $transitionDuration = null)
     {
         $this->transitionName = $transitionName;

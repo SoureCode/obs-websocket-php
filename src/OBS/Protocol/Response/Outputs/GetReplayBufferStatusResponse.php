@@ -20,6 +20,7 @@ final readonly class GetReplayBufferStatusResponse implements ResponseInterface
      * @var bool
      */
     public bool $outputActive;
+
     public function __construct(bool $outputActive)
     {
         $this->outputActive = $outputActive;

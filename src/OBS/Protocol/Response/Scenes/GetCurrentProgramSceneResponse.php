@@ -40,6 +40,7 @@ final readonly class GetCurrentProgramSceneResponse implements ResponseInterface
      * @var string
      */
     public string $currentProgramSceneUuid;
+
     public function __construct(string $sceneName, string $sceneUuid, string $currentProgramSceneName, string $currentProgramSceneUuid)
     {
         $this->sceneName = $sceneName;

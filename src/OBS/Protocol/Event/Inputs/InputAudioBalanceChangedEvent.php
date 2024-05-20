@@ -33,6 +33,7 @@ final readonly class InputAudioBalanceChangedEvent implements EventInterface
      * @var int
      */
     public int $inputAudioBalance;
+
     public function __construct(string $inputName, string $inputUuid, int $inputAudioBalance)
     {
         $this->inputName = $inputName;

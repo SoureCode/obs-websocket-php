@@ -50,6 +50,7 @@ final readonly class GetSpecialInputsResponse implements ResponseInterface
      * @var string
      */
     public string $mic4;
+
     public function __construct(string $desktop1, string $desktop2, string $mic1, string $mic2, string $mic3, string $mic4)
     {
         $this->desktop1 = $desktop1;

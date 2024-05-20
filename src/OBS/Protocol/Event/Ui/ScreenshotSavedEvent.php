@@ -25,6 +25,7 @@ final readonly class ScreenshotSavedEvent implements EventInterface
      * @var string
      */
     public string $savedScreenshotPath;
+
     public function __construct(string $savedScreenshotPath)
     {
         $this->savedScreenshotPath = $savedScreenshotPath;

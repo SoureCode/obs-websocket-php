@@ -26,6 +26,9 @@ final readonly class SetOutputSettingsRequest implements RequestInterface
      * @var array
      */
     public array $outputSettings;
+    /**
+     * @param array $outputSettings
+     */
     public function __construct(string $outputName, array $outputSettings)
     {
         $this->outputName = $outputName;

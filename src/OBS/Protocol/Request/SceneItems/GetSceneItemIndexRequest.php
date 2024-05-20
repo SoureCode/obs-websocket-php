@@ -36,6 +36,7 @@ final readonly class GetSceneItemIndexRequest implements RequestInterface
      * @var ?string
      */
     public ?string $sceneUuid;
+
     public function __construct(int $sceneItemId, ?string $sceneName = null, ?string $sceneUuid = null)
     {
         $this->sceneItemId = $sceneItemId;

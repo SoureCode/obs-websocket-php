@@ -44,6 +44,9 @@ final readonly class CreateSourceFilterRequest implements RequestInterface
      * @var ?array
      */
     public ?array $filterSettings;
+    /**
+     * @param ?array $filterSettings
+     */
     public function __construct(string $filterName, string $filterKind, ?string $sourceName = null, ?string $sourceUuid = null, ?array $filterSettings = null)
     {
         $this->filterName = $filterName;

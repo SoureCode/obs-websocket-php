@@ -27,6 +27,7 @@ final readonly class SourceFilterRemovedEvent implements EventInterface
      * @var string
      */
     public string $filterName;
+
     public function __construct(string $sourceName, string $filterName)
     {
         $this->sourceName = $sourceName;

@@ -33,6 +33,9 @@ final readonly class SceneItemListReindexedEvent implements EventInterface
      * @var array<object>
      */
     public array $sceneItems;
+    /**
+     * @param array<object> $sceneItems
+     */
     public function __construct(string $sceneName, string $sceneUuid, array $sceneItems)
     {
         $this->sceneName = $sceneName;

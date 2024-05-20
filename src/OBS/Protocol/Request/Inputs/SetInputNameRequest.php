@@ -32,6 +32,7 @@ final readonly class SetInputNameRequest implements RequestInterface
      * @var ?string
      */
     public ?string $inputUuid;
+
     public function __construct(string $newInputName, ?string $inputName = null, ?string $inputUuid = null)
     {
         $this->newInputName = $newInputName;

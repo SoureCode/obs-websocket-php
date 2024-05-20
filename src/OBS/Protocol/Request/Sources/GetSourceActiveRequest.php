@@ -28,6 +28,7 @@ final readonly class GetSourceActiveRequest implements RequestInterface
      * @var ?string
      */
     public ?string $sourceUuid;
+
     public function __construct(?string $sourceName = null, ?string $sourceUuid = null)
     {
         $this->sourceName = $sourceName;

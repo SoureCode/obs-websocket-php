@@ -51,6 +51,7 @@ final readonly class SceneItemCreatedEvent implements EventInterface
      * @var int
      */
     public int $sceneItemIndex;
+
     public function __construct(string $sceneName, string $sceneUuid, string $sourceName, string $sourceUuid, int $sceneItemId, int $sceneItemIndex)
     {
         $this->sceneName = $sceneName;

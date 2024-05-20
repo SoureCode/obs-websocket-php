@@ -44,6 +44,9 @@ final readonly class GetSceneListResponse implements ResponseInterface
      * @var ?string
      */
     public ?string $currentPreviewSceneUuid;
+    /**
+     * @param array<object> $scenes
+     */
     public function __construct(array $scenes, ?string $currentProgramSceneName = null, ?string $currentProgramSceneUuid = null, ?string $currentPreviewSceneName = null, ?string $currentPreviewSceneUuid = null)
     {
         $this->scenes = $scenes;

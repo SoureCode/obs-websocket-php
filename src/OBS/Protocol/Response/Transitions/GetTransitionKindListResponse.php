@@ -22,6 +22,9 @@ final readonly class GetTransitionKindListResponse implements ResponseInterface
      * @var array<string>
      */
     public array $transitionKinds;
+    /**
+     * @param array<string> $transitionKinds
+     */
     public function __construct(array $transitionKinds)
     {
         $this->transitionKinds = $transitionKinds;

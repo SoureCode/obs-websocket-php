@@ -33,6 +33,7 @@ final readonly class InputAudioSyncOffsetChangedEvent implements EventInterface
      * @var int
      */
     public int $inputAudioSyncOffset;
+
     public function __construct(string $inputName, string $inputUuid, int $inputAudioSyncOffset)
     {
         $this->inputName = $inputName;

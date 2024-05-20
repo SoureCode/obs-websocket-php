@@ -40,6 +40,7 @@ final readonly class GetSceneItemIdRequest implements RequestInterface
      * @var ?int
      */
     public ?int $searchOffset;
+
     public function __construct(string $sourceName, ?string $sceneName = null, ?string $sceneUuid = null, ?int $searchOffset = null)
     {
         $this->sourceName = $sourceName;

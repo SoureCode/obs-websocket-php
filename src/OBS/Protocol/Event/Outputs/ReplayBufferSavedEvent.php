@@ -21,6 +21,7 @@ final readonly class ReplayBufferSavedEvent implements EventInterface
      * @var string
      */
     public string $savedReplayPath;
+
     public function __construct(string $savedReplayPath)
     {
         $this->savedReplayPath = $savedReplayPath;

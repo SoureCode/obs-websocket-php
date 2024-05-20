@@ -20,6 +20,7 @@ final readonly class CreateSceneResponse implements ResponseInterface
      * @var string
      */
     public string $sceneUuid;
+
     public function __construct(string $sceneUuid)
     {
         $this->sceneUuid = $sceneUuid;

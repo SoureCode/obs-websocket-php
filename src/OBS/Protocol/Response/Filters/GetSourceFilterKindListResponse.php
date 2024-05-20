@@ -22,6 +22,9 @@ final readonly class GetSourceFilterKindListResponse implements ResponseInterfac
      * @var array<string>
      */
     public array $sourceFilterKinds;
+    /**
+     * @param array<string> $sourceFilterKinds
+     */
     public function __construct(array $sourceFilterKinds)
     {
         $this->sourceFilterKinds = $sourceFilterKinds;

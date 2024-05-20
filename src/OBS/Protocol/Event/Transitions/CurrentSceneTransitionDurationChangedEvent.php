@@ -21,6 +21,7 @@ final readonly class CurrentSceneTransitionDurationChangedEvent implements Event
      * @var int
      */
     public int $transitionDuration;
+
     public function __construct(int $transitionDuration)
     {
         $this->transitionDuration = $transitionDuration;

@@ -22,6 +22,9 @@ final readonly class GetInputPropertiesListPropertyItemsResponse implements Resp
      * @var array<object>
      */
     public array $propertyItems;
+    /**
+     * @param array<object> $propertyItems
+     */
     public function __construct(array $propertyItems)
     {
         $this->propertyItems = $propertyItems;

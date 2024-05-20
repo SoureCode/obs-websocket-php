@@ -32,6 +32,7 @@ final readonly class SetProfileParameterRequest implements RequestInterface
      * @var ?string
      */
     public ?string $parameterValue;
+
     public function __construct(string $parameterCategory, string $parameterName, ?string $parameterValue = null)
     {
         $this->parameterCategory = $parameterCategory;

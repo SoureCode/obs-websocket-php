@@ -21,6 +21,7 @@ final readonly class CurrentProfileChangedEvent implements EventInterface
      * @var string
      */
     public string $profileName;
+
     public function __construct(string $profileName)
     {
         $this->profileName = $profileName;

@@ -27,6 +27,7 @@ final readonly class CurrentSceneTransitionChangedEvent implements EventInterfac
      * @var string
      */
     public string $transitionUuid;
+
     public function __construct(string $transitionName, string $transitionUuid)
     {
         $this->transitionName = $transitionName;

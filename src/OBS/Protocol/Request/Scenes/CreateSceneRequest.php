@@ -20,6 +20,7 @@ final readonly class CreateSceneRequest implements RequestInterface
      * @var string
      */
     public string $sceneName;
+
     public function __construct(string $sceneName)
     {
         $this->sceneName = $sceneName;

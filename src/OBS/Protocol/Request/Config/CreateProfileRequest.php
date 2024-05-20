@@ -20,6 +20,7 @@ final readonly class CreateProfileRequest implements RequestInterface
      * @var string
      */
     public string $profileName;
+
     public function __construct(string $profileName)
     {
         $this->profileName = $profileName;

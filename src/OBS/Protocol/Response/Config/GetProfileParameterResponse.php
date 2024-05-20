@@ -26,6 +26,7 @@ final readonly class GetProfileParameterResponse implements ResponseInterface
      * @var ?string
      */
     public ?string $defaultParameterValue;
+
     public function __construct(?string $parameterValue = null, ?string $defaultParameterValue = null)
     {
         $this->parameterValue = $parameterValue;

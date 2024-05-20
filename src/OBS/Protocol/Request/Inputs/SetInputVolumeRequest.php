@@ -38,6 +38,7 @@ final readonly class SetInputVolumeRequest implements RequestInterface
      * @var ?int
      */
     public ?int $inputVolumeDb;
+
     public function __construct(?string $inputName = null, ?string $inputUuid = null, ?int $inputVolumeMul = null, ?int $inputVolumeDb = null)
     {
         $this->inputName = $inputName;

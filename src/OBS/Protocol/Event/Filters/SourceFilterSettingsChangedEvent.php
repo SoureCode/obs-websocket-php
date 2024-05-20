@@ -33,6 +33,9 @@ final readonly class SourceFilterSettingsChangedEvent implements EventInterface
      * @var array
      */
     public array $filterSettings;
+    /**
+     * @param array $filterSettings
+     */
     public function __construct(string $sourceName, string $filterName, array $filterSettings)
     {
         $this->sourceName = $sourceName;

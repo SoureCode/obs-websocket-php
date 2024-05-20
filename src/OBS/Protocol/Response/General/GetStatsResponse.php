@@ -80,6 +80,7 @@ final readonly class GetStatsResponse implements ResponseInterface
      * @var int
      */
     public int $webSocketSessionOutgoingMessages;
+
     public function __construct(int $cpuUsage, int $memoryUsage, int $availableDiskSpace, int $activeFps, int $averageFrameRenderTime, int $renderSkippedFrames, int $renderTotalFrames, int $outputSkippedFrames, int $outputTotalFrames, int $webSocketSessionIncomingMessages, int $webSocketSessionOutgoingMessages)
     {
         $this->cpuUsage = $cpuUsage;

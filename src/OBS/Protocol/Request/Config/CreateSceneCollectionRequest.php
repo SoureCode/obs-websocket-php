@@ -22,6 +22,7 @@ final readonly class CreateSceneCollectionRequest implements RequestInterface
      * @var string
      */
     public string $sceneCollectionName;
+
     public function __construct(string $sceneCollectionName)
     {
         $this->sceneCollectionName = $sceneCollectionName;

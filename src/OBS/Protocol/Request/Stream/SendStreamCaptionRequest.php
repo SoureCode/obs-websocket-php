@@ -20,6 +20,7 @@ final readonly class SendStreamCaptionRequest implements RequestInterface
      * @var string
      */
     public string $captionText;
+
     public function __construct(string $captionText)
     {
         $this->captionText = $captionText;

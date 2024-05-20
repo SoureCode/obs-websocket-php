@@ -30,6 +30,7 @@ final readonly class GetGroupSceneItemListRequest implements RequestInterface
      * @var ?string
      */
     public ?string $sceneUuid;
+
     public function __construct(?string $sceneName = null, ?string $sceneUuid = null)
     {
         $this->sceneName = $sceneName;

@@ -27,6 +27,9 @@ final readonly class SourceFilterListReindexedEvent implements EventInterface
      * @var array<object>
      */
     public array $filters;
+    /**
+     * @param array<object> $filters
+     */
     public function __construct(string $sourceName, array $filters)
     {
         $this->sourceName = $sourceName;

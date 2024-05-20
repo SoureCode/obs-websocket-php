@@ -35,6 +35,7 @@ final readonly class InputShowStateChangedEvent implements EventInterface
      * @var bool
      */
     public bool $videoShowing;
+
     public function __construct(string $inputName, string $inputUuid, bool $videoShowing)
     {
         $this->inputName = $inputName;

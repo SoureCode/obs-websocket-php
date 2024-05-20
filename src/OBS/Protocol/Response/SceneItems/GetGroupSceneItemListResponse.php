@@ -24,6 +24,9 @@ final readonly class GetGroupSceneItemListResponse implements ResponseInterface
      * @var array<object>
      */
     public array $sceneItems;
+    /**
+     * @param array<object> $sceneItems
+     */
     public function __construct(array $sceneItems)
     {
         $this->sceneItems = $sceneItems;

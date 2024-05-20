@@ -26,6 +26,7 @@ final readonly class CreateInputResponse implements ResponseInterface
      * @var int
      */
     public int $sceneItemId;
+
     public function __construct(string $inputUuid, int $sceneItemId)
     {
         $this->inputUuid = $inputUuid;

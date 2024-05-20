@@ -50,6 +50,9 @@ final readonly class CreateInputRequest implements RequestInterface
      * @var ?bool
      */
     public ?bool $sceneItemEnabled;
+    /**
+     * @param ?array $inputSettings
+     */
     public function __construct(string $inputName, string $inputKind, ?string $sceneName = null, ?string $sceneUuid = null, ?array $inputSettings = null, ?bool $sceneItemEnabled = null)
     {
         $this->inputName = $inputName;

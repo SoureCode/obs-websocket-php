@@ -22,6 +22,7 @@ final readonly class GetSceneItemEnabledResponse implements ResponseInterface
      * @var bool
      */
     public bool $sceneItemEnabled;
+
     public function __construct(bool $sceneItemEnabled)
     {
         $this->sceneItemEnabled = $sceneItemEnabled;

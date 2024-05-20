@@ -20,6 +20,7 @@ final readonly class GetRecordDirectoryResponse implements ResponseInterface
      * @var string
      */
     public string $recordDirectory;
+
     public function __construct(string $recordDirectory)
     {
         $this->recordDirectory = $recordDirectory;

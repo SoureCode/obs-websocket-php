@@ -11,6 +11,7 @@ use SoureCode\OBS\Generator\EnumGenerator;
 use SoureCode\OBS\Generator\EventGenerator;
 use SoureCode\OBS\Generator\RequestGenerator;
 use SoureCode\OBS\Generator\ResponseGenerator;
+use SoureCode\OBS\Generator\Utils;
 use Symfony\Component\Filesystem\Filesystem;
 use function Symfony\Component\String\u;
 
@@ -88,9 +89,15 @@ foreach ($protocol['requests'] as $request) {
     $requestCall = $factory->methodCall($factory->var('this'), 'request', [$newRequestInstance]);
     $clientMethod->addStmt(new Return_($factory->propertyFetch($factory->propertyFetch($requestCall, 'd'), 'responseData')));
 
+    $paramTypes = [];
+
     foreach($requestClass->properties as $property) {
         $param = $factory->param($property->name)
             ->setType($property->type);
+
+        if(!Utils::isNativeBuiltInType($property->type)) {
+            $paramTypes[] = $property->type . ' $' . $property->name;
+        }
 
         if ($property->isOptional()) {
             $param->setDefault(null);
@@ -98,6 +105,14 @@ foreach ($protocol['requests'] as $request) {
 
         $newRequestInstance->args[] = $factory->var($property->name);
         $clientMethod->addParam($param);
+    }
+
+    $docComment = Utils::formatDocComment(null, [
+        'param' => $paramTypes,
+    ], 4);
+
+    if(strlen($docComment) > 0) {
+        $clientMethod->setDocComment($docComment);
     }
 
     $clientNode->addStmt($clientMethod);

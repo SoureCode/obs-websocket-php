@@ -56,6 +56,10 @@ final readonly class GetVersionResponse implements ResponseInterface
      * @var string
      */
     public string $platformDescription;
+    /**
+     * @param array<string> $availableRequests
+     * @param array<string> $supportedImageFormats
+     */
     public function __construct(string $obsVersion, string $obsWebSocketVersion, int $rpcVersion, array $availableRequests, array $supportedImageFormats, string $platform, string $platformDescription)
     {
         $this->obsVersion = $obsVersion;

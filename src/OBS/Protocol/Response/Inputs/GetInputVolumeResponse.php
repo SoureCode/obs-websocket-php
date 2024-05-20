@@ -26,6 +26,7 @@ final readonly class GetInputVolumeResponse implements ResponseInterface
      * @var int
      */
     public int $inputVolumeDb;
+
     public function __construct(int $inputVolumeMul, int $inputVolumeDb)
     {
         $this->inputVolumeMul = $inputVolumeMul;

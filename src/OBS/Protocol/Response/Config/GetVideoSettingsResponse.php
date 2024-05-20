@@ -52,6 +52,7 @@ final readonly class GetVideoSettingsResponse implements ResponseInterface
      * @var int
      */
     public int $outputHeight;
+
     public function __construct(int $fpsNumerator, int $fpsDenominator, int $baseWidth, int $baseHeight, int $outputWidth, int $outputHeight)
     {
         $this->fpsNumerator = $fpsNumerator;

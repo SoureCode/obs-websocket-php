@@ -20,6 +20,7 @@ final readonly class GetStudioModeEnabledResponse implements ResponseInterface
      * @var bool
      */
     public bool $studioModeEnabled;
+
     public function __construct(bool $studioModeEnabled)
     {
         $this->studioModeEnabled = $studioModeEnabled;

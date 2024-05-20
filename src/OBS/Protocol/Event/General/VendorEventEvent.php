@@ -36,6 +36,9 @@ final readonly class VendorEventEvent implements EventInterface
      * @var array
      */
     public array $eventData;
+    /**
+     * @param array $eventData
+     */
     public function __construct(string $vendorName, string $eventType, array $eventData)
     {
         $this->vendorName = $vendorName;

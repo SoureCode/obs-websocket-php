@@ -35,6 +35,9 @@ final readonly class CallVendorRequestResponse implements ResponseInterface
      * @var array
      */
     public array $responseData;
+    /**
+     * @param array $responseData
+     */
     public function __construct(string $vendorName, string $requestType, array $responseData)
     {
         $this->vendorName = $vendorName;

@@ -38,6 +38,9 @@ final readonly class GetSceneTransitionListResponse implements ResponseInterface
      * @var ?string
      */
     public ?string $currentSceneTransitionKind;
+    /**
+     * @param array<object> $transitions
+     */
     public function __construct(array $transitions, ?string $currentSceneTransitionName = null, ?string $currentSceneTransitionUuid = null, ?string $currentSceneTransitionKind = null)
     {
         $this->transitions = $transitions;

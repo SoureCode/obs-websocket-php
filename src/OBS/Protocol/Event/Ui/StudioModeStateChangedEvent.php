@@ -21,6 +21,7 @@ final readonly class StudioModeStateChangedEvent implements EventInterface
      * @var bool
      */
     public bool $studioModeEnabled;
+
     public function __construct(bool $studioModeEnabled)
     {
         $this->studioModeEnabled = $studioModeEnabled;

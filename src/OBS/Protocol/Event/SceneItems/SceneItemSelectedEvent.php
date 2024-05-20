@@ -33,6 +33,7 @@ final readonly class SceneItemSelectedEvent implements EventInterface
      * @var int
      */
     public int $sceneItemId;
+
     public function __construct(string $sceneName, string $sceneUuid, int $sceneItemId)
     {
         $this->sceneName = $sceneName;

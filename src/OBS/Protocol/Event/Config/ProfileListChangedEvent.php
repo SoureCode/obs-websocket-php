@@ -21,6 +21,9 @@ final readonly class ProfileListChangedEvent implements EventInterface
      * @var array<string>
      */
     public array $profiles;
+    /**
+     * @param array<string> $profiles
+     */
     public function __construct(array $profiles)
     {
         $this->profiles = $profiles;

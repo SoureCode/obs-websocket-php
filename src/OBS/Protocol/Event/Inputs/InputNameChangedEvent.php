@@ -33,6 +33,7 @@ final readonly class InputNameChangedEvent implements EventInterface
      * @var string
      */
     public string $inputName;
+
     public function __construct(string $inputUuid, string $oldInputName, string $inputName)
     {
         $this->inputUuid = $inputUuid;

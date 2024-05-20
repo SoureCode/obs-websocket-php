@@ -33,6 +33,7 @@ final readonly class InputMuteStateChangedEvent implements EventInterface
      * @var bool
      */
     public bool $inputMuted;
+
     public function __construct(string $inputName, string $inputUuid, bool $inputMuted)
     {
         $this->inputName = $inputName;

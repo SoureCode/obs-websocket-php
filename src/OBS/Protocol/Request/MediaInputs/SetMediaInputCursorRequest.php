@@ -34,6 +34,7 @@ final readonly class SetMediaInputCursorRequest implements RequestInterface
      * @var ?string
      */
     public ?string $inputUuid;
+
     public function __construct(int $mediaCursor, ?string $inputName = null, ?string $inputUuid = null)
     {
         $this->mediaCursor = $mediaCursor;

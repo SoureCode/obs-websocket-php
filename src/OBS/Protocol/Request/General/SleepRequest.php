@@ -26,6 +26,7 @@ final readonly class SleepRequest implements RequestInterface
      * @var ?int
      */
     public ?int $sleepFrames;
+
     public function __construct(?int $sleepMillis = null, ?int $sleepFrames = null)
     {
         $this->sleepMillis = $sleepMillis;

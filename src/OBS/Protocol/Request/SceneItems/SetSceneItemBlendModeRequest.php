@@ -40,6 +40,7 @@ final readonly class SetSceneItemBlendModeRequest implements RequestInterface
      * @var ?string
      */
     public ?string $sceneUuid;
+
     public function __construct(int $sceneItemId, string $sceneItemBlendMode, ?string $sceneName = null, ?string $sceneUuid = null)
     {
         $this->sceneItemId = $sceneItemId;

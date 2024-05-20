@@ -22,6 +22,7 @@ final readonly class GetCurrentSceneTransitionCursorResponse implements Response
      * @var float
      */
     public float $transitionCursor;
+
     public function __construct(float $transitionCursor)
     {
         $this->transitionCursor = $transitionCursor;

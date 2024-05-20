@@ -38,6 +38,7 @@ final readonly class PressInputPropertiesButtonRequest implements RequestInterfa
      * @var ?string
      */
     public ?string $inputUuid;
+
     public function __construct(string $propertyName, ?string $inputName = null, ?string $inputUuid = null)
     {
         $this->propertyName = $propertyName;

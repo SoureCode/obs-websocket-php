@@ -20,6 +20,9 @@ final readonly class GetOutputSettingsResponse implements ResponseInterface
      * @var array
      */
     public array $outputSettings;
+    /**
+     * @param array $outputSettings
+     */
     public function __construct(array $outputSettings)
     {
         $this->outputSettings = $outputSettings;

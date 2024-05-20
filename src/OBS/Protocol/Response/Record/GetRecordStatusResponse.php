@@ -44,6 +44,7 @@ final readonly class GetRecordStatusResponse implements ResponseInterface
      * @var int
      */
     public int $outputBytes;
+
     public function __construct(bool $outputActive, bool $outputPaused, string $outputTimecode, int $outputDuration, int $outputBytes)
     {
         $this->outputActive = $outputActive;

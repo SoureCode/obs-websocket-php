@@ -85,6 +85,8 @@ class ClassGenerator
             ->method('__construct')
             ->makePublic();
 
+        $paramTypes = [];
+
         foreach ($this->properties as $property) {
             foreach ($property->attributes as $attribute) {
                 if (!in_array($attribute->name, $addedUses, true)) {
@@ -98,8 +100,12 @@ class ClassGenerator
             $param = $factory->param($property->name)
                 ->setType($property->type);
 
-            if ($property->isOptional()){
+            if ($property->isOptional()) {
                 $param->setDefault(null);
+            }
+
+            if(!Utils::isNativeBuiltInType($property->type)) {
+                $paramTypes[] = $property->docType . ' $' . $property->name;
             }
 
             $constructorBuilder->addParam($param);
@@ -111,6 +117,10 @@ class ClassGenerator
 
             $constructorBuilder->addStmt($assign);
         }
+
+        $constructorBuilder->setDocComment(Utils::formatDocComment('', [
+                'param' => $paramTypes,
+            ], 4));
 
         $classBuilder->addStmt($constructorBuilder);
         $namespaceBuilder->addStmt($classBuilder);

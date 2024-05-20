@@ -26,6 +26,7 @@ final readonly class OpenInputPropertiesDialogRequest implements RequestInterfac
      * @var ?string
      */
     public ?string $inputUuid;
+
     public function __construct(?string $inputName = null, ?string $inputUuid = null)
     {
         $this->inputName = $inputName;

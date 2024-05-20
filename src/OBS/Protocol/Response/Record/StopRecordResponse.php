@@ -20,6 +20,7 @@ final readonly class StopRecordResponse implements ResponseInterface
      * @var string
      */
     public string $outputPath;
+
     public function __construct(string $outputPath)
     {
         $this->outputPath = $outputPath;

@@ -32,6 +32,7 @@ final readonly class SetInputMuteRequest implements RequestInterface
      * @var ?string
      */
     public ?string $inputUuid;
+
     public function __construct(bool $inputMuted, ?string $inputName = null, ?string $inputUuid = null)
     {
         $this->inputMuted = $inputMuted;

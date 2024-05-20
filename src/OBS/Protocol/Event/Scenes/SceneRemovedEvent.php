@@ -33,6 +33,7 @@ final readonly class SceneRemovedEvent implements EventInterface
      * @var bool
      */
     public bool $isGroup;
+
     public function __construct(string $sceneName, string $sceneUuid, bool $isGroup)
     {
         $this->sceneName = $sceneName;

@@ -32,6 +32,9 @@ final readonly class SetPersistentDataRequest implements RequestInterface
      * @var mixed
      */
     public mixed $slotValue;
+    /**
+     * @param mixed $slotValue
+     */
     public function __construct(string $realm, string $slotName, mixed $slotValue)
     {
         $this->realm = $realm;

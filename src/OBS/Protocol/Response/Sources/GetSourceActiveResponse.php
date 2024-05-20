@@ -28,6 +28,7 @@ final readonly class GetSourceActiveResponse implements ResponseInterface
      * @var bool
      */
     public bool $videoShowing;
+
     public function __construct(bool $videoActive, bool $videoShowing)
     {
         $this->videoActive = $videoActive;

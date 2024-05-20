@@ -46,6 +46,7 @@ final readonly class DuplicateSceneItemRequest implements RequestInterface
      * @var ?string
      */
     public ?string $destinationSceneUuid;
+
     public function __construct(int $sceneItemId, ?string $sceneName = null, ?string $sceneUuid = null, ?string $destinationSceneName = null, ?string $destinationSceneUuid = null)
     {
         $this->sceneItemId = $sceneItemId;

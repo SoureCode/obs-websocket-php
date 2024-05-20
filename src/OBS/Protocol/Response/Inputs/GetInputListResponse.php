@@ -20,6 +20,9 @@ final readonly class GetInputListResponse implements ResponseInterface
      * @var array<object>
      */
     public array $inputs;
+    /**
+     * @param array<object> $inputs
+     */
     public function __construct(array $inputs)
     {
         $this->inputs = $inputs;

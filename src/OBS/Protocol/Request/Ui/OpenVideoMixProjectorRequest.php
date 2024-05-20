@@ -40,6 +40,7 @@ final readonly class OpenVideoMixProjectorRequest implements RequestInterface
      * @var ?string
      */
     public ?string $projectorGeometry;
+
     public function __construct(string $videoMixType, ?int $monitorIndex = null, ?string $projectorGeometry = null)
     {
         $this->videoMixType = $videoMixType;

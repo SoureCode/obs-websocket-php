@@ -46,6 +46,7 @@ final readonly class CreateSceneItemRequest implements RequestInterface
      * @var ?bool
      */
     public ?bool $sceneItemEnabled;
+
     public function __construct(?string $sceneName = null, ?string $sceneUuid = null, ?string $sourceName = null, ?string $sourceUuid = null, ?bool $sceneItemEnabled = null)
     {
         $this->sceneName = $sceneName;

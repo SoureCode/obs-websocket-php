@@ -62,6 +62,7 @@ final readonly class GetStreamStatusResponse implements ResponseInterface
      * @var int
      */
     public int $outputTotalFrames;
+
     public function __construct(bool $outputActive, bool $outputReconnecting, string $outputTimecode, int $outputDuration, int $outputCongestion, int $outputBytes, int $outputSkippedFrames, int $outputTotalFrames)
     {
         $this->outputActive = $outputActive;

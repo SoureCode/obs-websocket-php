@@ -26,6 +26,9 @@ final readonly class GetStreamServiceSettingsResponse implements ResponseInterfa
      * @var array
      */
     public array $streamServiceSettings;
+    /**
+     * @param array $streamServiceSettings
+     */
     public function __construct(string $streamServiceType, array $streamServiceSettings)
     {
         $this->streamServiceType = $streamServiceType;

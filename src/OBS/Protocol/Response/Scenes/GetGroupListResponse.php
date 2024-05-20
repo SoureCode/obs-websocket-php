@@ -22,6 +22,9 @@ final readonly class GetGroupListResponse implements ResponseInterface
      * @var array<string>
      */
     public array $groups;
+    /**
+     * @param array<string> $groups
+     */
     public function __construct(array $groups)
     {
         $this->groups = $groups;

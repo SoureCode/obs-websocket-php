@@ -33,6 +33,7 @@ final readonly class SourceFilterEnableStateChangedEvent implements EventInterfa
      * @var bool
      */
     public bool $filterEnabled;
+
     public function __construct(string $sourceName, string $filterName, bool $filterEnabled)
     {
         $this->sourceName = $sourceName;

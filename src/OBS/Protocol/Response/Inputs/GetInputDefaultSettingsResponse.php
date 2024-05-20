@@ -20,6 +20,9 @@ final readonly class GetInputDefaultSettingsResponse implements ResponseInterfac
      * @var array
      */
     public array $defaultInputSettings;
+    /**
+     * @param array $defaultInputSettings
+     */
     public function __construct(array $defaultInputSettings)
     {
         $this->defaultInputSettings = $defaultInputSettings;

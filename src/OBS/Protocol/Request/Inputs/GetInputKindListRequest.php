@@ -20,6 +20,7 @@ final readonly class GetInputKindListRequest implements RequestInterface
      * @var ?bool
      */
     public ?bool $unversioned;
+
     public function __construct(?bool $unversioned = null)
     {
         $this->unversioned = $unversioned;

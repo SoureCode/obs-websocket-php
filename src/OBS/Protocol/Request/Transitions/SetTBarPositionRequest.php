@@ -28,6 +28,7 @@ final readonly class SetTBarPositionRequest implements RequestInterface
      * @var ?bool
      */
     public ?bool $release;
+
     public function __construct(int $position, ?bool $release = null)
     {
         $this->position = $position;

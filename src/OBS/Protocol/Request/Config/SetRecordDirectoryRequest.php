@@ -20,6 +20,7 @@ final readonly class SetRecordDirectoryRequest implements RequestInterface
      * @var string
      */
     public string $recordDirectory;
+
     public function __construct(string $recordDirectory)
     {
         $this->recordDirectory = $recordDirectory;

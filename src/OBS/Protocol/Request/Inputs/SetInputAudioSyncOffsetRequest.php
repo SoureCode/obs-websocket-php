@@ -32,6 +32,7 @@ final readonly class SetInputAudioSyncOffsetRequest implements RequestInterface
      * @var ?string
      */
     public ?string $inputUuid;
+
     public function __construct(int $inputAudioSyncOffset, ?string $inputName = null, ?string $inputUuid = null)
     {
         $this->inputAudioSyncOffset = $inputAudioSyncOffset;

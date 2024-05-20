@@ -28,6 +28,9 @@ final readonly class GetInputSettingsResponse implements ResponseInterface
      * @var string
      */
     public string $inputKind;
+    /**
+     * @param array $inputSettings
+     */
     public function __construct(array $inputSettings, string $inputKind)
     {
         $this->inputSettings = $inputSettings;

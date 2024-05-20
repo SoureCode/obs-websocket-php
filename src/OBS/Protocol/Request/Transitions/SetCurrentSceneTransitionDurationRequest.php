@@ -20,6 +20,7 @@ final readonly class SetCurrentSceneTransitionDurationRequest implements Request
      * @var int
      */
     public int $transitionDuration;
+
     public function __construct(int $transitionDuration)
     {
         $this->transitionDuration = $transitionDuration;

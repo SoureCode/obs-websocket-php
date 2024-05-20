@@ -47,6 +47,7 @@ final readonly class SceneItemRemovedEvent implements EventInterface
      * @var int
      */
     public int $sceneItemId;
+
     public function __construct(string $sceneName, string $sceneUuid, string $sourceName, string $sourceUuid, int $sceneItemId)
     {
         $this->sceneName = $sceneName;

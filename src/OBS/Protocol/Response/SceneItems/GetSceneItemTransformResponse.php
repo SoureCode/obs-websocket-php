@@ -22,6 +22,9 @@ final readonly class GetSceneItemTransformResponse implements ResponseInterface
      * @var array
      */
     public array $sceneItemTransform;
+    /**
+     * @param array $sceneItemTransform
+     */
     public function __construct(array $sceneItemTransform)
     {
         $this->sceneItemTransform = $sceneItemTransform;

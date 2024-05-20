@@ -20,6 +20,9 @@ final readonly class BroadcastCustomEventRequest implements RequestInterface
      * @var array
      */
     public array $eventData;
+    /**
+     * @param array $eventData
+     */
     public function __construct(array $eventData)
     {
         $this->eventData = $eventData;

@@ -32,6 +32,7 @@ final readonly class SetInputAudioMonitorTypeRequest implements RequestInterface
      * @var ?string
      */
     public ?string $inputUuid;
+
     public function __construct(string $monitorType, ?string $inputName = null, ?string $inputUuid = null)
     {
         $this->monitorType = $monitorType;

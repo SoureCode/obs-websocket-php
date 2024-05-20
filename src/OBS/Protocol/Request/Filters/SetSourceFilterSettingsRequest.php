@@ -44,6 +44,9 @@ final readonly class SetSourceFilterSettingsRequest implements RequestInterface
      * @var ?bool
      */
     public ?bool $overlay;
+    /**
+     * @param array $filterSettings
+     */
     public function __construct(string $filterName, array $filterSettings, ?string $sourceName = null, ?string $sourceUuid = null, ?bool $overlay = null)
     {
         $this->filterName = $filterName;

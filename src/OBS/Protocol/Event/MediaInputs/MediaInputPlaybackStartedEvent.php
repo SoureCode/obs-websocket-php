@@ -27,6 +27,7 @@ final readonly class MediaInputPlaybackStartedEvent implements EventInterface
      * @var string
      */
     public string $inputUuid;
+
     public function __construct(string $inputName, string $inputUuid)
     {
         $this->inputName = $inputName;

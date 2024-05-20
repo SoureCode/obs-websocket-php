@@ -20,6 +20,7 @@ final readonly class GetInputAudioBalanceResponse implements ResponseInterface
      * @var float
      */
     public float $inputAudioBalance;
+
     public function __construct(float $inputAudioBalance)
     {
         $this->inputAudioBalance = $inputAudioBalance;

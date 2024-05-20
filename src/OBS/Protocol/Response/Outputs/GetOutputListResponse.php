@@ -20,6 +20,9 @@ final readonly class GetOutputListResponse implements ResponseInterface
      * @var array<object>
      */
     public array $outputs;
+    /**
+     * @param array<object> $outputs
+     */
     public function __construct(array $outputs)
     {
         $this->outputs = $outputs;

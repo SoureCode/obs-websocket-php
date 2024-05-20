@@ -27,6 +27,7 @@ final readonly class InputRemovedEvent implements EventInterface
      * @var string
      */
     public string $inputUuid;
+
     public function __construct(string $inputName, string $inputUuid)
     {
         $this->inputName = $inputName;

@@ -26,6 +26,7 @@ final readonly class GetInputAudioMonitorTypeResponse implements ResponseInterfa
      * @var string
      */
     public string $monitorType;
+
     public function __construct(string $monitorType)
     {
         $this->monitorType = $monitorType;

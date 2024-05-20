@@ -21,6 +21,9 @@ final readonly class CustomEventEvent implements EventInterface
      * @var array
      */
     public array $eventData;
+    /**
+     * @param array $eventData
+     */
     public function __construct(array $eventData)
     {
         $this->eventData = $eventData;

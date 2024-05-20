@@ -43,6 +43,7 @@ final readonly class GetMediaInputStatusResponse implements ResponseInterface
      * @var ?int
      */
     public ?int $mediaCursor;
+
     public function __construct(string $mediaState, ?int $mediaDuration = null, ?int $mediaCursor = null)
     {
         $this->mediaState = $mediaState;

@@ -26,6 +26,9 @@ final readonly class GetSceneCollectionListResponse implements ResponseInterface
      * @var array<string>
      */
     public array $sceneCollections;
+    /**
+     * @param array<string> $sceneCollections
+     */
     public function __construct(string $currentSceneCollectionName, array $sceneCollections)
     {
         $this->currentSceneCollectionName = $currentSceneCollectionName;

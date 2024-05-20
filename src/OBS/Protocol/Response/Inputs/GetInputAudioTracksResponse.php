@@ -20,6 +20,9 @@ final readonly class GetInputAudioTracksResponse implements ResponseInterface
      * @var array
      */
     public array $inputAudioTracks;
+    /**
+     * @param array $inputAudioTracks
+     */
     public function __construct(array $inputAudioTracks)
     {
         $this->inputAudioTracks = $inputAudioTracks;

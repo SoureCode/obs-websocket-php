@@ -39,6 +39,7 @@ final readonly class InputVolumeChangedEvent implements EventInterface
      * @var int
      */
     public int $inputVolumeDb;
+
     public function __construct(string $inputName, string $inputUuid, int $inputVolumeMul, int $inputVolumeDb)
     {
         $this->inputName = $inputName;

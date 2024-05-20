@@ -42,6 +42,7 @@ final readonly class GetCurrentPreviewSceneResponse implements ResponseInterface
      * @var string
      */
     public string $currentPreviewSceneUuid;
+
     public function __construct(string $sceneName, string $sceneUuid, string $currentPreviewSceneName, string $currentPreviewSceneUuid)
     {
         $this->sceneName = $sceneName;

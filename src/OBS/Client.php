@@ -290,6 +290,9 @@ class Client extends BaseClient
     {
         return $this->request(new GetPersistentDataRequest($realm, $slotName))->d->responseData;
     }
+    /**
+     * @param mixed $slotValue
+     */
     public function setPersistentData(string $realm, string $slotName, mixed $slotValue): SetPersistentDataResponse
     {
         return $this->request(new SetPersistentDataRequest($realm, $slotName, $slotValue))->d->responseData;
@@ -342,6 +345,9 @@ class Client extends BaseClient
     {
         return $this->request(new GetStreamServiceSettingsRequest())->d->responseData;
     }
+    /**
+     * @param array $streamServiceSettings
+     */
     public function setStreamServiceSettings(string $streamServiceType, array $streamServiceSettings): SetStreamServiceSettingsResponse
     {
         return $this->request(new SetStreamServiceSettingsRequest($streamServiceType, $streamServiceSettings))->d->responseData;
@@ -366,6 +372,9 @@ class Client extends BaseClient
     {
         return $this->request(new GetSourceFilterDefaultSettingsRequest($filterKind))->d->responseData;
     }
+    /**
+     * @param ?array $filterSettings
+     */
     public function createSourceFilter(string $filterName, string $filterKind, ?string $sourceName = null, ?string $sourceUuid = null, ?array $filterSettings = null): CreateSourceFilterResponse
     {
         return $this->request(new CreateSourceFilterRequest($filterName, $filterKind, $sourceName, $sourceUuid, $filterSettings))->d->responseData;
@@ -386,6 +395,9 @@ class Client extends BaseClient
     {
         return $this->request(new SetSourceFilterIndexRequest($filterName, $filterIndex, $sourceName, $sourceUuid))->d->responseData;
     }
+    /**
+     * @param array $filterSettings
+     */
     public function setSourceFilterSettings(string $filterName, array $filterSettings, ?string $sourceName = null, ?string $sourceUuid = null, ?bool $overlay = null): SetSourceFilterSettingsResponse
     {
         return $this->request(new SetSourceFilterSettingsRequest($filterName, $filterSettings, $sourceName, $sourceUuid, $overlay))->d->responseData;
@@ -402,10 +414,16 @@ class Client extends BaseClient
     {
         return $this->request(new GetStatsRequest())->d->responseData;
     }
+    /**
+     * @param array $eventData
+     */
     public function broadcastCustomEvent(array $eventData): BroadcastCustomEventResponse
     {
         return $this->request(new BroadcastCustomEventRequest($eventData))->d->responseData;
     }
+    /**
+     * @param ?array $requestData
+     */
     public function callVendorRequest(string $vendorName, string $requestType, ?array $requestData = null): CallVendorRequestResponse
     {
         return $this->request(new CallVendorRequestRequest($vendorName, $requestType, $requestData))->d->responseData;
@@ -418,6 +436,9 @@ class Client extends BaseClient
     {
         return $this->request(new TriggerHotkeyByNameRequest($hotkeyName, $contextName))->d->responseData;
     }
+    /**
+     * @param ?array $keyModifiers
+     */
     public function triggerHotkeyByKeySequence(?string $keyId = null, ?array $keyModifiers = null, ?bool $keyModifiersShift = null, ?bool $keyModifiersControl = null, ?bool $keyModifiersAlt = null, ?bool $keyModifiersCommand = null): TriggerHotkeyByKeySequenceResponse
     {
         return $this->request(new TriggerHotkeyByKeySequenceRequest($keyId, $keyModifiers, $keyModifiersShift, $keyModifiersControl, $keyModifiersAlt, $keyModifiersCommand))->d->responseData;
@@ -438,6 +459,9 @@ class Client extends BaseClient
     {
         return $this->request(new GetSpecialInputsRequest())->d->responseData;
     }
+    /**
+     * @param ?array $inputSettings
+     */
     public function createInput(string $inputName, string $inputKind, ?string $sceneName = null, ?string $sceneUuid = null, ?array $inputSettings = null, ?bool $sceneItemEnabled = null): CreateInputResponse
     {
         return $this->request(new CreateInputRequest($inputName, $inputKind, $sceneName, $sceneUuid, $inputSettings, $sceneItemEnabled))->d->responseData;
@@ -458,6 +482,9 @@ class Client extends BaseClient
     {
         return $this->request(new GetInputSettingsRequest($inputName, $inputUuid))->d->responseData;
     }
+    /**
+     * @param array $inputSettings
+     */
     public function setInputSettings(array $inputSettings, ?string $inputName = null, ?string $inputUuid = null, ?bool $overlay = null): SetInputSettingsResponse
     {
         return $this->request(new SetInputSettingsRequest($inputSettings, $inputName, $inputUuid, $overlay))->d->responseData;
@@ -510,6 +537,9 @@ class Client extends BaseClient
     {
         return $this->request(new GetInputAudioTracksRequest($inputName, $inputUuid))->d->responseData;
     }
+    /**
+     * @param array $inputAudioTracks
+     */
     public function setInputAudioTracks(array $inputAudioTracks, ?string $inputName = null, ?string $inputUuid = null): SetInputAudioTracksResponse
     {
         return $this->request(new SetInputAudioTracksRequest($inputAudioTracks, $inputName, $inputUuid))->d->responseData;
@@ -602,6 +632,9 @@ class Client extends BaseClient
     {
         return $this->request(new GetOutputSettingsRequest($outputName))->d->responseData;
     }
+    /**
+     * @param array $outputSettings
+     */
     public function setOutputSettings(string $outputName, array $outputSettings): SetOutputSettingsResponse
     {
         return $this->request(new SetOutputSettingsRequest($outputName, $outputSettings))->d->responseData;
@@ -666,6 +699,9 @@ class Client extends BaseClient
     {
         return $this->request(new GetSceneItemTransformRequest($sceneItemId, $sceneName, $sceneUuid))->d->responseData;
     }
+    /**
+     * @param array $sceneItemTransform
+     */
     public function setSceneItemTransform(int $sceneItemId, array $sceneItemTransform, ?string $sceneName = null, ?string $sceneUuid = null): SetSceneItemTransformResponse
     {
         return $this->request(new SetSceneItemTransformRequest($sceneItemId, $sceneItemTransform, $sceneName, $sceneUuid))->d->responseData;
@@ -798,6 +834,9 @@ class Client extends BaseClient
     {
         return $this->request(new SetCurrentSceneTransitionDurationRequest($transitionDuration))->d->responseData;
     }
+    /**
+     * @param array $transitionSettings
+     */
     public function setCurrentSceneTransitionSettings(array $transitionSettings, ?bool $overlay = null): SetCurrentSceneTransitionSettingsResponse
     {
         return $this->request(new SetCurrentSceneTransitionSettingsRequest($transitionSettings, $overlay))->d->responseData;

@@ -26,6 +26,7 @@ final readonly class GetSceneItemSourceResponse implements ResponseInterface
      * @var string
      */
     public string $sourceUuid;
+
     public function __construct(string $sourceName, string $sourceUuid)
     {
         $this->sourceName = $sourceName;

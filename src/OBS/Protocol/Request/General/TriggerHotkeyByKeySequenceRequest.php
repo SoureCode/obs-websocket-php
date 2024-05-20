@@ -57,6 +57,9 @@ final readonly class TriggerHotkeyByKeySequenceRequest implements RequestInterfa
      */
     #[SerializedName('keyModifiers.command')]
     public ?bool $keyModifiersCommand;
+    /**
+     * @param ?array $keyModifiers
+     */
     public function __construct(?string $keyId = null, ?array $keyModifiers = null, ?bool $keyModifiersShift = null, ?bool $keyModifiersControl = null, ?bool $keyModifiersAlt = null, ?bool $keyModifiersCommand = null)
     {
         $this->keyId = $keyId;

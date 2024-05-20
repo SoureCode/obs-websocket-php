@@ -27,6 +27,7 @@ final readonly class StreamStateChangedEvent implements EventInterface
      * @var string
      */
     public string $outputState;
+
     public function __construct(bool $outputActive, string $outputState)
     {
         $this->outputActive = $outputActive;

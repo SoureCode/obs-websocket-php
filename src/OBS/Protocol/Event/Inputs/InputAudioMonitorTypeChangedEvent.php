@@ -39,6 +39,7 @@ final readonly class InputAudioMonitorTypeChangedEvent implements EventInterface
      * @var string
      */
     public string $monitorType;
+
     public function __construct(string $inputName, string $inputUuid, string $monitorType)
     {
         $this->inputName = $inputName;

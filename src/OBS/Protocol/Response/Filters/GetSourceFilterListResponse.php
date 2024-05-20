@@ -20,6 +20,9 @@ final readonly class GetSourceFilterListResponse implements ResponseInterface
      * @var array<object>
      */
     public array $filters;
+    /**
+     * @param array<object> $filters
+     */
     public function __construct(array $filters)
     {
         $this->filters = $filters;

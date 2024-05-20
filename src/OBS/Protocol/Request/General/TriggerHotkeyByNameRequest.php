@@ -28,6 +28,7 @@ final readonly class TriggerHotkeyByNameRequest implements RequestInterface
      * @var ?string
      */
     public ?string $contextName;
+
     public function __construct(string $hotkeyName, ?string $contextName = null)
     {
         $this->hotkeyName = $hotkeyName;

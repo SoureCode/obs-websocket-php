@@ -26,6 +26,7 @@ final readonly class GetPersistentDataRequest implements RequestInterface
      * @var string
      */
     public string $slotName;
+
     public function __construct(string $realm, string $slotName)
     {
         $this->realm = $realm;
