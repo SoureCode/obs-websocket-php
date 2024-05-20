@@ -16,8 +16,6 @@ final readonly class GetStudioModeEnabledResponse implements ResponseInterface
 {
     /**
      * Whether studio mode is enabled
-     *
-     * @var bool
      */
     public bool $studioModeEnabled;
 

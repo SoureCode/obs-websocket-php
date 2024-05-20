@@ -16,14 +16,10 @@ final readonly class GetInputAudioTracksRequest implements RequestInterface
 {
     /**
      * Name of the input
-     *
-     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the input
-     *
-     * @var ?string
      */
     public ?string $inputUuid;
 

@@ -22,20 +22,14 @@ final readonly class SetInputSettingsRequest implements RequestInterface
     public array $inputSettings;
     /**
      * Name of the input to set the settings of
-     *
-     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the input to set the settings of
-     *
-     * @var ?string
      */
     public ?string $inputUuid;
     /**
      * True == apply the settings on top of existing ones, False == reset the input to its defaults, then apply settings.
-     *
-     * @var ?bool
      */
     public ?bool $overlay;
     /**

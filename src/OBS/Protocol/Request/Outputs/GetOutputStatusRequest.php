@@ -16,8 +16,6 @@ final readonly class GetOutputStatusRequest implements RequestInterface
 {
     /**
      * Output name
-     *
-     * @var string
      */
     public string $outputName;
 

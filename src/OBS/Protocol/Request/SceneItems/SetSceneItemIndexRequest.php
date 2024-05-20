@@ -18,26 +18,18 @@ final readonly class SetSceneItemIndexRequest implements RequestInterface
 {
     /**
      * Numeric ID of the scene item
-     *
-     * @var int
      */
     public int $sceneItemId;
     /**
      * New index position of the scene item
-     *
-     * @var int
      */
     public int $sceneItemIndex;
     /**
      * Name of the scene the item is in
-     *
-     * @var ?string
      */
     public ?string $sceneName;
     /**
      * UUID of the scene the item is in
-     *
-     * @var ?string
      */
     public ?string $sceneUuid;
 

@@ -16,14 +16,10 @@ final readonly class GetProfileParameterRequest implements RequestInterface
 {
     /**
      * Category of the parameter to get
-     *
-     * @var string
      */
     public string $parameterCategory;
     /**
      * Name of the parameter to get
-     *
-     * @var string
      */
     public string $parameterName;
 

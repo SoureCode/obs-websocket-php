@@ -16,14 +16,10 @@ final readonly class GetSourceFilterListRequest implements RequestInterface
 {
     /**
      * Name of the source
-     *
-     * @var ?string
      */
     public ?string $sourceName;
     /**
      * UUID of the source
-     *
-     * @var ?string
      */
     public ?string $sourceUuid;
 

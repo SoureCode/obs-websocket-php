@@ -30,6 +30,7 @@ class BaseClient
 {
     private WebSocketClient $client;
     private OBSMessageSerializer $serializer;
+    private ?LoggerInterface $logger = null;
 
     public function __construct(
         private readonly string $url,
@@ -74,7 +75,17 @@ class BaseClient
             throw new RuntimeException('Unexpected message type');
         }
 
-        return $this->serializer->deserialize($data->getContent());
+        $content = $data->getContent();
+
+        $this->logger?->debug('Received message', [
+            'content' => $content,
+            'payload' => $data->getPayload(),
+            'timestamp' => $data->getTimestamp(),
+            'length' => $data->getLength(),
+            'op' => $data->getOpcode(),
+        ]);
+
+        return $this->serializer->deserialize($content);
     }
 
     public function identify(#[SensitiveParameter] $plainPassword, Authentication $authentication, ?EventSubscription $eventSubscriptions = EventSubscription::None): OBSMessage
@@ -159,6 +170,7 @@ class BaseClient
 
     public function setLogger(LoggerInterface $logger): static
     {
+        $this->logger = $logger;
         $this->client->setLogger($logger);
 
         return $this;

@@ -16,8 +16,6 @@ final readonly class GetInputKindListRequest implements RequestInterface
 {
     /**
      * True == Return all kinds as unversioned, False == Return with version suffixes (if available)
-     *
-     * @var ?bool
      */
     public ?bool $unversioned;
 

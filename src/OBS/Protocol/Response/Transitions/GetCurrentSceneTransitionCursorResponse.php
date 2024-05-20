@@ -18,8 +18,6 @@ final readonly class GetCurrentSceneTransitionCursorResponse implements Response
 {
     /**
      * Cursor position, between 0.0 and 1.0
-     *
-     * @var float
      */
     public float $transitionCursor;
 

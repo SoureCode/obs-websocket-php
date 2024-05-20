@@ -18,26 +18,18 @@ final readonly class SetSceneItemLockedRequest implements RequestInterface
 {
     /**
      * Numeric ID of the scene item
-     *
-     * @var int
      */
     public int $sceneItemId;
     /**
      * New lock state of the scene item
-     *
-     * @var bool
      */
     public bool $sceneItemLocked;
     /**
      * Name of the scene the item is in
-     *
-     * @var ?string
      */
     public ?string $sceneName;
     /**
      * UUID of the scene the item is in
-     *
-     * @var ?string
      */
     public ?string $sceneUuid;
 

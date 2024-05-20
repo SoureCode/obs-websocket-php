@@ -18,26 +18,18 @@ final readonly class GetCurrentProgramSceneResponse implements ResponseInterface
 {
     /**
      * Current program scene name
-     *
-     * @var string
      */
     public string $sceneName;
     /**
      * Current program scene UUID
-     *
-     * @var string
      */
     public string $sceneUuid;
     /**
      * Current program scene name (Deprecated)
-     *
-     * @var string
      */
     public string $currentProgramSceneName;
     /**
      * Current program scene UUID (Deprecated)
-     *
-     * @var string
      */
     public string $currentProgramSceneUuid;
 

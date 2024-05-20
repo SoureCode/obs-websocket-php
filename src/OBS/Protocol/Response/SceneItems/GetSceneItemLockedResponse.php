@@ -18,8 +18,6 @@ final readonly class GetSceneItemLockedResponse implements ResponseInterface
 {
     /**
      * Whether the scene item is locked. `true` for locked, `false` for unlocked
-     *
-     * @var bool
      */
     public bool $sceneItemLocked;
 

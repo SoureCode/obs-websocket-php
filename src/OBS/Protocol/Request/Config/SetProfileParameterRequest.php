@@ -16,20 +16,14 @@ final readonly class SetProfileParameterRequest implements RequestInterface
 {
     /**
      * Category of the parameter to set
-     *
-     * @var string
      */
     public string $parameterCategory;
     /**
      * Name of the parameter to set
-     *
-     * @var string
      */
     public string $parameterName;
     /**
      * Value of the parameter to set. Use `null` to delete
-     *
-     * @var ?string
      */
     public ?string $parameterValue;
 

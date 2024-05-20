@@ -18,8 +18,6 @@ final readonly class GetSceneItemEnabledResponse implements ResponseInterface
 {
     /**
      * Whether the scene item is enabled. `true` for enabled, `false` for disabled
-     *
-     * @var bool
      */
     public bool $sceneItemEnabled;
 

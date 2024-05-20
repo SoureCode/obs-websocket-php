@@ -16,32 +16,24 @@ final readonly class CreateSourceFilterRequest implements RequestInterface
 {
     /**
      * Name of the new filter to be created
-     *
-     * @var string
      */
     public string $filterName;
     /**
      * The kind of filter to be created
-     *
-     * @var string
      */
     public string $filterKind;
     /**
      * Name of the source to add the filter to
-     *
-     * @var ?string
      */
     public ?string $sourceName;
     /**
      * UUID of the source to add the filter to
-     *
-     * @var ?string
      */
     public ?string $sourceUuid;
     /**
      * Settings object to initialize the filter with
      *
-     * @var ?array
+     * @var array
      */
     public ?array $filterSettings;
     /**

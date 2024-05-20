@@ -16,42 +16,30 @@ final readonly class GetSpecialInputsResponse implements ResponseInterface
 {
     /**
      * Name of the Desktop Audio input
-     *
-     * @var string
      */
-    public string $desktop1;
+    public ?string $desktop1;
     /**
      * Name of the Desktop Audio 2 input
-     *
-     * @var string
      */
-    public string $desktop2;
+    public ?string $desktop2;
     /**
      * Name of the Mic/Auxiliary Audio input
-     *
-     * @var string
      */
-    public string $mic1;
+    public ?string $mic1;
     /**
      * Name of the Mic/Auxiliary Audio 2 input
-     *
-     * @var string
      */
-    public string $mic2;
+    public ?string $mic2;
     /**
      * Name of the Mic/Auxiliary Audio 3 input
-     *
-     * @var string
      */
-    public string $mic3;
+    public ?string $mic3;
     /**
      * Name of the Mic/Auxiliary Audio 4 input
-     *
-     * @var string
      */
-    public string $mic4;
+    public ?string $mic4;
 
-    public function __construct(string $desktop1, string $desktop2, string $mic1, string $mic2, string $mic3, string $mic4)
+    public function __construct(?string $desktop1 = null, ?string $desktop2 = null, ?string $mic1 = null, ?string $mic2 = null, ?string $mic3 = null, ?string $mic4 = null)
     {
         $this->desktop1 = $desktop1;
         $this->desktop2 = $desktop2;

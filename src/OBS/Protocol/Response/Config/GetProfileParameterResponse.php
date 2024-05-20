@@ -16,14 +16,10 @@ final readonly class GetProfileParameterResponse implements ResponseInterface
 {
     /**
      * Value associated with the parameter. `null` if not set and no default
-     *
-     * @var ?string
      */
     public ?string $parameterValue;
     /**
      * Default value associated with the parameter. `null` if no default
-     *
-     * @var ?string
      */
     public ?string $defaultParameterValue;
 

@@ -16,26 +16,18 @@ final readonly class SetSourceFilterNameRequest implements RequestInterface
 {
     /**
      * Current name of the filter
-     *
-     * @var string
      */
     public string $filterName;
     /**
      * New name for the filter
-     *
-     * @var string
      */
     public string $newFilterName;
     /**
      * Name of the source the filter is on
-     *
-     * @var ?string
      */
     public ?string $sourceName;
     /**
      * UUID of the source the filter is on
-     *
-     * @var ?string
      */
     public ?string $sourceUuid;
 

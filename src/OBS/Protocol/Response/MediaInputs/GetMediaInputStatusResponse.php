@@ -27,20 +27,14 @@ final readonly class GetMediaInputStatusResponse implements ResponseInterface
 {
     /**
      * State of the media input
-     *
-     * @var string
      */
     public string $mediaState;
     /**
      * Total duration of the playing media in milliseconds. `null` if not playing
-     *
-     * @var ?int
      */
     public ?int $mediaDuration;
     /**
      * Position of the cursor in milliseconds. `null` if not playing
-     *
-     * @var ?int
      */
     public ?int $mediaCursor;
 

@@ -16,14 +16,10 @@ final readonly class ToggleInputMuteRequest implements RequestInterface
 {
     /**
      * Name of the input to toggle the mute state of
-     *
-     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the input to toggle the mute state of
-     *
-     * @var ?string
      */
     public ?string $inputUuid;
 

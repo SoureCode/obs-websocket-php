@@ -18,14 +18,10 @@ final readonly class SetTBarPositionRequest implements RequestInterface
 {
     /**
      * New position
-     *
-     * @var int
      */
     public int $position;
     /**
      * Whether to release the TBar. Only set `false` if you know that you will be sending another position update
-     *
-     * @var ?bool
      */
     public ?bool $release;
 

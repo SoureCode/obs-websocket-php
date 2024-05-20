@@ -16,14 +16,10 @@ final readonly class GetInputMuteRequest implements RequestInterface
 {
     /**
      * Name of input to get the mute state of
-     *
-     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of input to get the mute state of
-     *
-     * @var ?string
      */
     public ?string $inputUuid;
 

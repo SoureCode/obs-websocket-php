@@ -16,8 +16,6 @@ final readonly class SetCurrentSceneTransitionDurationRequest implements Request
 {
     /**
      * Duration in milliseconds
-     *
-     * @var int
      */
     public int $transitionDuration;
 

@@ -18,14 +18,10 @@ final readonly class GetInputAudioSyncOffsetRequest implements RequestInterface
 {
     /**
      * Name of the input to get the audio sync offset of
-     *
-     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the input to get the audio sync offset of
-     *
-     * @var ?string
      */
     public ?string $inputUuid;
 

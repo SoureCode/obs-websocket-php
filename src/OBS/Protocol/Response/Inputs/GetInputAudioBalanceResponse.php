@@ -16,8 +16,6 @@ final readonly class GetInputAudioBalanceResponse implements ResponseInterface
 {
     /**
      * Audio balance value from 0.0-1.0
-     *
-     * @var float
      */
     public float $inputAudioBalance;
 

@@ -16,8 +16,6 @@ final readonly class ToggleStreamResponse implements ResponseInterface
 {
     /**
      * New state of the stream output
-     *
-     * @var bool
      */
     public bool $outputActive;
 

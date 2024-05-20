@@ -16,20 +16,14 @@ final readonly class SetInputMuteRequest implements RequestInterface
 {
     /**
      * Whether to mute the input or not
-     *
-     * @var bool
      */
     public bool $inputMuted;
     /**
      * Name of the input to set the mute state of
-     *
-     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the input to set the mute state of
-     *
-     * @var ?string
      */
     public ?string $inputUuid;
 

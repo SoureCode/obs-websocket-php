@@ -16,8 +16,6 @@ final readonly class CreateSceneRequest implements RequestInterface
 {
     /**
      * Name for the new scene
-     *
-     * @var string
      */
     public string $sceneName;
 

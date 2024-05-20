@@ -16,50 +16,34 @@ final readonly class GetStreamStatusResponse implements ResponseInterface
 {
     /**
      * Whether the output is active
-     *
-     * @var bool
      */
     public bool $outputActive;
     /**
      * Whether the output is currently reconnecting
-     *
-     * @var bool
      */
     public bool $outputReconnecting;
     /**
      * Current formatted timecode string for the output
-     *
-     * @var string
      */
     public string $outputTimecode;
     /**
      * Current duration in milliseconds for the output
-     *
-     * @var int
      */
     public int $outputDuration;
     /**
      * Congestion of the output
-     *
-     * @var int
      */
     public int $outputCongestion;
     /**
      * Number of bytes sent by the output
-     *
-     * @var int
      */
     public int $outputBytes;
     /**
      * Number of frames skipped by the output's process
-     *
-     * @var int
      */
     public int $outputSkippedFrames;
     /**
      * Total number of frames delivered by the output's process
-     *
-     * @var int
      */
     public int $outputTotalFrames;
 

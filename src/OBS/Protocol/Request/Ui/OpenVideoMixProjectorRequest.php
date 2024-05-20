@@ -24,20 +24,14 @@ final readonly class OpenVideoMixProjectorRequest implements RequestInterface
 {
     /**
      * Type of mix to open
-     *
-     * @var string
      */
     public string $videoMixType;
     /**
      * Monitor index, use `GetMonitorList` to obtain index
-     *
-     * @var ?int
      */
     public ?int $monitorIndex;
     /**
      * Size/Position data for a windowed projector, in Qt Base64 encoded format. Mutually exclusive with `monitorIndex`
-     *
-     * @var ?string
      */
     public ?string $projectorGeometry;
 

@@ -16,8 +16,6 @@ final readonly class SendStreamCaptionRequest implements RequestInterface
 {
     /**
      * Caption text
-     *
-     * @var string
      */
     public string $captionText;
 

@@ -2,6 +2,7 @@
 
 namespace SoureCode\OBS\Integration\Symfony;
 
+use Psr\Log\LoggerInterface;
 use SoureCode\OBS\Client;
 use SoureCode\OBS\WebSocket\Serializer\OBSMessageSerializer;
 use Symfony\Component\Config\Definition\Configurator\DefinitionConfigurator;

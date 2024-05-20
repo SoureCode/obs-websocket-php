@@ -16,14 +16,10 @@ final readonly class GetInputVolumeRequest implements RequestInterface
 {
     /**
      * Name of the input to get the volume of
-     *
-     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the input to get the volume of
-     *
-     * @var ?string
      */
     public ?string $inputUuid;
 

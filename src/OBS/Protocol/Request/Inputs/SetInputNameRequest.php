@@ -16,20 +16,14 @@ final readonly class SetInputNameRequest implements RequestInterface
 {
     /**
      * New name for the input
-     *
-     * @var string
      */
     public string $newInputName;
     /**
      * Current input name
-     *
-     * @var ?string
      */
     public ?string $inputName;
     /**
      * Current input UUID
-     *
-     * @var ?string
      */
     public ?string $inputUuid;
 

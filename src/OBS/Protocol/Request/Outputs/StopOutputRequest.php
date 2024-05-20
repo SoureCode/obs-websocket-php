@@ -16,8 +16,6 @@ final readonly class StopOutputRequest implements RequestInterface
 {
     /**
      * Output name
-     *
-     * @var string
      */
     public string $outputName;
 

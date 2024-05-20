@@ -18,32 +18,22 @@ final readonly class CreateSceneItemRequest implements RequestInterface
 {
     /**
      * Name of the scene to create the new item in
-     *
-     * @var ?string
      */
     public ?string $sceneName;
     /**
      * UUID of the scene to create the new item in
-     *
-     * @var ?string
      */
     public ?string $sceneUuid;
     /**
      * Name of the source to add to the scene
-     *
-     * @var ?string
      */
     public ?string $sourceName;
     /**
      * UUID of the source to add to the scene
-     *
-     * @var ?string
      */
     public ?string $sourceUuid;
     /**
      * Enable state to apply to the scene item on creation
-     *
-     * @var ?bool
      */
     public ?bool $sceneItemEnabled;
 

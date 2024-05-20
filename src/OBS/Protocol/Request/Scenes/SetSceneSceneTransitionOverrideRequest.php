@@ -16,26 +16,18 @@ final readonly class SetSceneSceneTransitionOverrideRequest implements RequestIn
 {
     /**
      * Name of the scene
-     *
-     * @var ?string
      */
     public ?string $sceneName;
     /**
      * UUID of the scene
-     *
-     * @var ?string
      */
     public ?string $sceneUuid;
     /**
      * Name of the scene transition to use as override. Specify `null` to remove
-     *
-     * @var ?string
      */
     public ?string $transitionName;
     /**
      * Duration to use for any overridden transition. Specify `null` to remove
-     *
-     * @var ?int
      */
     public ?int $transitionDuration;
 

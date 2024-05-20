@@ -16,8 +16,6 @@ final readonly class StartOutputRequest implements RequestInterface
 {
     /**
      * Output name
-     *
-     * @var string
      */
     public string $outputName;
 

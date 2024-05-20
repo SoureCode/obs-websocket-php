@@ -16,14 +16,10 @@ final readonly class SetCurrentProgramSceneRequest implements RequestInterface
 {
     /**
      * Scene name to set as the current program scene
-     *
-     * @var ?string
      */
     public ?string $sceneName;
     /**
      * Scene UUID to set as the current program scene
-     *
-     * @var ?string
      */
     public ?string $sceneUuid;
 

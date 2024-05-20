@@ -19,20 +19,16 @@ final readonly class CallVendorRequestRequest implements RequestInterface
 {
     /**
      * Name of the vendor to use
-     *
-     * @var string
      */
     public string $vendorName;
     /**
      * The request type to call
-     *
-     * @var string
      */
     public string $requestType;
     /**
      * Object containing appropriate request data
      *
-     * @var ?array
+     * @var array
      */
     public ?array $requestData;
     /**

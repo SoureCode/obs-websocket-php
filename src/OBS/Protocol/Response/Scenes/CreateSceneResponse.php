@@ -16,8 +16,6 @@ final readonly class CreateSceneResponse implements ResponseInterface
 {
     /**
      * UUID of the created scene
-     *
-     * @var string
      */
     public string $sceneUuid;
 

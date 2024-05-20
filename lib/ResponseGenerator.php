@@ -41,7 +41,7 @@ final class ResponseGenerator extends ClassGenerator
         $properties = [];
 
         foreach ($protocol['responseFields'] as $dataField) {
-            $properties[] = Property::fromRequestProtocol($className, $dataField);
+            $properties[] = Property::fromRequestProtocol($namespace . '\\'.$className, $dataField);
         }
 
         return new self(

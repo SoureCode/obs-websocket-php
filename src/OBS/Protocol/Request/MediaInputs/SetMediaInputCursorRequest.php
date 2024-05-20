@@ -18,20 +18,14 @@ final readonly class SetMediaInputCursorRequest implements RequestInterface
 {
     /**
      * New cursor position to set
-     *
-     * @var int
      */
     public int $mediaCursor;
     /**
      * Name of the media input
-     *
-     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the media input
-     *
-     * @var ?string
      */
     public ?string $inputUuid;
 

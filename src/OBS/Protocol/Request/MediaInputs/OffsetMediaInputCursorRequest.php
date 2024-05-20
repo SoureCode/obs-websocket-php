@@ -18,20 +18,14 @@ final readonly class OffsetMediaInputCursorRequest implements RequestInterface
 {
     /**
      * Value to offset the current cursor position by
-     *
-     * @var int
      */
     public int $mediaCursorOffset;
     /**
      * Name of the media input
-     *
-     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the media input
-     *
-     * @var ?string
      */
     public ?string $inputUuid;
 

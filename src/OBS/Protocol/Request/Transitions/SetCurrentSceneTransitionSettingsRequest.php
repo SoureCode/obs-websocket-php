@@ -22,8 +22,6 @@ final readonly class SetCurrentSceneTransitionSettingsRequest implements Request
     public array $transitionSettings;
     /**
      * Whether to overlay over the current settings or replace them
-     *
-     * @var ?bool
      */
     public ?bool $overlay;
     /**

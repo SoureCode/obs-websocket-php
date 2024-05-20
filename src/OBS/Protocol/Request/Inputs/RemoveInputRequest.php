@@ -18,14 +18,10 @@ final readonly class RemoveInputRequest implements RequestInterface
 {
     /**
      * Name of the input to remove
-     *
-     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the input to remove
-     *
-     * @var ?string
      */
     public ?string $inputUuid;
 

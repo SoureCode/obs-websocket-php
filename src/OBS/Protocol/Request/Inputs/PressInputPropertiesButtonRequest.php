@@ -22,20 +22,14 @@ final readonly class PressInputPropertiesButtonRequest implements RequestInterfa
 {
     /**
      * Name of the button property to press
-     *
-     * @var string
      */
     public string $propertyName;
     /**
      * Name of the input
-     *
-     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the input
-     *
-     * @var ?string
      */
     public ?string $inputUuid;
 

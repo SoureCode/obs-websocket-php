@@ -42,7 +42,7 @@ final class RequestGenerator extends ClassGenerator
         $properties = [];
 
         foreach ($protocol['requestFields'] as $dataField) {
-            $properties[] = Property::fromRequestProtocol($className, $dataField);
+            $properties[] = Property::fromRequestProtocol($namespace . '\\'.$className, $dataField);
         }
 
         return new self(

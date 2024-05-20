@@ -24,8 +24,6 @@ final readonly class GetInputSettingsResponse implements ResponseInterface
     public array $inputSettings;
     /**
      * The kind of the input
-     *
-     * @var string
      */
     public string $inputKind;
     /**

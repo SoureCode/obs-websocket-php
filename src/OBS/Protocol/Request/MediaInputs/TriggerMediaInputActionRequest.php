@@ -16,20 +16,14 @@ final readonly class TriggerMediaInputActionRequest implements RequestInterface
 {
     /**
      * Identifier of the `ObsMediaInputAction` enum
-     *
-     * @var string
      */
     public string $mediaAction;
     /**
      * Name of the media input
-     *
-     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the media input
-     *
-     * @var ?string
      */
     public ?string $inputUuid;
 

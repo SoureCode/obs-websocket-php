@@ -19,41 +19,31 @@ final readonly class TriggerHotkeyByKeySequenceRequest implements RequestInterfa
 {
     /**
      * The OBS key ID to use. See https://github.com/obsproject/obs-studio/blob/master/libobs/obs-hotkeys.h
-     *
-     * @var ?string
      */
     public ?string $keyId;
     /**
      * Object containing key modifiers to apply
      *
-     * @var ?array
+     * @var array
      */
     public ?array $keyModifiers;
     /**
      * Press Shift
-     *
-     * @var ?bool
      */
     #[SerializedName('keyModifiers.shift')]
     public ?bool $keyModifiersShift;
     /**
      * Press CTRL
-     *
-     * @var ?bool
      */
     #[SerializedName('keyModifiers.control')]
     public ?bool $keyModifiersControl;
     /**
      * Press ALT
-     *
-     * @var ?bool
      */
     #[SerializedName('keyModifiers.alt')]
     public ?bool $keyModifiersAlt;
     /**
      * Press CMD (Mac)
-     *
-     * @var ?bool
      */
     #[SerializedName('keyModifiers.command')]
     public ?bool $keyModifiersCommand;

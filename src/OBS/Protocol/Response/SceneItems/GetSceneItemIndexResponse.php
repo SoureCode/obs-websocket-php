@@ -20,8 +20,6 @@ final readonly class GetSceneItemIndexResponse implements ResponseInterface
 {
     /**
      * Index position of the scene item
-     *
-     * @var int
      */
     public int $sceneItemIndex;
 

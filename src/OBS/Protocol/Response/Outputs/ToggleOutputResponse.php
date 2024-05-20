@@ -16,8 +16,6 @@ final readonly class ToggleOutputResponse implements ResponseInterface
 {
     /**
      * Whether the output is active
-     *
-     * @var bool
      */
     public bool $outputActive;
 

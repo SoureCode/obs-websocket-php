@@ -16,20 +16,14 @@ final readonly class GetVersionResponse implements ResponseInterface
 {
     /**
      * Current OBS Studio version
-     *
-     * @var string
      */
     public string $obsVersion;
     /**
      * Current obs-websocket version
-     *
-     * @var string
      */
     public string $obsWebSocketVersion;
     /**
      * Current latest obs-websocket RPC version
-     *
-     * @var int
      */
     public int $rpcVersion;
     /**
@@ -46,14 +40,10 @@ final readonly class GetVersionResponse implements ResponseInterface
     public array $supportedImageFormats;
     /**
      * Name of the platform. Usually `windows`, `macos`, or `ubuntu` (linux flavor). Not guaranteed to be any of those
-     *
-     * @var string
      */
     public string $platform;
     /**
      * Description of the platform, like `Windows 10 (10.0)`
-     *
-     * @var string
      */
     public string $platformDescription;
     /**

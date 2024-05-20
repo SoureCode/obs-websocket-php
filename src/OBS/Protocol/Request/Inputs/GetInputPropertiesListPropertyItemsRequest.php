@@ -18,20 +18,14 @@ final readonly class GetInputPropertiesListPropertyItemsRequest implements Reque
 {
     /**
      * Name of the list property to get the items of
-     *
-     * @var string
      */
     public string $propertyName;
     /**
      * Name of the input
-     *
-     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the input
-     *
-     * @var ?string
      */
     public ?string $inputUuid;
 

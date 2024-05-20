@@ -16,8 +16,6 @@ final readonly class CreateProfileRequest implements RequestInterface
 {
     /**
      * Name for the new profile
-     *
-     * @var string
      */
     public string $profileName;
 

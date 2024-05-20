@@ -16,20 +16,14 @@ final readonly class SetSceneNameRequest implements RequestInterface
 {
     /**
      * New name for the scene
-     *
-     * @var string
      */
     public string $newSceneName;
     /**
      * Name of the scene to be renamed
-     *
-     * @var ?string
      */
     public ?string $sceneName;
     /**
      * UUID of the scene to be renamed
-     *
-     * @var ?string
      */
     public ?string $sceneUuid;
 

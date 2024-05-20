@@ -18,26 +18,18 @@ final readonly class OpenSourceProjectorRequest implements RequestInterface
 {
     /**
      * Name of the source to open a projector for
-     *
-     * @var ?string
      */
     public ?string $sourceName;
     /**
      * UUID of the source to open a projector for
-     *
-     * @var ?string
      */
     public ?string $sourceUuid;
     /**
      * Monitor index, use `GetMonitorList` to obtain index
-     *
-     * @var ?int
      */
     public ?int $monitorIndex;
     /**
      * Size/Position data for a windowed projector, in Qt Base64 encoded format. Mutually exclusive with `monitorIndex`
-     *
-     * @var ?string
      */
     public ?string $projectorGeometry;
 

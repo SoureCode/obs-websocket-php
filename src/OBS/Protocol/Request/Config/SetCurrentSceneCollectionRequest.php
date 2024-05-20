@@ -18,8 +18,6 @@ final readonly class SetCurrentSceneCollectionRequest implements RequestInterfac
 {
     /**
      * Name of the scene collection to switch to
-     *
-     * @var string
      */
     public string $sceneCollectionName;
 

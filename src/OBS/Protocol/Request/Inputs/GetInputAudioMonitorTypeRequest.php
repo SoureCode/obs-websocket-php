@@ -22,14 +22,10 @@ final readonly class GetInputAudioMonitorTypeRequest implements RequestInterface
 {
     /**
      * Name of the input to get the audio monitor type of
-     *
-     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the input to get the audio monitor type of
-     *
-     * @var ?string
      */
     public ?string $inputUuid;
 

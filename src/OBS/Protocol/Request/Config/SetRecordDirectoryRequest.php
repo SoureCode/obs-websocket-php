@@ -16,8 +16,6 @@ final readonly class SetRecordDirectoryRequest implements RequestInterface
 {
     /**
      * Output directory
-     *
-     * @var string
      */
     public string $recordDirectory;
 

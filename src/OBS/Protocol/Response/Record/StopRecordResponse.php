@@ -16,8 +16,6 @@ final readonly class StopRecordResponse implements ResponseInterface
 {
     /**
      * File name for the saved recording
-     *
-     * @var string
      */
     public string $outputPath;
 

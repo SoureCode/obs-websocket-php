@@ -18,14 +18,10 @@ final readonly class GetInputSettingsRequest implements RequestInterface
 {
     /**
      * Name of the input to get the settings of
-     *
-     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the input to get the settings of
-     *
-     * @var ?string
      */
     public ?string $inputUuid;
 

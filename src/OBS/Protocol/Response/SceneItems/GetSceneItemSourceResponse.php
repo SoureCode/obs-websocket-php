@@ -16,14 +16,10 @@ final readonly class GetSceneItemSourceResponse implements ResponseInterface
 {
     /**
      * Name of the source associated with the scene item
-     *
-     * @var string
      */
     public string $sourceName;
     /**
      * UUID of the source associated with the scene item
-     *
-     * @var string
      */
     public string $sourceUuid;
 

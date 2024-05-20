@@ -18,14 +18,10 @@ final readonly class GetSceneSceneTransitionOverrideRequest implements RequestIn
 {
     /**
      * Name of the scene
-     *
-     * @var ?string
      */
     public ?string $sceneName;
     /**
      * UUID of the scene
-     *
-     * @var ?string
      */
     public ?string $sceneUuid;
 

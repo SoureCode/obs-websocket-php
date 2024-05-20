@@ -16,14 +16,10 @@ final readonly class OpenInputInteractDialogRequest implements RequestInterface
 {
     /**
      * Name of the input to open the dialog of
-     *
-     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the input to open the dialog of
-     *
-     * @var ?string
      */
     public ?string $inputUuid;
 

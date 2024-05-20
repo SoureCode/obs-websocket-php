@@ -16,8 +16,6 @@ final readonly class GetInputDefaultSettingsRequest implements RequestInterface
 {
     /**
      * Input kind to get the default settings for
-     *
-     * @var string
      */
     public string $inputKind;
 

@@ -16,8 +16,6 @@ final readonly class GetLastReplayBufferReplayResponse implements ResponseInterf
 {
     /**
      * File path
-     *
-     * @var string
      */
     public string $savedReplayPath;
 

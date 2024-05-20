@@ -16,20 +16,14 @@ final readonly class GetSourceFilterResponse implements ResponseInterface
 {
     /**
      * Whether the filter is enabled
-     *
-     * @var bool
      */
     public bool $filterEnabled;
     /**
      * Index of the filter in the list, beginning at 0
-     *
-     * @var int
      */
     public int $filterIndex;
     /**
      * The kind of filter
-     *
-     * @var string
      */
     public string $filterKind;
     /**

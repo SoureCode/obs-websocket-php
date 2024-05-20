@@ -16,8 +16,6 @@ final readonly class GetProfileListResponse implements ResponseInterface
 {
     /**
      * The name of the current profile
-     *
-     * @var string
      */
     public string $currentProfileName;
     /**

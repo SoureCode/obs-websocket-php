@@ -16,14 +16,10 @@ final readonly class GetInputAudioBalanceRequest implements RequestInterface
 {
     /**
      * Name of the input to get the audio balance of
-     *
-     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the input to get the audio balance of
-     *
-     * @var ?string
      */
     public ?string $inputUuid;
 

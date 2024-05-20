@@ -16,8 +16,6 @@ final readonly class ToggleRecordResponse implements ResponseInterface
 {
     /**
      * The new active state of the output
-     *
-     * @var bool
      */
     public bool $outputActive;
 

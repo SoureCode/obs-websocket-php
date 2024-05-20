@@ -16,8 +16,6 @@ final readonly class SetCurrentProfileRequest implements RequestInterface
 {
     /**
      * Name of the profile to switch to
-     *
-     * @var string
      */
     public string $profileName;
 

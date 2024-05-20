@@ -7,7 +7,7 @@ use PhpParser\Node\Expr\BinaryOp\BitwiseOr;
 use PhpParser\Node\Expr\ClassConstFetch;
 use SoureCode\OBS\Protocol\EventInterface;
 use SoureCode\OBS\Protocol\RequestInterface;
-use SoureCode\OBS\Protocol\Response\Inputs\GetInputKindListResponse;
+use SoureCode\OBS\Protocol\Response\Inputs\GetSpecialInputsResponse;
 use SoureCode\OBS\Protocol\ResponseInterface;
 use Symfony\Component\Serializer\Attribute\SerializedName;
 use function Symfony\Component\String\u;
@@ -26,9 +26,17 @@ class Utils
     ];
 
     public const array DOC_TYPE_MAPPING = [
-        GetInputKindListResponse::class => [
-            "inputKinds" => "array<string>"
-        ]
+    ];
+
+    public const array TYPE_MAPPING = [
+        GetSpecialInputsResponse::class => [
+            'desktop1' => '?string',
+            'desktop2' => '?string',
+            'mic1' => '?string',
+            'mic2' => '?string',
+            'mic3' => '?string',
+            'mic4' => '?string',
+        ],
     ];
 
     /**
@@ -52,9 +60,7 @@ class Utils
         }
 
         if ($tags !== null) {
-            if(count($outputLines) > 1) {
-                $outputLines[] = $indentionString . ' *';
-            }
+            $tagLines = [];
 
             foreach ($tags as $name => $value) {
                 if ($value === null) { // Skip null values
@@ -63,17 +69,27 @@ class Utils
 
                 if (is_array($value)) {
                     foreach ($value as $item) {
-                        $outputLines[] = $indentionString . ' * @' . $name . ' ' . $item;
+                        $tagLines[] = $indentionString . ' * @' . $name . ' ' . $item;
                     }
 
                     continue;
                 }
 
-                $outputLines[] = $indentionString . ' * @' . $name . ' ' . $value;
+                $tagLines[] = $indentionString . ' * @' . $name . ' ' . $value;
+            }
+
+            if(count($tagLines) > 0) {
+                if (count($outputLines) > 1) {
+                    $outputLines[] = $indentionString . ' *';
+                }
+
+                foreach ($tagLines as $line) {
+                    $outputLines[] = $line;
+                }
             }
         }
 
-        if (count($outputLines) === 1){
+        if (count($outputLines) === 1) {
             return '';
         }
 
@@ -94,30 +110,51 @@ class Utils
         $valueType = strtolower($valueType);
 
         if ($valueType === "any") {
-            return ["mixed", self::resolveDocType($className, $valueName, "mixed")];
+            return [
+                self::resolveType($className, $valueName, "mixed"),
+                self::resolveDocType($className, $valueName, "mixed")
+            ];
         }
 
         if ($valueType === "object") {
-            return ["array", self::resolveDocType($className, $valueName, "array")];
+            return [
+                self::resolveType($className, $valueName, "array"),
+                self::resolveDocType($className, $valueName, "array")
+            ];
         }
 
         if ($valueType === "boolean") {
-            return ["bool", self::resolveDocType($className, $valueName, "bool")];
+            return [
+                self::resolveType($className, $valueName, "bool"),
+                self::resolveDocType($className, $valueName, "bool")
+            ];
         }
 
         if ($valueType === "number") {
             if (preg_match('/\d+\.\d+/', $description) || preg_match('/\d+\.\d+/', $restrictions)) {
-                return ["float", self::resolveDocType($className, $valueName, "float")];
+                return [
+                    self::resolveType($className, $valueName, "float"),
+                    self::resolveDocType($className, $valueName, "float")
+                ];
             }
 
-            return ["int", self::resolveDocType($className, $valueName, "int")];
+            return [
+                self::resolveType($className, $valueName, "int"),
+                self::resolveDocType($className, $valueName, "int")
+            ];
         }
 
         if (str_starts_with($valueType, "array")) {
-            return ["array", self::resolveDocType($className, $valueName, $valueType)];
+            return [
+                self::resolveType($className, $valueName, "array"),
+                self::resolveDocType($className, $valueName, $valueType)
+            ];
         }
 
-        return [$valueType, self::resolveDocType($className, $valueName, $valueType)];
+        return [
+            self::resolveType($className, $valueName, $valueType),
+            self::resolveDocType($className, $valueName, $valueType),
+        ];
     }
 
     public static function buildBitwiseOr(array $references, mixed $right = null): null|BitwiseOr|ClassConstFetch
@@ -190,7 +227,12 @@ class Utils
 
     private static function resolveDocType(string $className, string $valueName, string $default): string
     {
-        return self::DOC_TYPE_MAPPING[$className][$valueName] ?? $default;
+        return self::DOC_TYPE_MAPPING[$className][$valueName] ?? self::resolveType($className, $valueName, $default);
+    }
+
+    private static function resolveType(string $className, string $valueName, string $default): string
+    {
+        return self::TYPE_MAPPING[$className][$valueName] ?? $default;
     }
 
     public static function isNativeBuiltInType(string $type): bool

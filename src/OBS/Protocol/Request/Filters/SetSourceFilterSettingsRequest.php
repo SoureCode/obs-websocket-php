@@ -16,8 +16,6 @@ final readonly class SetSourceFilterSettingsRequest implements RequestInterface
 {
     /**
      * Name of the filter to set the settings of
-     *
-     * @var string
      */
     public string $filterName;
     /**
@@ -28,20 +26,14 @@ final readonly class SetSourceFilterSettingsRequest implements RequestInterface
     public array $filterSettings;
     /**
      * Name of the source the filter is on
-     *
-     * @var ?string
      */
     public ?string $sourceName;
     /**
      * UUID of the source the filter is on
-     *
-     * @var ?string
      */
     public ?string $sourceUuid;
     /**
      * True == apply the settings on top of existing ones, False == reset the input to its defaults, then apply settings.
-     *
-     * @var ?bool
      */
     public ?bool $overlay;
     /**

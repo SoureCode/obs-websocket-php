@@ -16,8 +16,6 @@ final readonly class GetInputListRequest implements RequestInterface
 {
     /**
      * Restrict the array to only inputs of the specified kind
-     *
-     * @var ?string
      */
     public ?string $inputKind;
 

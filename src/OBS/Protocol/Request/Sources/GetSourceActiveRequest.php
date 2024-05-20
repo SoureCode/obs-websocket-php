@@ -18,14 +18,10 @@ final readonly class GetSourceActiveRequest implements RequestInterface
 {
     /**
      * Name of the source to get the active state of
-     *
-     * @var ?string
      */
     public ?string $sourceName;
     /**
      * UUID of the source to get the active state of
-     *
-     * @var ?string
      */
     public ?string $sourceUuid;
 

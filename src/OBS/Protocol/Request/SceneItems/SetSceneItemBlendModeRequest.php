@@ -18,26 +18,18 @@ final readonly class SetSceneItemBlendModeRequest implements RequestInterface
 {
     /**
      * Numeric ID of the scene item
-     *
-     * @var int
      */
     public int $sceneItemId;
     /**
      * New blend mode
-     *
-     * @var string
      */
     public string $sceneItemBlendMode;
     /**
      * Name of the scene the item is in
-     *
-     * @var ?string
      */
     public ?string $sceneName;
     /**
      * UUID of the scene the item is in
-     *
-     * @var ?string
      */
     public ?string $sceneUuid;
 

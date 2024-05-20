@@ -16,32 +16,22 @@ final readonly class GetRecordStatusResponse implements ResponseInterface
 {
     /**
      * Whether the output is active
-     *
-     * @var bool
      */
     public bool $outputActive;
     /**
      * Whether the output is paused
-     *
-     * @var bool
      */
     public bool $outputPaused;
     /**
      * Current formatted timecode string for the output
-     *
-     * @var string
      */
     public string $outputTimecode;
     /**
      * Current duration in milliseconds for the output
-     *
-     * @var int
      */
     public int $outputDuration;
     /**
      * Number of bytes sent by the output
-     *
-     * @var int
      */
     public int $outputBytes;
 

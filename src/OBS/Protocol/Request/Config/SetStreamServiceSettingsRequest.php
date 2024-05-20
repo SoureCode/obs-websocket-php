@@ -18,8 +18,6 @@ final readonly class SetStreamServiceSettingsRequest implements RequestInterface
 {
     /**
      * Type of stream service to apply. Example: `rtmp_common` or `rtmp_custom`
-     *
-     * @var string
      */
     public string $streamServiceType;
     /**

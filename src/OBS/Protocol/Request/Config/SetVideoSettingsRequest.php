@@ -18,38 +18,26 @@ final readonly class SetVideoSettingsRequest implements RequestInterface
 {
     /**
      * Numerator of the fractional FPS value
-     *
-     * @var ?int
      */
     public ?int $fpsNumerator;
     /**
      * Denominator of the fractional FPS value
-     *
-     * @var ?int
      */
     public ?int $fpsDenominator;
     /**
      * Width of the base (canvas) resolution in pixels
-     *
-     * @var ?int
      */
     public ?int $baseWidth;
     /**
      * Height of the base (canvas) resolution in pixels
-     *
-     * @var ?int
      */
     public ?int $baseHeight;
     /**
      * Width of the output resolution in pixels
-     *
-     * @var ?int
      */
     public ?int $outputWidth;
     /**
      * Height of the output resolution in pixels
-     *
-     * @var ?int
      */
     public ?int $outputHeight;
 

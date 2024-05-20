@@ -16,8 +16,6 @@ final readonly class GetSceneCollectionListResponse implements ResponseInterface
 {
     /**
      * The name of the current scene collection
-     *
-     * @var string
      */
     public string $currentSceneCollectionName;
     /**

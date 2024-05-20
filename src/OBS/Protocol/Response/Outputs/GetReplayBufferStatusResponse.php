@@ -16,8 +16,6 @@ final readonly class GetReplayBufferStatusResponse implements ResponseInterface
 {
     /**
      * Whether the output is active
-     *
-     * @var bool
      */
     public bool $outputActive;
 

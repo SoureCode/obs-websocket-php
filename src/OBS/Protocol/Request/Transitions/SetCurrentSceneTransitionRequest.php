@@ -18,8 +18,6 @@ final readonly class SetCurrentSceneTransitionRequest implements RequestInterfac
 {
     /**
      * Name of the transition to make active
-     *
-     * @var string
      */
     public string $transitionName;
 

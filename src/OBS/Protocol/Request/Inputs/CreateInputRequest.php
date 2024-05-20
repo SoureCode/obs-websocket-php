@@ -16,38 +16,28 @@ final readonly class CreateInputRequest implements RequestInterface
 {
     /**
      * Name of the new input to created
-     *
-     * @var string
      */
     public string $inputName;
     /**
      * The kind of input to be created
-     *
-     * @var string
      */
     public string $inputKind;
     /**
      * Name of the scene to add the input to as a scene item
-     *
-     * @var ?string
      */
     public ?string $sceneName;
     /**
      * UUID of the scene to add the input to as a scene item
-     *
-     * @var ?string
      */
     public ?string $sceneUuid;
     /**
      * Settings object to initialize the input with
      *
-     * @var ?array
+     * @var array
      */
     public ?array $inputSettings;
     /**
      * Whether to set the created scene item to enabled or disabled
-     *
-     * @var ?bool
      */
     public ?bool $sceneItemEnabled;
     /**

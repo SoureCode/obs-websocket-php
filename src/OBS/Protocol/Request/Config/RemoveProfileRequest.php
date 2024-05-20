@@ -16,8 +16,6 @@ final readonly class RemoveProfileRequest implements RequestInterface
 {
     /**
      * Name of the profile to remove
-     *
-     * @var string
      */
     public string $profileName;
 

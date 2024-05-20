@@ -16,8 +16,6 @@ final readonly class GetStreamServiceSettingsResponse implements ResponseInterfa
 {
     /**
      * Stream service type, like `rtmp_custom` or `rtmp_common`
-     *
-     * @var string
      */
     public string $streamServiceType;
     /**

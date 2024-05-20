@@ -28,8 +28,6 @@ final readonly class GetSceneItemBlendModeResponse implements ResponseInterface
 {
     /**
      * Current blend mode
-     *
-     * @var string
      */
     public string $sceneItemBlendMode;
 

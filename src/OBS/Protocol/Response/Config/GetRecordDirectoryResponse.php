@@ -16,8 +16,6 @@ final readonly class GetRecordDirectoryResponse implements ResponseInterface
 {
     /**
      * Output directory
-     *
-     * @var string
      */
     public string $recordDirectory;
 

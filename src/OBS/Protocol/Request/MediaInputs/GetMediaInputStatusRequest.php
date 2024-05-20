@@ -27,14 +27,10 @@ final readonly class GetMediaInputStatusRequest implements RequestInterface
 {
     /**
      * Name of the media input
-     *
-     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the media input
-     *
-     * @var ?string
      */
     public ?string $inputUuid;
 

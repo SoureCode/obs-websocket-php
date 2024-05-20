@@ -20,26 +20,18 @@ final readonly class GetCurrentPreviewSceneResponse implements ResponseInterface
 {
     /**
      * Current preview scene name
-     *
-     * @var string
      */
     public string $sceneName;
     /**
      * Current preview scene UUID
-     *
-     * @var string
      */
     public string $sceneUuid;
     /**
      * Current preview scene name
-     *
-     * @var string
      */
     public string $currentPreviewSceneName;
     /**
      * Current preview scene UUID
-     *
-     * @var string
      */
     public string $currentPreviewSceneUuid;
 

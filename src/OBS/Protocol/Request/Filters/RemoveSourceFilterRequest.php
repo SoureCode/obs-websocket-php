@@ -16,20 +16,14 @@ final readonly class RemoveSourceFilterRequest implements RequestInterface
 {
     /**
      * Name of the filter to remove
-     *
-     * @var string
      */
     public string $filterName;
     /**
      * Name of the source the filter is on
-     *
-     * @var ?string
      */
     public ?string $sourceName;
     /**
      * UUID of the source the filter is on
-     *
-     * @var ?string
      */
     public ?string $sourceUuid;
 

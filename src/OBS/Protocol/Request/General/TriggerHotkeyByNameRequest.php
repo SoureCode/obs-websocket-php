@@ -18,14 +18,10 @@ final readonly class TriggerHotkeyByNameRequest implements RequestInterface
 {
     /**
      * Name of the hotkey to trigger
-     *
-     * @var string
      */
     public string $hotkeyName;
     /**
      * Name of context of the hotkey to trigger
-     *
-     * @var ?string
      */
     public ?string $contextName;
 

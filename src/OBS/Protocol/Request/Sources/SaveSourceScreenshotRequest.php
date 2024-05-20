@@ -21,44 +21,30 @@ final readonly class SaveSourceScreenshotRequest implements RequestInterface
 {
     /**
      * Image compression format to use. Use `GetVersion` to get compatible image formats
-     *
-     * @var string
      */
     public string $imageFormat;
     /**
      * Path to save the screenshot file to. Eg. `C:\Users\user\Desktop\screenshot.png`
-     *
-     * @var string
      */
     public string $imageFilePath;
     /**
      * Name of the source to take a screenshot of
-     *
-     * @var ?string
      */
     public ?string $sourceName;
     /**
      * UUID of the source to take a screenshot of
-     *
-     * @var ?string
      */
     public ?string $sourceUuid;
     /**
      * Width to scale the screenshot to
-     *
-     * @var ?int
      */
     public ?int $imageWidth;
     /**
      * Height to scale the screenshot to
-     *
-     * @var ?int
      */
     public ?int $imageHeight;
     /**
      * Compression quality to use. 0 for high compression, 100 for uncompressed. -1 to use "default" (whatever that means, idk)
-     *
-     * @var ?int
      */
     public ?int $imageCompressionQuality;
 

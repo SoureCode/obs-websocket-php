@@ -18,26 +18,18 @@ final readonly class SetSceneItemEnabledRequest implements RequestInterface
 {
     /**
      * Numeric ID of the scene item
-     *
-     * @var int
      */
     public int $sceneItemId;
     /**
      * New enable state of the scene item
-     *
-     * @var bool
      */
     public bool $sceneItemEnabled;
     /**
      * Name of the scene the item is in
-     *
-     * @var ?string
      */
     public ?string $sceneName;
     /**
      * UUID of the scene the item is in
-     *
-     * @var ?string
      */
     public ?string $sceneUuid;
 

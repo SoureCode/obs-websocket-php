@@ -5,7 +5,7 @@ use PhpParser\BuilderFactory;
 use PhpParser\Node;
 use Symfony\Component\Serializer\Attribute\SerializedName;
 
-final  class Property
+final class Property
 {
     use AttributeAwareTrait;
 
@@ -118,10 +118,13 @@ final  class Property
         }
 
         $tags = [
-            'var' => $targetRealType,
             'restriction' => $valueRestriction,
             'optionalBehaviour' => $protocol['valueOptionalBehaviour'] ?? null,
         ];
+
+        if (!Utils::isNativeBuiltInType($valueType)) {
+            $tags['var'] = $docType;
+        }
 
         $description = Utils::formatDocComment($valueDescription, $tags, 4);
 

@@ -16,14 +16,10 @@ final readonly class CreateInputResponse implements ResponseInterface
 {
     /**
      * UUID of the newly created input
-     *
-     * @var string
      */
     public string $inputUuid;
     /**
      * ID of the newly created scene item
-     *
-     * @var int
      */
     public int $sceneItemId;
 

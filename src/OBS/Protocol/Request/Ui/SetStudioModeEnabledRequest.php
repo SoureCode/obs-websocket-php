@@ -16,8 +16,6 @@ final readonly class SetStudioModeEnabledRequest implements RequestInterface
 {
     /**
      * True == Enabled, False == Disabled
-     *
-     * @var bool
      */
     public bool $studioModeEnabled;
 

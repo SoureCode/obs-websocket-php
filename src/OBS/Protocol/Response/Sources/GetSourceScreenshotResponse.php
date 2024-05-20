@@ -21,8 +21,6 @@ final readonly class GetSourceScreenshotResponse implements ResponseInterface
 {
     /**
      * Base64-encoded screenshot
-     *
-     * @var string
      */
     public string $imageData;
 

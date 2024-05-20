@@ -18,14 +18,10 @@ final readonly class GetSourceActiveResponse implements ResponseInterface
 {
     /**
      * Whether the source is showing in Program
-     *
-     * @var bool
      */
     public bool $videoActive;
     /**
      * Whether the source is showing in the UI (Preview, Projector, Properties)
-     *
-     * @var bool
      */
     public bool $videoShowing;
 

@@ -16,14 +16,10 @@ final readonly class RemoveSceneRequest implements RequestInterface
 {
     /**
      * Name of the scene to remove
-     *
-     * @var ?string
      */
     public ?string $sceneName;
     /**
      * UUID of the scene to remove
-     *
-     * @var ?string
      */
     public ?string $sceneUuid;
 

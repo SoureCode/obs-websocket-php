@@ -16,14 +16,10 @@ final readonly class SetPersistentDataRequest implements RequestInterface
 {
     /**
      * The data realm to select. `OBS_WEBSOCKET_DATA_REALM_GLOBAL` or `OBS_WEBSOCKET_DATA_REALM_PROFILE`
-     *
-     * @var string
      */
     public string $realm;
     /**
      * The name of the slot to retrieve data from
-     *
-     * @var string
      */
     public string $slotName;
     /**

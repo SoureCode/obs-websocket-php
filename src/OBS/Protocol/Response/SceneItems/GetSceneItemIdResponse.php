@@ -18,8 +18,6 @@ final readonly class GetSceneItemIdResponse implements ResponseInterface
 {
     /**
      * Numeric ID of the scene item
-     *
-     * @var int
      */
     public int $sceneItemId;
 

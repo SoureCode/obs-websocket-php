@@ -16,44 +16,32 @@ final readonly class GetCurrentSceneTransitionResponse implements ResponseInterf
 {
     /**
      * Name of the transition
-     *
-     * @var string
      */
     public string $transitionName;
     /**
      * UUID of the transition
-     *
-     * @var string
      */
     public string $transitionUuid;
     /**
      * Kind of the transition
-     *
-     * @var string
      */
     public string $transitionKind;
     /**
      * Whether the transition uses a fixed (unconfigurable) duration
-     *
-     * @var bool
      */
     public bool $transitionFixed;
     /**
      * Whether the transition supports being configured
-     *
-     * @var bool
      */
     public bool $transitionConfigurable;
     /**
      * Configured transition duration in milliseconds. `null` if transition is fixed
-     *
-     * @var ?int
      */
     public ?int $transitionDuration;
     /**
      * Object of settings for the transition. `null` if transition is not configurable
      *
-     * @var ?array
+     * @var array
      */
     public ?array $transitionSettings;
     /**

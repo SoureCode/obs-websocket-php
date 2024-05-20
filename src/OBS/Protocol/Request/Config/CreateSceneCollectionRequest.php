@@ -18,8 +18,6 @@ final readonly class CreateSceneCollectionRequest implements RequestInterface
 {
     /**
      * Name for the new scene collection
-     *
-     * @var string
      */
     public string $sceneCollectionName;
 

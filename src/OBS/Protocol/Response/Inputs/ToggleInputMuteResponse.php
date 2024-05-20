@@ -16,8 +16,6 @@ final readonly class ToggleInputMuteResponse implements ResponseInterface
 {
     /**
      * Whether the input has been muted or unmuted
-     *
-     * @var bool
      */
     public bool $inputMuted;
 

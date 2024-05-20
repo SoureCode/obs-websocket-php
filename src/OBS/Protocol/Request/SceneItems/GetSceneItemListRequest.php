@@ -18,14 +18,10 @@ final readonly class GetSceneItemListRequest implements RequestInterface
 {
     /**
      * Name of the scene to get the items of
-     *
-     * @var ?string
      */
     public ?string $sceneName;
     /**
      * UUID of the scene to get the items of
-     *
-     * @var ?string
      */
     public ?string $sceneUuid;
 

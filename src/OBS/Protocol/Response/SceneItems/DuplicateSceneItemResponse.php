@@ -18,8 +18,6 @@ final readonly class DuplicateSceneItemResponse implements ResponseInterface
 {
     /**
      * Numeric ID of the duplicated scene item
-     *
-     * @var int
      */
     public int $sceneItemId;
 

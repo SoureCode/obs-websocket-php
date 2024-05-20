@@ -16,8 +16,6 @@ final readonly class GetInputMuteResponse implements ResponseInterface
 {
     /**
      * Whether the input is muted
-     *
-     * @var bool
      */
     public bool $inputMuted;
 

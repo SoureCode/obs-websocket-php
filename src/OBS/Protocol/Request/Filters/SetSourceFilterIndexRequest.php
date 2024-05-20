@@ -16,26 +16,18 @@ final readonly class SetSourceFilterIndexRequest implements RequestInterface
 {
     /**
      * Name of the filter
-     *
-     * @var string
      */
     public string $filterName;
     /**
      * New index position of the filter
-     *
-     * @var int
      */
     public int $filterIndex;
     /**
      * Name of the source the filter is on
-     *
-     * @var ?string
      */
     public ?string $sourceName;
     /**
      * UUID of the source the filter is on
-     *
-     * @var ?string
      */
     public ?string $sourceUuid;
 

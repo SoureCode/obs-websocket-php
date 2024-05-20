@@ -22,20 +22,14 @@ final readonly class GetSceneTransitionListResponse implements ResponseInterface
     public array $transitions;
     /**
      * Name of the current scene transition. Can be null
-     *
-     * @var ?string
      */
     public ?string $currentSceneTransitionName;
     /**
      * UUID of the current scene transition. Can be null
-     *
-     * @var ?string
      */
     public ?string $currentSceneTransitionUuid;
     /**
      * Kind of the current scene transition. Can be null
-     *
-     * @var ?string
      */
     public ?string $currentSceneTransitionKind;
     /**

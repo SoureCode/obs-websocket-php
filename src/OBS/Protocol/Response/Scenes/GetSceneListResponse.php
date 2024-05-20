@@ -22,26 +22,18 @@ final readonly class GetSceneListResponse implements ResponseInterface
     public array $scenes;
     /**
      * Current program scene name. Can be `null` if internal state desync
-     *
-     * @var ?string
      */
     public ?string $currentProgramSceneName;
     /**
      * Current program scene UUID. Can be `null` if internal state desync
-     *
-     * @var ?string
      */
     public ?string $currentProgramSceneUuid;
     /**
      * Current preview scene name. `null` if not in studio mode
-     *
-     * @var ?string
      */
     public ?string $currentPreviewSceneName;
     /**
      * Current preview scene UUID. `null` if not in studio mode
-     *
-     * @var ?string
      */
     public ?string $currentPreviewSceneUuid;
     /**

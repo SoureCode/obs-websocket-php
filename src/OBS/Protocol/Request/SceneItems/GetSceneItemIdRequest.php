@@ -18,26 +18,18 @@ final readonly class GetSceneItemIdRequest implements RequestInterface
 {
     /**
      * Name of the source to find
-     *
-     * @var string
      */
     public string $sourceName;
     /**
      * Name of the scene or group to search in
-     *
-     * @var ?string
      */
     public ?string $sceneName;
     /**
      * UUID of the scene or group to search in
-     *
-     * @var ?string
      */
     public ?string $sceneUuid;
     /**
      * Number of matches to skip during search. >= 0 means first forward. -1 means last (top) item
-     *
-     * @var ?int
      */
     public ?int $searchOffset;
 

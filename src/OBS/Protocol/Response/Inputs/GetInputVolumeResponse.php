@@ -16,14 +16,10 @@ final readonly class GetInputVolumeResponse implements ResponseInterface
 {
     /**
      * Volume setting in mul
-     *
-     * @var int
      */
     public int $inputVolumeMul;
     /**
      * Volume setting in dB
-     *
-     * @var int
      */
     public int $inputVolumeDb;
 

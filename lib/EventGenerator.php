@@ -41,7 +41,7 @@ final class EventGenerator extends ClassGenerator
         $properties = [];
 
         foreach ($protocol['dataFields'] as $dataField) {
-            $properties[] = Property::fromEventProtocol($className, $dataField);
+            $properties[] = Property::fromEventProtocol($namespace . '\\'.$className, $dataField);
         }
 
         return new self(

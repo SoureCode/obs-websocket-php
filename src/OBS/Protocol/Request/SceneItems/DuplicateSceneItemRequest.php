@@ -18,32 +18,22 @@ final readonly class DuplicateSceneItemRequest implements RequestInterface
 {
     /**
      * Numeric ID of the scene item
-     *
-     * @var int
      */
     public int $sceneItemId;
     /**
      * Name of the scene the item is in
-     *
-     * @var ?string
      */
     public ?string $sceneName;
     /**
      * UUID of the scene the item is in
-     *
-     * @var ?string
      */
     public ?string $sceneUuid;
     /**
      * Name of the scene to create the duplicated item in
-     *
-     * @var ?string
      */
     public ?string $destinationSceneName;
     /**
      * UUID of the scene to create the duplicated item in
-     *
-     * @var ?string
      */
     public ?string $destinationSceneUuid;
 

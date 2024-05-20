@@ -18,14 +18,10 @@ final readonly class GetSceneSceneTransitionOverrideResponse implements Response
 {
     /**
      * Name of the overridden scene transition, else `null`
-     *
-     * @var ?string
      */
     public ?string $transitionName;
     /**
      * Duration of the overridden scene transition, else `null`
-     *
-     * @var ?int
      */
     public ?int $transitionDuration;
 

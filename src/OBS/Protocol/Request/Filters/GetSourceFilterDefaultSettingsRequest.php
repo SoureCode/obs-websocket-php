@@ -16,8 +16,6 @@ final readonly class GetSourceFilterDefaultSettingsRequest implements RequestInt
 {
     /**
      * Filter kind to get the default settings for
-     *
-     * @var string
      */
     public string $filterKind;
 

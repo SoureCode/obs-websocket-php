@@ -18,14 +18,10 @@ final readonly class SetCurrentPreviewSceneRequest implements RequestInterface
 {
     /**
      * Scene name to set as the current preview scene
-     *
-     * @var ?string
      */
     public ?string $sceneName;
     /**
      * Scene UUID to set as the current preview scene
-     *
-     * @var ?string
      */
     public ?string $sceneUuid;
 

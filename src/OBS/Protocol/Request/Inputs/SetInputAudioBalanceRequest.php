@@ -16,20 +16,14 @@ final readonly class SetInputAudioBalanceRequest implements RequestInterface
 {
     /**
      * New audio balance value
-     *
-     * @var int
      */
     public int $inputAudioBalance;
     /**
      * Name of the input to set the audio balance of
-     *
-     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the input to set the audio balance of
-     *
-     * @var ?string
      */
     public ?string $inputUuid;
 

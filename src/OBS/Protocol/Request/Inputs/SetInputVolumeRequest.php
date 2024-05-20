@@ -16,26 +16,18 @@ final readonly class SetInputVolumeRequest implements RequestInterface
 {
     /**
      * Name of the input to set the volume of
-     *
-     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the input to set the volume of
-     *
-     * @var ?string
      */
     public ?string $inputUuid;
     /**
      * Volume setting in mul
-     *
-     * @var ?int
      */
     public ?int $inputVolumeMul;
     /**
      * Volume setting in dB
-     *
-     * @var ?int
      */
     public ?int $inputVolumeDb;
 

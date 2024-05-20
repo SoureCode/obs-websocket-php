@@ -20,14 +20,10 @@ final readonly class GetGroupSceneItemListRequest implements RequestInterface
 {
     /**
      * Name of the group to get the items of
-     *
-     * @var ?string
      */
     public ?string $sceneName;
     /**
      * UUID of the group to get the items of
-     *
-     * @var ?string
      */
     public ?string $sceneUuid;
 

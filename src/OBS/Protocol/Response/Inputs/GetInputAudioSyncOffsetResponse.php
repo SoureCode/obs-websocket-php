@@ -18,8 +18,6 @@ final readonly class GetInputAudioSyncOffsetResponse implements ResponseInterfac
 {
     /**
      * Audio sync offset in milliseconds
-     *
-     * @var int
      */
     public int $inputAudioSyncOffset;
 

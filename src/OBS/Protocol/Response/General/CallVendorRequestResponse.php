@@ -19,14 +19,10 @@ final readonly class CallVendorRequestResponse implements ResponseInterface
 {
     /**
      * Echoed of `vendorName`
-     *
-     * @var string
      */
     public string $vendorName;
     /**
      * Echoed of `requestType`
-     *
-     * @var string
      */
     public string $requestType;
     /**

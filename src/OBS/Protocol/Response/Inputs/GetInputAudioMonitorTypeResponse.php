@@ -22,8 +22,6 @@ final readonly class GetInputAudioMonitorTypeResponse implements ResponseInterfa
 {
     /**
      * Audio monitor type
-     *
-     * @var string
      */
     public string $monitorType;
 

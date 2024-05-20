@@ -16,20 +16,14 @@ final readonly class SetInputAudioSyncOffsetRequest implements RequestInterface
 {
     /**
      * New audio sync offset in milliseconds
-     *
-     * @var int
      */
     public int $inputAudioSyncOffset;
     /**
      * Name of the input to set the audio sync offset of
-     *
-     * @var ?string
      */
     public ?string $inputName;
     /**
      * UUID of the input to set the audio sync offset of
-     *
-     * @var ?string
      */
     public ?string $inputUuid;
 
